@@ -156,6 +156,11 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+<<<<<<< HEAD
+=======
+    nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
+>>>>>>> 0efa07eacf72d8f9f08800b1e019da34a9759eb7
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -256,6 +261,10 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+<<<<<<< HEAD
+=======
+  x86_64-darwin-22
+>>>>>>> 0efa07eacf72d8f9f08800b1e019da34a9759eb7
   x86_64-linux
 
 DEPENDENCIES
