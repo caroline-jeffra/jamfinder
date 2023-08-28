@@ -77,3 +77,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Added gems
+#
+gem "faker"
+gem "geocoder"
+gem "pexels"
+gem 'pg_search'
