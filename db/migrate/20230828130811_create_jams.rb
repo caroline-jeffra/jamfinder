@@ -5,7 +5,7 @@ class CreateJams < ActiveRecord::Migration[7.0]
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.boolean :did_happen
+      t.boolean :did_happen, default: false
 
       t.timestamps
     end
