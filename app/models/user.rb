@@ -3,16 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :audios
-  has_many :images
-  has_many :messages
-  has_many :user_chatrooms
+  has_many :audios, dependent: :destroy
+  has_many :images, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :user_chatrooms, dependent: :destroy
   has_many :chatrooms, through: :user_chatrooms
-  has_many :user_genres
+  has_many :user_genres, dependent: :destroy
   has_many :genres, through: :user_genres
-  has_many :user_instruments
+  has_many :user_instruments, dependent: :destroy
   has_many :instruments, through: :user_instruments
-  has_many :user_jams
+  has_many :user_jams, dependent: :destroy
   has_many :jams, through: :user_jams
-  has_many :videos
+  has_many :videos, dependent: :destroy
 end
