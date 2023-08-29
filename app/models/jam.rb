@@ -5,5 +5,5 @@ class Jam < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates_comparison_of :date, greater_than_or_equal_to: Time.now
-  validates :date, :address, :latitude, :longitude, presence: true
+  validates :date, :address, presence: true
 end
