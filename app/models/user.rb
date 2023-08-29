@@ -15,4 +15,9 @@ class User < ApplicationRecord
   has_many :user_jams, dependent: :destroy
   has_many :jams, through: :user_jams
   has_many :videos, dependent: :destroy
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  validates :first_name, :last_name, :address, :latitude, :longitude, presence: true 
 end
