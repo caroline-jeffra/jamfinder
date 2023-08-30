@@ -1,4 +1,4 @@
-# For now, this seeds do not create: chatrooms, user_chatrooms, messages, jams, user_jams, videos, audios, images, instruments and user_instrument.
+# For now, this seeds do not create: chatrooms, user_chatrooms, messages, jams, user_jams, videos, audios, and images.
 
 # Just in case a left pexels in here
 # Sets Pexels client
@@ -22,12 +22,20 @@ Image.destroy_all
 # Destroy instruments, genres and users
 Instrument.destroy_all
 UserInstrument.destroy_all
+Genre.destroy_all
+UserGenre.destroy_all
 User.destroy_all
 
 # Dataset:
 CITIES = ['Amsterdam', 'Den Haag', 'Utrecht', 'Leiden', 'Rotterdam'].freeze
 
-CATEGORIES = %w[Vocal Keyboard String Percussion Wind].freeze
+CATEGORIES = {
+  "Vocal" => ["Soprano", "Tenor", "Baritone", "Alto"],
+  "Keyboard" => ["Piano", "Organ", "Synthesizer", "Electric Piano"],
+  "String" => ["Violin", "Cello", "Guitar", "Harp"],
+  "Percussion" => ["Drum Kit", "Bongo Drums", "Tambourine", "Marimba"],
+  "Wind" => ["Flute", "Saxophone", "Trumpet", "Clarinet"]
+}.freeze
 
 GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska'].freeze
 
@@ -91,7 +99,6 @@ TAGLINE = [
   "Echoes of Dreams in Every Note",
   "Music's Journey, Guided by Heart"
 ].freeze
-
 
 DISPLAY_NAME = ["Rockstar",
   "Maestro",
@@ -214,5 +221,43 @@ puts 'Creating users...'
     tagline: TAGLINE.sample,
     avatar_url: AVATAR_URL.sample,
     banner_url: BANNERS.sample
+  ).save
+end
+
+puts "Seeded #{User.count} users."
+
+puts 'Creating genres...'
+
+8.times do
+  Genre.new(
+    name: GENRES.sample
+  ).save
+end
+
+puts 'Relating genres to users...'
+
+16.times do
+  UserGenre.new(
+    genre_id: Genre.all.sample.id,
+    user_id: User.all.sample.id
+  ).save
+end
+
+puts 'Creating instruments...'
+
+8.times do
+  categorie = CATEGORIES.keys.sample
+  Instrument.new(
+    category: categorie,
+    name: CATEGORIES[categorie].sample
+  ).save
+end
+
+puts 'Relating instruments to users...'
+
+16.times do
+  UserInstrument.new(
+    instrument_id: Instrument.all.sample.id,
+    user_id: User.all.sample.id
   ).save
 end
