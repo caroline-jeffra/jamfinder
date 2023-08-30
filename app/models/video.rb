@@ -3,5 +3,5 @@ class Video < ApplicationRecord
 
   validates :url, presence: true
 
-  has_one_attached :url
+  has_one_attached :cl_video_url
 end
