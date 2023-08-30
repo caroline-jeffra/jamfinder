@@ -1,5 +1,7 @@
 <h1>Hello from profiles#index</h1>
 
 <% @profiles.each do |user| %>
-  <%= render "layouts/user_summary", user: user %>
+  <%= link_to profile_path(user) do %>
+    <%= render "layouts/user_summary", user: user %>
+  <% end %>
 <% end %>
