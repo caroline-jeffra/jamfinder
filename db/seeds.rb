@@ -235,7 +235,21 @@ UserGenre.create!(
   user_id: User.all.sample.id
 )
 
+puts 'Creating instruments...'
 
+8.times do
+  Instrument.new(
+    name: INSTRUMENTS_NAME.sample,
+    category: CATEGORIES.sample
+  ).save
+end
+
+puts 'Relating instruments to users...'
+
+UserInstrument.create!(
+  instrument_id: Instrument.all.sample.id,
+  user_id: User.all.sample.id
+)
 
 # INSTRUMENTS.shuffle.each do |data|
 #   model = data[:model]
