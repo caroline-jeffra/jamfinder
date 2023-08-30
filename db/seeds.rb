@@ -228,11 +228,13 @@ puts 'Creating genres...'
   ).save
 end
 
+puts 'Relating genres to users...'
+
 UserGenre.create!(
-  genre_id: Genre.find_by(id: '#{rand(0..9)}').id
-  user_id: User.find_by(email: "owner#{rand(0..9)}@email.com").id
+  genre_id: Genre.all.sample.id,
+  user_id: User.all.sample.id
 )
-end
+
 
 
 # INSTRUMENTS.shuffle.each do |data|
