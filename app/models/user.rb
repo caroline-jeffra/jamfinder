@@ -21,6 +21,9 @@ class User < ApplicationRecord
   has_many :jams, through: :user_jams
   has_many :videos, dependent: :destroy
 
+  # Cloudinary
+  has_one_attached :avatar_url, :banner_url
+
   # Geocoder
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
