@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_101156) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "chatroom_id", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"

@@ -1,43 +1,18 @@
 <div class="card my-2">
   <div class="card-upper">
-      <div class="card-img-top" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png');">
-      </div>
+    <div class="card-img-top" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url('<%= image_path user.banner_url %>');">
+    </div>
     <div class="d-flex flex-row space-between">
       <div class="user-info-avatar ps-2">
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"rounded-circle border border-3"%>
+        <%= image_tag user.avatar_url, alt: "avatar image of #{user.display_name}", class:"rounded-circle border border-3"%>
       </div>
       <div class="user-headline ps-5">
-        <h3>Jammy Dodger</h3>
-        <p class="highlighted">location, location (25km)</p>
+        <h3><%= user.display_name %></h3>
+        <p class="highlighted">(TODO: geocoding distance and nearby town name)</p>
       </div>
     </div>
     <div class="px-3">
-      <h4>Here’s a catchy tagline about me, see how likeable I am?!</h4>
-      <div class="d-flex flex-row">
-        <div class="icon-instrument me-2"></div>
-        <div class="icon-instrument me-2"></div>
-        <div class="icon-instrument me-2"></div>
-        <div class="icon-instrument me-2"></div>
-        <div class="icon-instrument me-2"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card my-2">
-  <div class="card-upper">
-      <div class="card-img-top" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png');">
-      </div>
-    <div class="d-flex flex-row space-between">
-      <div class="user-info-avatar ps-2">
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"rounded-circle border border-3"%>
-      </div>
-      <div class="user-headline ps-5">
-        <h3>Jammy Dodger</h3>
-        <p class="highlighted">location, location (25km)</p>
-      </div>
-    </div>
-    <div class="px-3">
-      <h4>Here’s a catchy tagline about me, see how likeable I am?!</h4>
+      <h4><%= user.tagline %></h4>
       <div class="d-flex flex-row">
         <div class="icon-instrument me-2"></div>
         <div class="icon-instrument me-2"></div>
