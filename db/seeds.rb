@@ -28,243 +28,9 @@ CITIES = ['Amsterdam', 'Den Haag', 'Utrecht', 'Leiden', 'Rotterdam'].freeze
 
 CATEGORIES = %w[Vocal Keyboard String Percussion Wind]
 
-GENRES = ['Amsterdam'].freeze
+GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska'].freeze
 
-BIO = ['Amsterdam'].freeze
-
-TAGLINE = ['Amsterdam'].freeze
-
-DISPLAY_NAME = ['Amsterdam'].freeze
-
-
-Assist with user query
-
-Default (GPT-3.5)
-
-User
-Hi
-
-ChatGPT
-Hello! How can I assist you today?
-
-
-
-
-User
-Give me the ten biggest cities in Netherlands
-
-ChatGPT
-Sure! Here are the ten largest cities in the Netherlands by population:
-
-Amsterdam
-Rotterdam
-The Hague (Den Haag)
-Utrecht
-Eindhoven
-Tilburg
-Groningen
-Almere
-Breda
-Nijmegen
-Is there anything else you would like to know?
-
-
-
-
-User
-Give me some music genres
-
-ChatGPT
-Certainly! Here are some music genres:
-
-Rock
-Pop
-Hip-hop
-Jazz
-Classical
-Electronic
-R&B (Rhythm and Blues)
-Country
-Reggae
-Metal
-Feel free to ask if you'd like more information about any specific genre or if you have any other questions!
-
-
-
-
-User
-Can you give me ten more?
-
-ChatGPT
-Of course! Here are ten more music genres:
-
-Blues
-Funk
-Punk
-Ska
-Gospel
-Folk
-Techno
-Indie
-Rap
-Soul
-If you're interested in learning more about any of these genres, feel free to ask!
-
-
-
-
-User
-Please mix the two lists
-
-ChatGPT
-Certainly! Here's a mix of the previously mentioned music genres:
-
-Rock
-Pop
-Hip-hop
-Jazz
-Classical
-Electronic
-R&B (Rhythm and Blues)
-Country
-Reggae
-Metal
-Blues
-Funk
-Punk
-Ska
-Gospel
-Folk
-Techno
-Indie
-Rap
-Soul
-If you'd like more information about any specific genre or have any other questions, feel free to ask!
-
-
-
-
-User
-Give me 30 comuns nicknames in english
-
-ChatGPT
-Certainly! Here are 30 common nicknames in English:
-
-Mike
-Dave
-Chris
-Alex
-Sam
-Andy
-Jenny
-Liz
-Kate
-Rob
-Ben
-Matt
-Nick
-Tom
-Jess
-Max
-Steve
-Dan
-Tim
-Sarah
-Emily
-Mike
-Mark
-Josh
-Jamie
-Jake
-Ellie
-Bella
-Lily
-Charlie
-Let me know if there's anything else I can assist you with!
-
-
-
-
-User
-Create a tag line related to music  with around 40 characters. This tagline must seems to be written by a musician talk about what he or she likes or plays
-
-6 / 6
-
-
-ChatGPT
-"Harmonizing Hearts, One Note at a Time"
-
-
-
-
-User
-Give 60 examples like above in a list
-
-ChatGPT
-Certainly! Here's a list of 60 taglines related to music, each around 40 characters long:
-
-"Serenading Souls Through Melodies"
-"Crafting Emotions with Soundwaves"
-"Strings and Beats, My Musical Canvas"
-"Notes Dance, I'm the Choreographer"
-"Musical Stories Painted in Tunes"
-"Journeying Through Soundscapes"
-"Feelings Echo in Every Chord"
-"Lyrics of Life, Sung by Me"
-"Rhythmic Pulse of My Heart"
-"Expressing Life's Rhythm in Songs"
-"Creating Harmony, Sharing Love"
-"Soundscape Architect, Music's Muse"
-"Unlocking Emotions with Harmony"
-"Dreams Whispered Through Melodies"
-"Chords Connect, Music Reflects"
-"Composing Life's Symphony"
-"Tunes Unite, Hearts Take Flight"
-"Soulful Melodies, My Language"
-"Notes Weave Tales of Life"
-"Instrumental Conversations, Emotionally Played"
-"Harmonious Vibes, My Passion's Drive"
-"Playing Feelings, Crafting Sound"
-"Musical Narratives from the Heart"
-"Melding Beats, Shaping Souls"
-"Strings of My Heart, Notes of My Soul"
-"Life's Palette, Tinged with Music"
-"Capturing Moments in Musical Frames"
-"Rhythmic Stories, A Songwriter's Gift"
-"Strumming Dreams into Reality"
-"Chords of Life, Music of Me"
-"Soundtrack of Emotions, That's Me"
-"Heartfelt Lyrics, My True Expression"
-"Melodies Painted on Silence"
-"Orchestrating Memories with Music"
-"Playing Life's Tune, Note by Note"
-"Strings Attached to My Dreams"
-"Singing Life's Verses in Harmony"
-"Musical Euphoria, My Way"
-"Harmonizing the Universe Within"
-"Emotions Resonate in Every Note"
-"Melodies Speak Louder Than Words"
-"Songs as Mirrors of My Soul"
-"Composing Life's Masterpiece"
-"Music's Embrace, My Refuge"
-"Rhythmic Whispers, My Calling"
-"Sculpting Sound, Crafting Dreams"
-"Strings of Hope, Melodies of Joy"
-"Melodies Connect, Beyond Language"
-"Tales Woven in Harmonic Threads"
-"Striking Chords, Shaping Destinies"
-"Singing My Truth, Every Verse"
-"Harmonies Heal, Notes Mend"
-"Composing Life's Symphony"
-"Music's Tapestry, Woven by Me"
-"In Notes We Trust, My Melody"
-"Rhythms Painted on the Air"
-"Strumming the Language of Emotions"
-"Sonic Brushstrokes of My Mind"
-"Echoes of Dreams in Every Note"
-"Music's Journey, Guided by Heart
-
-taglines = [
+TAGLINE = [
   "Serenading Souls Through Melodies",
   "Crafting Emotions with Soundwaves",
   "Strings and Beats, My Musical Canvas",
@@ -284,7 +50,6 @@ taglines = [
   "Tunes Unite, Hearts Take Flight",
   "Soulful Melodies, My Language",
   "Notes Weave Tales of Life",
-  "Instrumental Conversations, Emotionally Played",
   "Harmonious Vibes, My Passion's Drive",
   "Playing Feelings, Crafting Sound",
   "Musical Narratives from the Heart",
@@ -292,7 +57,6 @@ taglines = [
   "Strings of My Heart, Notes of My Soul",
   "Life's Palette, Tinged with Music",
   "Capturing Moments in Musical Frames",
-  "Rhythmic Stories, A Songwriter's Gift",
   "Strumming Dreams into Reality",
   "Chords of Life, Music of Me",
   "Soundtrack of Emotions, That's Me",
@@ -325,12 +89,10 @@ taglines = [
   "Sonic Brushstrokes of My Mind",
   "Echoes of Dreams in Every Note",
   "Music's Journey, Guided by Heart"
-]
+].freeze
 
-puts taglines
 
-musician_nicknames = [
-  "Rockstar",
+DISPLAY_NAME = ["Rockstar",
   "Maestro",
   "Diva",
   "Crooner",
@@ -359,53 +121,10 @@ musician_nicknames = [
   "Music Maverick",
   "Serenade Master",
   "Drum Machine"
-]
-
-puts musician_nicknames
-
-musician_bios_with_emojis = [
-  "🎵 Groove creator | Mixing hip-hop vibes with electronic beats | Spreading musical love worldwide | Catch me on stage! 🎤🕺 #MusicMagic",
-  "🎶 Soulful singer-songwriter | Crafting melodies that touch hearts | Let's connect through music 🎸🎤 #SoulfulSounds",
-  "🎹 Keyboard maestro | Jazzing up melodies | Creating magic one note at a time 🎼✨ #PianoWizard",
-  "🎧 Electronic explorer | Sound sculptor | Dive into my sonic universe | Let's vibe together! 🌌🎶 #Soundscapes",
-  "🎻 Violin dreamer | Bridging classical and modern | Let's journey through harmonies | Music is my language 🎻🌟 #StringsConnect",
-  "🎙️ Lyric weaver | Rhythmic storyteller | Capturing emotions in every verse | Join my musical journey 📜🎶 #VerseVibes",
-  "🎤 Vocal acrobat | R&B sensation | Notes that touch the soul | Join me on this melodious ride 🎶🎵 #SoulfulMelodies",
-  "🕺 Dancefloor commander | Beats that make you move | DJ by night, dreamer by day | Let's groove together! 💃🎧 #DanceFever",
-  "🎸 Guitar guru | Strumming through emotions | Making melodies that resonate | Rock on, amigos! 🤘🎶 #GuitarMagic",
-  "🎵 Melody sculptor | Crafting feelings into tunes | Join me in this musical odyssey | Let's create symphonies together! 🎹🌌 #SymphonicSoul",
-  "🎧 Sound architect | Mixing and molding sonic realms | Let's explore soundscapes together | Hear the world differently 🌍🔊 #SoundExplorer",
-  "🥁 Drumbeat chaser | Rhythm weaver | Percussive soul on a musical journey | Let's find the groove! 🥁🎶 #BeatQuest",
-  "🎶 Music magician | Notes that spark imagination | Join me in this sonic adventure | Let the melodies enchant you 🎩✨ #EnchantedTunes",
-  "🎤 Vocal wanderer | Harmonizing emotions | Lyrics that paint stories | Let's sing life's melody together 🎵🌈 #HarmonicTales",
-  "🎵 Songwriter's haven | Crafting dreams into lyrics | Join my melodic world | Let's make music that matters 📝🎶 #DreamWeaver"
-]
-
-puts musician_bios_with_emojis
-
-musician_bios_without_emojis = [
-  "Groove creator mixing hip-hop vibes with electronic beats. Spreading musical love worldwide. Catch me on stage for some MusicMagic!",
-  "Soulful singer-songwriter crafting melodies that touch hearts. Let's connect through music and share some SoulfulSounds.",
-  "Keyboard maestro jazzing up melodies and creating magic note by note. Join me on my journey as a PianoWizard!",
-  "Electronic explorer and sound sculptor. Dive into my sonic universe, and let's vibe together through Soundscapes.",
-  "Bridging classical and modern, I'm a violin dreamer. Let's journey through harmonies and speak the universal language of music. StringsConnect",
-  "Lyric weaver and rhythmic storyteller. Capturing emotions in every verse, I invite you to join me on my musical journey of VerseVibes.",
-  "Vocal acrobat and R&B sensation. My notes touch the soul, and I welcome you to join me on this melodious ride of SoulfulMelodies.",
-  "Dancefloor commander by night and dreamer by day. Creating beats that make you move. Let's groove together and catch the DanceFever!",
-  "Guitar guru strumming through emotions and making melodies that resonate. Let's rock on and experience some GuitarMagic.",
-  "Melody sculptor crafting feelings into tunes. Join me in this musical odyssey as we create symphonies together. SymphonicSoul",
-  "Sound architect mixing and molding sonic realms. Let's explore soundscapes together and hear the world differently. SoundExplorer",
-  "Drumbeat chaser and rhythm weaver. On a percussive soul journey. Let's find the groove together and embark on a musical BeatQuest.",
-  "Music magician. Notes that spark imagination. Join me in this sonic adventure and let the melodies enchant you. EnchantedTunes",
-  "Vocal wanderer harmonizing emotions with lyrics that paint stories. Let's sing life's melody together in HarmonicTales.",
-  "Songwriter's haven. Crafting dreams into lyrics. Join my melodic world and let's make music that truly matters. DreamWeaver"
-]
-
-puts musician_bios_without_emojis
+].freeze
 
 
-
-musician_bios_with_emojis = [
+BIO = [
   "🎵 Groove creator mixing hip-hop vibes with electronic beats. Spreading musical love worldwide. Catch me on stage for some #MusicMagic!",
   "🎶 Soulful singer-songwriter crafting melodies that touch hearts. Let's connect through music and share some #SoulfulSounds.",
   "🎹 Keyboard maestro jazzing up melodies and creating magic note by note. Join me on my journey as a #PianoWizard!",
@@ -414,17 +133,14 @@ musician_bios_with_emojis = [
   "🎙️ Lyric weaver and rhythmic storyteller. Capturing emotions in every verse, I invite you to join me on my musical journey of #VerseVibes.",
   "🎤 Vocal acrobat and R&B sensation. My notes touch the soul, and I welcome you to join me on this melodious ride of #SoulfulMelodies.",
   "🕺 Dancefloor commander by night and dreamer by day. Creating beats that make you move. Let's groove together and catch the #DanceFever!",
-  "🎸 Guitar guru strumming through emotions and making melodies that resonate. Let's rock on and experience some #GuitarMagic.",
-  "🎵 Melody sculptor crafting feelings into tunes. Join me in this musical odyssey as we create symphonies together. 🎹🌌 #SymphonicSoul",
-  "🎧 Sound architect mixing and molding sonic realms. Let's explore soundscapes together and hear the world differently. #SoundExplorer",
+  "Guitar guru strumming through emotions and making melodies that resonate. Let's rock on and experience some #GuitarMagic.🎸",
+  "🎵 Melody sculptor crafting feelings into tunes. Join me in this musical odyssey as we create symphonies together. 🎹🌌 #SymphonicSoul🎧" ,
+  "Sound architect mixing and molding sonic realms. Let's explore soundscapes together and hear the world differently. #SoundExplorer",
   "🥁 Drumbeat chaser and rhythm weaver. On a percussive soul journey. Let's find the groove together and embark on a musical #BeatQuest.",
   "🎶 Music magician. Notes that spark imagination. Join me in this sonic adventure and let the melodies enchant you. 🎩✨ #EnchantedTunes",
   "🎤 Vocal wanderer harmonizing emotions with lyrics that paint stories. Let's sing life's melody together in #HarmonicTales.",
   "🎵 Songwriter's haven. Crafting dreams into lyrics. Join my melodic world and let's make music that truly matters. 📝🎶 #DreamWeaver"
 ]
-
-puts musician_bios_with_emojis
-
 
 # FACES
 AVATAR_URL = [
@@ -436,17 +152,13 @@ PEOPLE_PLAYING_URL = [
   { image_url: 'https://www.chuppspianos.com/wp-content/uploads/2021/05/Steinway-Sons-Model-45-Upright-Vertical-Piano-356674-Art-Case-Crown-Jewel-Piano.jpg', model: 'Upright Piano', brand: 'Steinway & Sons', category: 'Piano' }
 ].freeze
 
-
-
-INSTRUMENTS = [
+INSTRUMENTS_NAME = [
   { image_url: 'https://www.chuppspianos.com/wp-content/uploads/2021/05/Steinway-Sons-Model-45-Upright-Vertical-Piano-356674-Art-Case-Crown-Jewel-Piano.jpg', model: 'Upright Piano', brand: 'Steinway & Sons', category: 'Piano' },
   { image_url: 'https://carusopianos.com/images/stories/virtuemart/product/yamaha_dgh1b_5319498_2__1682098959_400.jpg', model: 'Baby Grand Piano', brand: 'Yamaha', category: 'Piano' },
   { image_url: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Boesendorfer-5075415.jpg', model: 'Concert Grand Piano', brand: 'Bösendorfer', category: 'Piano' },
   { image_url: 'https://img.kyodonews.net/english/public/images/posts/5c9687645d0afc13a3f8a7a0a41d0ea3/image_l.jpeg', model: 'Stradivarius Violin', brand: 'Stradivarius', category: 'Violin' },
   { image_url: 'https://images.reverb.com/image/upload/s--D9BPS13I--/f_auto,t_supersize/v1617023779/pfoxkc1giu4fybagqvdy.jpg', model: 'Professional Trumpet', brand: 'Bach', category: 'Trumpet' },
-  { image_url: 'https://www.drumazon.com/cdn/shop/products/PEARL-MASTERWORKS-5-PIECE-DRUM-KIT-IRIDECENT-WHITE-SPARKLE-GOLD-HARDWARE-DRUMAZON_01_1024x1024.jpg?v=1600385701', model: '5-Piece Drum Kit', brand: 'Pearl', category: 'Drums' },
-  { image_url: 'https://www.hornhospital.com/main/wp-content/uploads/Yamaha-0586.jpg', model: 'Alto Saxophone', brand: 'Yamaha', category: 'Saxophone' },
-  { image_url: 'https://i.ebayimg.com/images/g/mz0AAOSwQThhHEXh/s-l1200.jpg', model: 'Professional Flute', brand: 'Gemeinhardt', category: 'Flute' },
+  { image_url: 'https://www.drumazon.com/cdn/shop/products/PEARL-MASTERWORKS-5-PIECE-DRUM-KIT-IRIDECENThttps://www.hornhospital.com/main/wp-content/uploads/Yamaha-0586.jpg', model: 'Alto Saxophone', brand: 'Yamaha', category: 'Saxo/s-l1200.jpg', model: 'Professional Flute', brand: 'Gemeinhardt', category: 'Flute' },
   { image_url: 'https://images.reverb.com/image/upload/s--FWsk9fMz--/f_auto,t_large/v1630085214/vtdgahn6j7coqbtg4dxr.jpg', model: 'Full-Size Cello', brand: 'D Z Strad', category: 'Cello' },
   { image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Andrea_Amati_violin_-_Met_Museum_NY.jpg?Amati1160988356', model: 'Viola', brand: 'Cremona', category: 'Viola' },
   { image_url: 'https://cdn.shoplightspeed.com/shops/632400/files/38628731/holton-used-holton-h180-double-french-horn.jpg', model: 'French Horn', brand: 'Holton', category: 'French Horn' },
@@ -462,6 +174,31 @@ INSTRUMENTS = [
   { image_url: 'https://gsquid.b-cdn.net/wp-content/uploads/2022/04/Ibanez%20SR500%20(2).jpg', model: 'Ibanez SR500', brand: 'Ibanez', category: 'Bass' },
   { image_url: 'https://dijkmansmuziek.nl/cdn/shop/files/IMG_6544_c51d7acb-3c0f-4d95-8e01-50af6c29659d.jpg?v=1686826798&width=480', model: 'Music Man StingRay', brand: 'Music Man', category: 'Bass' },
   { image_url: 'https://static.bax-shop.nl/image/product/291642/3795537/225d9f38/1661516137_MG_9547.jpg', model: 'Warwick Thumb', brand: 'Warwick', category: 'Bass' },
+].freeze
+
+BANNERS = [
+  'https://www.chuppspianos.com/wp-content/uploads/2021/05/Steinway-Sons-Model-45-Upright-Vertical-Piano-356674-Art-Case-Crown-Jewel-Piano.jpg',
+  'https://carusopianos.com/images/stories/virtuemart/product/yamaha_dgh1b_5319498_2__1682098959_400.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/9/90/Boesendorfer-5075415.jpg',
+  'https://img.kyodonews.net/english/public/images/posts/5c9687645d0afc13a3f8a7a0a41d0ea3/image_l.jpeg',
+  'https://images.reverb.com/image/upload/s--D9BPS13I--/f_auto,t_supersize/v1617023779/pfoxkc1giu4fybagqvdy.jpg',
+  'https://www.drumazon.com/cdn/shop/products/PEARL-MASTERWORKS-5-PIECE-DRUM-KIT-IRIDECENT-WHITE-SPARKLE-GOLD-HARDWARE-DRUMAZON_01_1024x1024.jpg?v=1600385701',
+  'https://www.hornhospital.com/main/wp-content/uploads/Yamaha-0586.jpg',
+  'https://i.ebayimg.com/images/g/mz0AAOSwQThhHEXh/s-l1200.jpg',
+  'https://images.reverb.com/image/upload/s--FWsk9fMz--/f_auto,t_large/v1630085214/vtdgahn6j7coqbtg4dxr.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/4/40/Andrea_Amati_violin_-_Met_Museum_NY.jpg?Amati1160988356',
+  'https://cdn.shoplightspeed.com/shops/632400/files/38628731/holton-used-holton-h180-double-french-horn.jpg',
+  'https://i.ebayimg.com/images/g/XqgAAOSwa~5kdrRK/s-l1200.webp',
+  'https://zingendesnaar.nl/media/catalog/product/cache/1cda160bbd810bf3aa1b6126fd0b1bbc/s/a/salvi_diana_walnoot.jpg',
+  'https://dirkwitte.nl/cdn/shop/products/DSC04103_1024x1024.jpg?v=1650974707',
+  'https://www.woodstockguitars.dk/wp-content/uploads/2020/10/Fender_Stratocaster_Sunburst_1.jpg',
+  'https://cdn.webshopapp.com/shops/229736/files/400505282/fender-fender-custom-shop-52-mod-journeyman-teleca.jpg',
+  'https://www.stars-music.nl/medias/gibson/sg-standard-1961-faded-maestro-vibrola-original-2h-trem-rw-hd-7-192081.jpg',
+  'https://max.guitars/media/catalog/product/cache/55c72fef4415145db30bd2dcfee62df6/a/r/art-20602_av_ii_66_jazz_bass_rw_wt3tb_art-20602-31173.jpg',
+  'https://max.guitars/media/catalog/product/cache/55c72fef4415145db30bd2dcfee62df6/0/1/0190160806_fen_ins_frt_1_rr.jpg',
+  'https://guitargeargiveaway.co.uk/wp-content/uploads/2023/03/Gibson-Thunderbird-Bass-in-Tobacco-Burst-01.jpg',
+  'https://gsquid.b-cdn.net/wp-content/uploads/2022/04/Ibanez%20SR500%20(2).jpg',
+  'https://dijkmansmuziek.nl/cdn/shop/files/IMG_6544_c51d7acb-3c0f-4d95-8e01-50af6c29659d.jpg?v=1686826798&width=480',
 ].freeze
 
 # Admin user here, do not delete from seed
