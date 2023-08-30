@@ -1,1 +1,37 @@
-<h1>Hello from profiles#show</h1>
+<div class="d-flex justify-content-between" >
+  <button type"btn" btn-primary">Start Chat</button>
+    <div class="circle-jam-counter">
+    <p>100</p>
+    </div>
+  </div>
+<div>
+  <img src="#" alt="">
+  <div>
+    <h3>
+      <%= @profile.first_name %>
+    </h3>
+    <p><%= @profile.address %></p>
+  </div>
+  <p><%= @profile.tagline %></p>
+  <div>
+  </div>
+</div>
+
+<article>
+  <p><%= @profile.bio %></p>
+</article>
+
+<div>
+  <div class="d-flex">
+    <p class="profile-tags">Genre</p>
+    <p class="profile-tags">Genre</p>
+  </div>
+
+  <div class="d-flex">
+    <p class="profile-tags">Instrument</p>
+    <p class="profile-tags">Instrument</p>
+  </div>
+</div>
+
+<script src="scripts/read-more-btn-v1.js"></script>
+<script>mkBtn('article', 30);</script>

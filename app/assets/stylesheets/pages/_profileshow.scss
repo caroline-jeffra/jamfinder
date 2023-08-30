@@ -1,0 +1,22 @@
+.circle-jam-counter{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: pink;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+
+}
+
+.profile-tags{
+  padding: 8px 12px;
+  background: grey;
+  border-radius: 2px;
+  margin: 2px;
+
+}
