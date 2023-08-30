@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # Callbacks
+  before_create :set_display_name_default
+
+  # Relations
   has_many :audios, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -16,8 +21,19 @@ class User < ApplicationRecord
   has_many :jams, through: :user_jams
   has_many :videos, dependent: :destroy
 
+  # Cloudinary
+  has_one_attached :avatar_url, :banner_url
+
+  # Geocoder
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  # Validations
   validates :first_name, :last_name, :address, presence: true
+
+  private
+
+  def set_display_name_default
+    self.display_name = first_name
+  end
 end
