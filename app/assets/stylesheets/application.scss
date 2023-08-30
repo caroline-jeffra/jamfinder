@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// application-wide scss overrides
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
