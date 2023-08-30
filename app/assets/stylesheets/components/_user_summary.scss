@@ -1,0 +1,61 @@
+.card {
+  width: 100%;
+  height: 49vh;
+  flex-shrink: 0;
+  background-color: $primary;
+  border: none;
+}
+
+.card-upper {
+  height: 30vh;
+}
+
+.card-img-top {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30vh;
+  z-index: -1000 !important;
+  border: 1px solid $secondary;
+}
+
+.user-headline {
+  margin-top: -2rem;
+}
+
+.user-info-avatar > img {
+  display: flex;
+  width: 12rem;
+  height: 12rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: -8rem;
+  z-index: 1000 !important;
+  opacity: 1;
+}
+
+.icon-instrument {
+  width: 3rem;
+  height: 3rem;
+  background-color: $accent;
+}
+
+h1, h2 {
+  font-family: $headers-font;
+}
+
+h3, h4, p {
+  font-family: $body-font;
+}
+
+h3 {
+  font-size: 2.0;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.user-headline > p {
+  color: $accent;
+  margin-bottom: 0;
+}
