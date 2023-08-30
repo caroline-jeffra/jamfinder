@@ -1,4 +1,4 @@
-# For now, this seeds do not create: chatrooms, user_chatrooms, messages, jams, user_jams, videos, audios, images, instruments and user_instrument.
+# For now, this seeds do not create: chatrooms, user_chatrooms, messages, jams, user_jams, videos, audios, and images.
 
 # Just in case a left pexels in here
 # Sets Pexels client
@@ -29,7 +29,18 @@ User.destroy_all
 # Dataset:
 CITIES = ['Amsterdam', 'Den Haag', 'Utrecht', 'Leiden', 'Rotterdam'].freeze
 
-CATEGORIES = %w[Vocal Keyboard String Percussion Wind].freeze
+CATEGORIES = {
+  "Vocal" => ["Soprano", "Tenor", "Baritone", "Alto"],
+  "Keyboard" => ["Piano", "Organ", "Synthesizer", "Electric Piano"],
+  "String" => ["Violin", "Cello", "Guitar", "Harp"],
+  "Percussion" => ["Drum Kit", "Bongo Drums", "Tambourine", "Marimba"],
+  "Wind" => ["Flute", "Saxophone", "Trumpet", "Clarinet"]
+}
+
+instrument_categories.each do |category, instruments|
+  puts "#{category}: #{instruments.join(', ')}"
+end
+.freeze
 
 GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska'].freeze
 
@@ -231,28 +242,29 @@ end
 puts 'Relating genres to users...'
 
 16.times do
-  UserGenre.create!(
+  UserGenre.new(
     genre_id: Genre.all.sample.id,
     user_id: User.all.sample.id
-  )
+  ).save
 end
 
 puts 'Creating instruments...'
 
 8.times do
+  categorie = CATEGORIES.keys.sample
   Instrument.new(
-    name: INSTRUMENTS_NAME.sample,
-    category: CATEGORIES.sample
+    category: categorie,
+    name: CATEGORIES[categorie].sample
   ).save
 end
 
 puts 'Relating instruments to users...'
 
 16.times do
-  UserInstrument.create!(
+  UserInstrument.new(
     instrument_id: Instrument.all.sample.id,
     user_id: User.all.sample.id
-  )
+  ).save
 end
 
 # INSTRUMENTS.shuffle.each do |data|
