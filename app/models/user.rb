@@ -22,8 +22,8 @@ class User < ApplicationRecord
   has_many :videos, dependent: :destroy
 
   # Cloudinary
-  has_one_attached :avatar_url
-  has_one_attached :banner_url
+  has_one_attached :cl_avatar_url
+  has_one_attached :cl_banner_url
 
   # Geocoder
   geocoded_by :address
