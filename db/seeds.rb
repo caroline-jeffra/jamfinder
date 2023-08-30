@@ -230,10 +230,12 @@ end
 
 puts 'Relating genres to users...'
 
-UserGenre.create!(
-  genre_id: Genre.all.sample.id,
-  user_id: User.all.sample.id
-)
+16.times do
+  UserGenre.create!(
+    genre_id: Genre.all.sample.id,
+    user_id: User.all.sample.id
+  )
+end
 
 puts 'Creating instruments...'
 
@@ -246,10 +248,12 @@ end
 
 puts 'Relating instruments to users...'
 
-UserInstrument.create!(
-  instrument_id: Instrument.all.sample.id,
-  user_id: User.all.sample.id
-)
+16.times do
+  UserInstrument.create!(
+    instrument_id: Instrument.all.sample.id,
+    user_id: User.all.sample.id
+  )
+end
 
 # INSTRUMENTS.shuffle.each do |data|
 #   model = data[:model]
