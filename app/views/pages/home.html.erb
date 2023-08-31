@@ -1,6 +1,10 @@
-<%= cl_image_tag("purple_background", width: 400, height: 300, crop: :fill) %>
 
-<div class="container">
+<div class="card-img-top d-flex flex-column justify-content-end align-items-center" style="background-image: url('http://res.cloudinary.com/drxcsc3ye/image/upload/v1693476762/purple_background.png');">
+  <div class="mt-4">
+  <%= render 'profiles/search_form' %>
+  </div>
+</div>
+<div class="container pt-3">
   <hr class="py-2">
   <h1>local jamsters</h1>
   <% @profiles.each do |profile| %>
