@@ -14,14 +14,18 @@
 }
 
 .profile-tags{
-  padding: 8px 12px;
-  background: grey;
-  border-radius: 2px;
+padding: 1px 14px;
+  background: rgb(221, 221, 221);
+  border-radius: 10px;
   margin: 2px;
 
 }
 
-.splide__slide img {
-  width: 100%;
-  height: auto;
+.hidden {
+  display: none;
+}
+
+#readMore {
+  margin-top: 10px;
+  cursor: pointer;
 }
