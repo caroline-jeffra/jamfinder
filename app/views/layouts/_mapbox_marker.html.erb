@@ -1,1 +1,6 @@
-<%= image_tag user.avatar_url, height: 30, width: 30, alt: "avatar image of #{user.display_name}", class:"rounded-circle border border-3"%>
+
+<% if user.avatar_url %>
+  <%= image_tag user.avatar_url, height: 50, width: 50, alt: "avatar image of #{user.display_name}", class:"rounded-circle border border-3"%>
+<% else %>
+  <%= image_tag """", height: 50, width: 50, alt: "avatar image of #{user.display_name}", class:"rounded-circle border border-3"%>
+<% end %>
