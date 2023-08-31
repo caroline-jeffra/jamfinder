@@ -19,3 +19,16 @@ html {
 a {
   text-decoration: none;
 }
+
+.sticky-class {
+  position:sticky;
+  top:50px;
+  width:100vw;
+  background-color: white;
+  z-index: 1020;
+}
+
+.scrollable {
+  overflow: scroll;
+  height: 70vh;
+}
