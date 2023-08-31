@@ -1,6 +1,17 @@
 <h1>Welcome to the Chatrooms#index</h1>
 
 <% @chatrooms.each do |chat| %>
+  <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
   <span>Chatroom#<%= chat.id %></span>
-  <% raise %>
+  <% if chat.messages.any? %>
+    <% chat.messages.each do |msg| %>
+      <p><strong><%= msg.user.display_name %>: </strong><%= msg.content %></p>
+    <% end %>
+  <% end %>
+  <%= form_for :message, url: messages_path, html: {class: "d-flex"} do |f| %>
+    <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
+    <%= hidden_field_tag "message[user_id]", "#{current_user.id}" %>
+    <%= f.text_field :content %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <% end %>
 <% end %>

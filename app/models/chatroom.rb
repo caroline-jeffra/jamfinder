@@ -1,5 +1,5 @@
 class Chatroom < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :user_chatrooms
   before_validation :sort_participant_ids
 
