@@ -1,24 +1,26 @@
 <h1>Hello from profiles#index</h1>
+<div data-controller='switch-btn'>
+  <div >
+        <button class="btn btn-primary" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">List</button>
 
-<div >
-      <button class="btn btn-primary" data-controller='switch' data-action="click->switch#fire1">List</button>
-      <button class="btn btn-outline-primary" data-controller='switch'>Map</button>
-</div>
+        <button class="btn btn-outline-primary" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">Map</button>
+  </div>
 
-<div class="title-ctr">
-<h1>jamsters for you</h1>
-</div>
+  <div class="title-ctr">
+  <h1>jamsters for you</h1>
+  </div>
 
-<div data-switch-target="switchOne">
-<% @profiles.each do |user| %>
-  <%= link_to profile_path(user) do %>
-    <%= render "layouts/user_summary", user: user %>
-  <% end %>
-<% end %>
-</div>
+  <div data-switch-btn-target="switch1">
+    <% @profiles.each do |user| %>
+      <%= link_to profile_path(user) do %>
+        <%= render "layouts/user_summary", user: user %>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="d-none">
+  <div class="d-none" data-switch-btn-target="switch2">
 
-<%= render "layouts/mapbox" %>
+    <%= render "layouts/mapbox" %>
 
+  </div>
 </div>
