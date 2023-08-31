@@ -1,0 +1,73 @@
+.circle-jam-counter{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: pink;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+
+}
+
+.profile-tags{
+padding: 1px 14px;
+  background: rgb(221, 221, 221);
+  border-radius: 10px;
+  margin: 2px;
+
+}
+
+.hidden {
+  display: none;
+}
+
+#readMore {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.imageFirst {
+  height: 100px !important;
+  width: 100px;
+  background: url("https://images.unsplash.com/photo-1607443359781-1f90813dd803?ixlib=rb-4.0.3&ixid=M3wxM[…]dlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageSecond {
+  height: 100px !important;
+  width: 100px;
+  background: url("https://images.unsplash.com/photo-1598515751039-5b58e4f5f6be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FtYmElMjBtdXNpY2lhbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageThird{
+  height: 100px !important;
+  width: 100px;
+  background: url("https://images.unsplash.com/photo-1466767574486-40e61f77bdd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhbWJhJTIwbXVzaWNpYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60");  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageFourth {
+  height: 100px !important;
+  width: 100px;
+  background: url("https://images.unsplash.com/photo-1593697972672-b1c1902219e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNhbWJhJTIwbXVzaWNpYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60");  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageFith {
+  height: 100px !important;
+  width: 100px;
+  background: url("https://media.istockphoto.com/id/1391832141/photo/percussion-instrument-called-atabaque.webp?b=1&s=170667a&w=0&k=20&c=8io0jFOG08AW3IgPhEaCcQFv7yFIyKERCmJhrW4Ovxo=");  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

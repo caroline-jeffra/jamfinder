@@ -1,10 +1,34 @@
-<h1>Hello from profiles#index</h1>
+<div class="title-center" data-controller='switch-btn'>
+  <div class="sticky-class">
+    <div class="card-img-top d-flex flex-column justify-content-start align-items-center" style="background-image: url('http://res.cloudinary.com/drxcsc3ye/image/upload/v1693476762/purple_background.png');">
+      <div style="height:15vh; width: 100vh;"></div>
+      <div class="pt-5">
+        <%= render 'layouts/search_form' %>
+      </div>
+    </div >
+    <div>
+          <button class="btn btn-primary rounded-pill col-4" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">List</button>
 
-<% @profiles.each do |user| %>
-  <%= link_to profile_path(user) do %>
-    <%= render "layouts/user_summary", user: user %>
-  <% end %>
-<% end %>
+          <button class="btn btn-outline-primary rounded-pill col-4" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">Map</button>
+    </div>
+  </div>
+  <div class="scrollable">
+    <div class="container pt-3">
+      <hr class="py-2">
+      <div class="title-center">
+        <h1>jamsters for you</h1>
+      </div>
+      <div data-switch-btn-target="switch1">
+        <% @profiles.each do |user| %>
+          <%= link_to profile_path(user) do %>
+            <%= render "layouts/user_summary", user: user %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="d-none" data-switch-btn-target="switch2">
 
-
-<%= render "layouts/mapbox" %>
+        <%= render "layouts/mapbox" %>
+      </div>
+    </div>
+  </div>
+</div>
