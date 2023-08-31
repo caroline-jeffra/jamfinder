@@ -11,12 +11,17 @@
     <h1>local jamsters</h1>
   </div>
   <% @profiles.each do |profile| %>
-    <%= render "layouts/user_summary", user: profile %>
+    <%= link_to profile_path(profile) do %>
+      <%= render "layouts/user_summary", user: profile %>
+    <% end %>
   <% end %>
-
   <div class="d-flex justify-content-center pb-5" style="width:100vw;">
     <button class="btn btn-primary">
-      <%= link_to "join the jam", user_session_path %>
+      <% if current_user %>
+        <%= link_to "join the jam", profiles_path %>
+      <% else %>
+        <%= link_to "join the jam", user_session_path %>
+      <% end %>
     </button>
   </div>
 </div>
