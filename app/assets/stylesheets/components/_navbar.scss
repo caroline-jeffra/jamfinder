@@ -14,3 +14,9 @@
 a {
   color: $accent;
 }
+
+.dropdown-item {
+  text-align: end !important;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
