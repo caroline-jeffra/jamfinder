@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="py-5"></div>
+<hr class="py-2">
+<h1>local jamsters</h1>
+
+<% @profiles.each do |profile| %>
+  <%= render "layouts/user_summary", user: profile %>
+<% end %>
