@@ -35,6 +35,6 @@ class User < ApplicationRecord
   private
 
   def set_display_name_default
-    self.display_name = first_name
+    self.display_name = first_name if display_name.nil?
   end
 end
