@@ -4,34 +4,101 @@
     <p>100</p>
     </div>
   </div>
-<div>
-  <img src="#" alt="">
-  <div>
-    <h3>
-      <%= @profile.first_name %>
-    </h3>
-    <p><%= @profile.address %></p>
-  </div>
-  <p><%= @profile.tagline %></p>
-  <div>
-  </div>
-</div>
-
+  
+<%= render "layouts/user_summary", user: @profile %>
 <article>
-  <p><%= @profile.bio %></p>
+  <div id="collapsible-article">
+    <p><%= truncate(@profile.bio, length: 30) %></p>
+    <div id="full-article" class="hidden">
+      <p><%= @profile.bio %></p>
+    </div>
+  </div>
+  <button id="readMore">Read More</button>
 </article>
 
+
+                                <%# <div>class="d-felx align-items-center"</div>
 <div>
-  <div class="d-flex">
+  <div class="d-flex align-items-center">
     <p class="profile-tags">Genre</p>
     <p class="profile-tags">Genre</p>
   </div>
 
-  <div class="d-flex">
+  <div class="d-flex align-items-center">
     <p class="profile-tags">Instrument</p>
     <p class="profile-tags">Instrument</p>
   </div>
 </div>
 
-<script src="scripts/read-more-btn-v1.js"></script>
-<script>mkBtn('article', 30);</script>
+<section class="splide" aria-label="image-carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">Slide 01</li>
+      <li class="splide__slide">Slide 02</li>
+      <li class="splide__slide">Slide 03</li>
+    </ul>
+  </div>
+</section> %>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+   <script>
+    document.addEventListener("DOMContentLoaded", (e) => {
+    const articleContainer = document.getElementById("collapsible-article");
+    const fullArticle = document.getElementById("full-article");
+    const readMoreBtn = document.getElementById("readMore");
+
+    readMoreBtn.addEventListener("click", (e) => {
+        if (fullArticle.classList.contains("hidden")) {
+        fullArticle.classList.remove("hidden");
+        readMoreBtn.textContent = "Read Less";
+        } else {
+        fullArticle.classList.add("hidden");
+        readMoreBtn.textContent = "Read More";
+        }
+      });
+    });</script>
+
+    <style>
+    .hidden {
+      display: none;
+    }
+
+    #readMore {
+      margin-top: 10px;
+      cursor: pointer;
+      color: pink;
+    }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
