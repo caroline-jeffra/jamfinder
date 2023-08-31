@@ -1,32 +1,14 @@
 <h1>Welcome to the Chatrooms#index</h1>
 
-<div class="row">
+<div class="row" data-controller="chats">
   <div class="col chat-list">
     <% @chatrooms.each do |chat| %>
       <div class="chat-head">
         <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
-        <span>Chatroom#<%= chat.id %></span>
+        <%= link_to "Chat##{chat.id}", chat_path(chat.id), data: { action: "click->chats#display" } %>
       </div>
     <% end %>
   </div>
-  <div class="col chatbox">
-    <% @chatrooms.each do |chat| %>
-      <div class="container chatroom"
-        data-controller="chatroom-subscription"
-        data-chatroom-subscription-chatroom-id-value="<%= chat.id %>">
-        <% if chat.messages.any? %>
-          <div class="messages" data-chatroom-subscription-target="messages">
-            <% chat.messages.each do |msg| %>
-              <%= render "messages/message", message: msg %>
-            <% end %>
-          </div>
-        <% end %>
-        <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
-          <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
-          <%= f.text_field :content %>
-          <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-        <% end %>
-      </div>
-    <% end %>
+  <div class="col chatbox" data-chats-target="chatbox">
   </div>
 </div>

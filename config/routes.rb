@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :profiles, only: %i[index show]
-  resources :chatrooms, only: :index, path: :chats, as: :chats
+  resources :chatrooms, only: %i[index show], path: :chats, as: :chats
   resources :messages, only: :create
   resources :jams, only: :create
   resources :genres, only: :create
