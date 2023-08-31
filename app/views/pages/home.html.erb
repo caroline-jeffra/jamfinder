@@ -7,8 +7,16 @@
 </div>
 <div class="container pt-3">
   <hr class="py-2">
-  <h1>local jamsters</h1>
+  <div class="title-center">
+    <h1>local jamsters</h1>
+  </div>
   <% @profiles.each do |profile| %>
     <%= render "layouts/user_summary", user: profile %>
   <% end %>
+
+  <div class="d-flex justify-content-center pb-5" style="width:100vw;">
+    <button class="btn btn-primary">
+      <%= link_to "join the jam", user_session_path %>
+    </button>
+  </div>
 </div>
