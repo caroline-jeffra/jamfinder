@@ -22,8 +22,8 @@ class User < ApplicationRecord
   has_many :videos, dependent: :destroy
 
   # Cloudinary
-  has_one_attached :avatar_url
-  has_one_attached :banner_url
+  has_one_attached :cl_avatar_url
+  has_one_attached :cl_banner_url
 
   # Geocoder
   geocoded_by :address
@@ -35,6 +35,6 @@ class User < ApplicationRecord
   private
 
   def set_display_name_default
-    self.display_name = first_name
+    self.display_name = first_name if display_name.nil?
   end
 end
