@@ -1,7 +1,9 @@
-<div class="py-5"></div>
-<hr class="py-2">
-<h1>local jamsters</h1>
+<%= cl_image_tag("purple_background", width: 400, height: 300, crop: :fill) %>
 
-<% @profiles.each do |profile| %>
-  <%= render "layouts/user_summary", user: profile %>
-<% end %>
+<div class="container">
+  <hr class="py-2">
+  <h1>local jamsters</h1>
+  <% @profiles.each do |profile| %>
+    <%= render "layouts/user_summary", user: profile %>
+  <% end %>
+</div>
