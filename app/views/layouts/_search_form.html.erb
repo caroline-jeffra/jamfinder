@@ -1,5 +1,5 @@
 <div class="pt-3 pb-2">
-  <%= form_with url: instruments_path, method: :get, data: { controller: "searchform toggle" } do %>
+  <%= form_with url: profiles_path, method: :get, data: { controller: "searchform toggle" } do %>
     <div class="d-flex align-items-center">
       <%= text_field_tag :query,
         params[:query],
