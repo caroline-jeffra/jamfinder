@@ -85,3 +85,4 @@ gem "geocoder"
 gem "pexels"
 gem 'pg_search'
 gem "cloudinary"
+gem 'redis'
