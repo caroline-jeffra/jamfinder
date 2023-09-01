@@ -1,7 +1,5 @@
-<h1>Welcome to the Chatrooms#index</h1>
-
-<div class="row" data-controller="chats">
-  <div class="col-2 min-vh-100 chat-list">
+<div class="row min-vh-100 chat" data-controller="chats" style="overflow: hidden;">
+  <div class="col-2 chat-list border-right" style="overflow-y: scroll;">
     <% @chatrooms.each do |chat| %>
       <div class="chat-head position-relative">
         <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
@@ -9,6 +7,6 @@
       </div>
     <% end %>
   </div>
-  <div class="col min-vh-100 chatbox" data-chats-target="chatbox">
+  <div class="col-10 chatbox" data-chats-target="chatbox">
   </div>
 </div>

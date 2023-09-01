@@ -10,7 +10,7 @@
       <% end %>
   <% end %>
   </div>
-  <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex fixed-bottom"} do |f| %>
+  <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
     <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
     <%= f.text_field :content, class: "form-control" %>
     <%= f.submit "Send", class: "btn btn-primary mb-3" %>
