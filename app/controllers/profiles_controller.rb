@@ -18,6 +18,13 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def update_bio
+    current_user.bio = params[:bio]
+    current_user.save
+    redirect_to profile_path(current_user)
+    
+  end
+
   def show
     @profile = User.find(params[:id])
   end
