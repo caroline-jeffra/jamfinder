@@ -4,7 +4,7 @@
   <div class="messages" data-chatroom-subscription-target="messages" style="max-height: 82vh; overflow: scroll;">
     <% if chat.messages.any? %>
       <% chat.messages.each do |msg| %>
-        <div class="d-flex <%= msg.user == (current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="d-flex">
           <%= render "messages/message", message: msg %>
         </div>
       <% end %>
