@@ -13,6 +13,7 @@
     <%= render"bioform" %>
   </div>
 </div>
+<%= link_to "Chat", chats_path(recipient: params[:id]) %>
 <article>
   <div id="collapsible-article">
     <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>

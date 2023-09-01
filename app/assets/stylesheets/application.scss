@@ -1,11 +1,11 @@
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
-// External libraries
-@import "bootstrap";
-@import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
@@ -18,4 +18,17 @@ html {
 
 a {
   text-decoration: none;
+}
+
+.sticky-class {
+  position:sticky;
+  top:50px;
+  width:2vw;
+  background-color: white;
+  z-index: 1020;
+}
+
+.scrollable {
+  overflow: scroll;
+  height: 70vh;
 }
