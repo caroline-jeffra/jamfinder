@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # Callbacks
   before_create :set_display_name_default
   before_create :set_default_background
+  before_create :set_default_avatar
 
   # Relations
   has_many :audios, dependent: :destroy
