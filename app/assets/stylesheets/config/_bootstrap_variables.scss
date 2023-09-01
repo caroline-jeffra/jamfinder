@@ -28,3 +28,39 @@ $input-border-radius: 20px;
 $input-bg: $secondary;
 $component-active-bg: $accent;
 $custom-checkbox-indicator-indeterminate-bg: $accent;
+
+// button overrides
+.btn {
+  font-size: 2rem;
+  border-radius: 2rem;
+}
+
+.btn-outline-primary {
+  background-color: $primary;
+  border-color: $info;
+  color: $body-color;
+}
+
+.btn-primary {
+  background-color: $info;
+  border-color: $info;
+  color: $primary;
+}
+
+.btn:hover {
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.btn-outline-primary:hover {
+  background-color: $primary;
+  border-color: $info;
+  color: $body-color;
+}
+
+.btn-primary:hover {
+  background-color: $info;
+  border-color: $info;
+  color: $primary;
+}
