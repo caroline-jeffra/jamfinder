@@ -1,14 +1,12 @@
-<h1>Welcome to the Chatrooms#index</h1>
-
-<div class="row" data-controller="chats">
-  <div class="col chat-list">
+<div class="row chat" data-controller="chats" style="height: 89vh; max-height: 89vh; overflow: scroll;">
+  <div class="col-2 chat-list border-right" style="overflow-y: scroll;">
     <% @chatrooms.each do |chat| %>
-      <div class="chat-head">
+      <div class="chat-head position-relative">
         <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
-        <%= link_to "Chat##{chat.id}", chat_path(chat.id), data: { action: "click->chats#display" } %>
+        <%= link_to "", chat_path(chat.id), data: { action: "click->chats#display"}, class: "stretched-link" %>
       </div>
     <% end %>
   </div>
-  <div class="col chatbox" data-chats-target="chatbox">
+  <div class="col-10 chatbox" data-chats-target="chatbox">
   </div>
 </div>
