@@ -1,16 +1,20 @@
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= chat.id %>">
-  <div class="messages" data-chatroom-subscription-target="messages">
-  <% if chat.messages.any? %>
+  <div class="messages" data-chatroom-subscription-target="messages" style="max-height: 82vh; overflow: scroll;">
+    <% if chat.messages.any? %>
       <% chat.messages.each do |msg| %>
-        <%= render "messages/message", message: msg %>
+        <div class="d-flex">
+          <%= render "messages/message", message: msg %>
+        </div>
       <% end %>
-  <% end %>
+    <% end %>
   </div>
-  <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
-    <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
-    <%= f.text_field :content %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
+  <div class="px-2">
+    <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex mb-5 mr-2", style: "position: fixed; bottom: 0; right: 0; width: 83vw; padding-right: 10px;"} do |f| %>
+      <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
+      <%= f.text_field :content, class: "form-control" %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <% end %>
+  </div>
 </div>
