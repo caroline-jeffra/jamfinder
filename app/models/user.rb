@@ -32,6 +32,18 @@ class User < ApplicationRecord
   # Validations
   validates :first_name, :last_name, :address, presence: true
 
+  include PgSearch::Model
+  pg_search_scope(
+    :search,
+    against: %i[address display_name],
+    using: {
+      tsearch: { prefix: true }
+    }
+  )
+  def coordinates
+    [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
+  end
+
   private
 
   def set_display_name_default
