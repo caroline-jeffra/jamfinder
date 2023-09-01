@@ -2,8 +2,12 @@ class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @profiles = User.where.not(id: current_user)
-    # TODO: account for search filters
+    if params[:query].present?
+      @profiles = User.search(params[:query])
+    else
+      @profiles = User.where.not(id: current_user)
+    end
+
     @markers = @profiles.geocoded.map do |user|
       {
         lat: user.latitude,
