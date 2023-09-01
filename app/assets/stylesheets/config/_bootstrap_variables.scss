@@ -45,6 +45,10 @@ $custom-checkbox-indicator-indeterminate-bg: $accent;
   background-color: $info;
   border-color: $info;
   color: $primary;
+
+  a {
+    color: $primary;
+  }
 }
 
 .btn:hover {
