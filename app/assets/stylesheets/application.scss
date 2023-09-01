@@ -23,7 +23,7 @@ a {
 .sticky-class {
   position:sticky;
   top:50px;
-  width:2vw;
+  width:100%;
   background-color: white;
   z-index: 1020;
 }
@@ -31,4 +31,12 @@ a {
 .scrollable {
   overflow: scroll;
   height: 70vh;
+}
+
+.banner-index{
+  height: 90px;
+}
+
+.mapboxgl-render{
+  visibility: none;
 }
