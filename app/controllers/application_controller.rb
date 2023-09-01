@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       keys: %i[first_name last_name address]
     )
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end

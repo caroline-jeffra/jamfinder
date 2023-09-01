@@ -1,1 +1,14 @@
 <h1>Welcome to the Chatrooms#index</h1>
+
+<div class="row" data-controller="chats">
+  <div class="col chat-list">
+    <% @chatrooms.each do |chat| %>
+      <div class="chat-head">
+        <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
+        <%= link_to "Chat##{chat.id}", chat_path(chat.id), data: { action: "click->chats#display" } %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col chatbox" data-chats-target="chatbox">
+  </div>
+</div>
