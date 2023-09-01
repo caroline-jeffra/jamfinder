@@ -7,6 +7,12 @@
 
 <%= render "layouts/user_summary", user: @profile %>
 <hr style="margin: -20px 0 20px 0">
+<div data-controller="popover">
+  <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
+  <div class="d-none" data-popover-target="bio">
+    <%= render"bioform" %>
+  </div>
+</div>
 <article>
   <div id="collapsible-article">
     <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>
