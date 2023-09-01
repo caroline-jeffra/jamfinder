@@ -1,31 +1,29 @@
-<div class="title-center" data-controller='switch-btn'>
+<div data-controller='switch-btn'>
   <div class="sticky-class">
-    <div class="card-img-top d-flex flex-column justify-content-start align-items-center" style="background-image: url('http://res.cloudinary.com/drxcsc3ye/image/upload/v1693476762/purple_background.png');">
-      <div class="pt-5">
+    <div class="card-img-top d-flex flex-column justify-content-start align-items-center banner-index" style="background-image: url('http://res.cloudinary.com/drxcsc3ye/image/upload/v1693476762/purple_background.png');">
+      <div class="pt-7">
         <%= render 'layouts/search_form' %>
       </div>
-    </div >
-    <div>
-          <button class="btn btn-primary rounded-pill col-4" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">List</button>
-
-          <button class="btn btn-outline-primary rounded-pill col-4" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">Map</button>
+    </div>
+    <div class="title-center">
+          <button class="btn btn-primary col-4 me-5" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">Map</button>
+          <button class="btn btn-outline-primary col-4" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">List</button>
     </div>
   </div>
   <div class="scrollable">
-    <div class="container pt-3">
+    <div class="container pt-1">
       <hr class="py-2">
       <div class="title-center">
         <h1>jamsters for you</h1>
       </div>
-      <div data-switch-btn-target="switch1">
+      <div class="d-none" data-switch-btn-target="switch2">
         <% @profiles.each do |user| %>
           <%= link_to profile_path(user) do %>
             <%= render "layouts/user_summary", user: user %>
           <% end %>
         <% end %>
       </div>
-      <div class="d-none" data-switch-btn-target="switch2">
-
+      <div data-switch-btn-target="switch1">
         <%= render "layouts/mapbox" %>
       </div>
     </div>
