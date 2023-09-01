@@ -6,9 +6,8 @@
       </div>
     </div>
     <div class="title-center">
-          <button class="btn btn-primary col-4 me-5" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">List</button>
-
-          <button class="btn btn-outline-primary col-4" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">Map</button>
+          <button class="btn btn-primary col-4 me-5" data-switch-btn-target="switch3" data-action="click->switch-btn#fire2">Map</button>
+          <button class="btn btn-outline-primary col-4" data-switch-btn-target="switch4" data-action="click->switch-btn#fire1">List</button>
     </div>
   </div>
   <div class="scrollable">
@@ -17,14 +16,14 @@
       <div class="title-center">
         <h1>jamsters for you</h1>
       </div>
-      <div data-switch-btn-target="switch1">
+      <div class="d-none" data-switch-btn-target="switch2">
         <% @profiles.each do |user| %>
           <%= link_to profile_path(user) do %>
             <%= render "layouts/user_summary", user: user %>
           <% end %>
         <% end %>
       </div>
-      <div data-switch-btn-target="switch2">
+      <div data-switch-btn-target="switch1">
         <%= render "layouts/mapbox" %>
       </div>
     </div>
