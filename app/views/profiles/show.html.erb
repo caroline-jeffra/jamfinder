@@ -1,3 +1,5 @@
+<div data-controller="popover">
+
 <%# <div class="d-flex justify-content-between" >
   <button type"btn" btn-primary">Start Chat</button>
     <div class="circle-jam-counter">
@@ -7,7 +9,6 @@
 
 <%= render "layouts/user_summary", user: @profile %>
 <hr style="margin: -20px 0 20px 0">
-<div data-controller="popover">
   <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
   <div class="d-none" data-popover-target="bio">
 
@@ -15,9 +16,7 @@
   <%= render 'bioform' %>
   <% end %>
 
-
   </div>
-</div>
 <%= link_to "Chat", chats_path(recipient: params[:id]) %>
 <article>
   <div id="collapsible-article">
@@ -31,7 +30,7 @@
 
 
 
-<div>
+<%# <div>
   <div class="d-flex align-items-center ">
     <p class="profile-tags">#Samba</p>
     <p class="profile-tags">#Rumba</p>
@@ -41,7 +40,17 @@
     <p class="profile-tags">#Cajon</p>
     <p class="profile-tags">#Agogo</p>
   </div>
+</div> %>
+
+<div class="d-flex flex-wrap">
+  <% current_user.genres.each do |genre|  %>
+      <p class="profile-tags"><%= genre.name %></p>
+  <% end %>
 </div>
+
+ <%= current_user.genres.last.name%>
+<i class="fa-solid fa-plus" data-action="click->popover#genre"></i>
+<%= render "genreform" %>
 
 <hr style="">
 
@@ -56,6 +65,8 @@
   </div>
   <div class="swiper-pagination"></div>
 </div>
+</div>
+
 
 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FNTSRadio%2Fbubble-gum-violence-w-raya-noire-11th-august-2023%2F" frameborder="0" ></iframe>
 <script>

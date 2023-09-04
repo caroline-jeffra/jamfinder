@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
 
   patch 'profiles/bio', to: 'profiles#update_bio', as: :update_bio
+  patch 'profiles/genre', to: 'profiles#update_genre', as: :update_genre
+  patch 'profiles/instrument', to: 'profiles#update_instrument', as: :update_instrument
 
 end

@@ -1,0 +1,6 @@
+<div class="d-none" data-popover-target="genre">
+  <%= form_tag update_genre_path, :method => :patch do |f|%>
+  <%= select_tag :genre, options_for_select(Genre.all.map { |el| [el.name, el.id] })%>
+  <%= submit_tag "Update genre..." %>
+  <% end %>
+</div>

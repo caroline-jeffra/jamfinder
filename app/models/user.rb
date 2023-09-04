@@ -46,6 +46,9 @@ class User < ApplicationRecord
     [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
   end
 
+  GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska']
+
+
   private
 
   def set_display_name_default
