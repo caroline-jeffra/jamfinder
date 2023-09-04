@@ -20,7 +20,7 @@
 
   <% @months.each do |month| %>
     <div class="month-units pb-2">
-      <h1><%= month %></h1>
+      <h1><%= Date::MONTHNAMES[month] %></h1>
         <% @jams.each do |jam| %>
           <% if jam.date.mon == month %>
             <div class="m-2 p-4 jam-card">
