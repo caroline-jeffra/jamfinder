@@ -5,7 +5,6 @@ class JamsController < ApplicationController
     if @jam.save
       flash.alert = "Jam booked!"
       puts "******* jam with users #{jam_params} *******"
-      raise
       # TODO: collapse toggleable
     else
       flash.alert = "Please enter a date and time in the future."

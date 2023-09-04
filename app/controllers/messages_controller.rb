@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     @chatroom = @message.chatroom
-    @jam = Jam.new
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
