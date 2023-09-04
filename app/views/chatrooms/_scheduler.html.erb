@@ -4,6 +4,8 @@
     <%= f.input :date,
       label: false,
       placeholder: 'select a date and time',
+      as: :string,
+      input_html: { data: { controller: "datepicker" } },
       required: true,
       autofocus: true %>
     <%= f.input :address,
