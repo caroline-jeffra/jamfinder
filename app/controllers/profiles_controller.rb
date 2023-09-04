@@ -24,7 +24,6 @@ class ProfilesController < ApplicationController
     current_user.bio = params[:bio]
     current_user.save
     redirect_to profile_path(current_user)
-
   end
 
   def show
