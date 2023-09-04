@@ -1,4 +1,4 @@
-  <%= render "chatrooms/scheduler", jam: @jam %>
+  <%= render "chatrooms/scheduler", jam: @jam, participants: chat.participant_ids %>
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= chat.id %>">

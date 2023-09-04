@@ -10,6 +10,7 @@
       label: false,
       placeholder: "Address",
       required: true %>
+    <%= f.hidden_field :participants, value: participants %>
     <%= f.submit "Create Jam", class: "btn btn-primary" %>
   <% end %>
 </div>
