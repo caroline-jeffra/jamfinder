@@ -49,6 +49,18 @@ class User < ApplicationRecord
     [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
   end
 
+  def categories
+    categories = []
+    self.instruments.each do |instrument|
+      categories << instrument.category if categories.exclude?(instrument.category)
+    end
+    categories
+  end
+
+  def categories_icons
+    self.categories.map { |item| item.downcase }
+  end
+
   private
 
   def set_display_name_default

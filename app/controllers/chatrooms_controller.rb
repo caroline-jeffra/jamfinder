@@ -4,8 +4,12 @@ class ChatroomsController < ApplicationController
       @participants = [current_user.id, params[:recipient].to_i].sort
       Chatroom.create!(participant_ids: @participants) unless Chatroom.where(participant_ids: @participants).any?
     end
+<<<<<<< HEAD
     @chatrooms = Chatroom.where("? = ANY (participant_ids)", current_user.id)
     @jam = Jam.new
+=======
+  @chatrooms = Chatroom.where("? = ANY (participant_ids)", current_user.id).reverse_order
+>>>>>>> master
   end
 
   def show
