@@ -10,9 +10,9 @@ class JamsController < ApplicationController
         jam_join.user = User.find(participant.to_i)
         jam_join.jam = @jam
         if jam_join.save
-          puts "#{jam_join} saved"
+          flash.alert = "Jam saved to your profile"
         else
-          puts "jam_join not saved :((((((("
+          flash.alert = "There was an error saving your jam to your profile. Please try again."
         end
       end
       # TODO: collapse toggleable
