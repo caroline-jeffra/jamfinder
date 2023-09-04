@@ -35,13 +35,16 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :address, presence: true
 
   include PgSearch::Model
-  pg_search_scope(
-    :search,
-    against: %i[address display_name],
+  pg_search_scope :search,
+    against: [:address, :display_name],
+    associated_against: {
+      genres: [ :name ],
+      instruments: [ :name, :category ]
+    },
     using: {
       tsearch: { prefix: true }
     }
-  )
+
   def coordinates
     [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
   end

@@ -17,14 +17,26 @@
         <h1>jamsters for you</h1>
       </div>
       <div class="d-none" data-switch-btn-target="switch2">
-        <% @profiles.each do |user| %>
-          <%= link_to profile_path(user) do %>
-            <%= render "layouts/user_summary", user: user %>
+        <% if @profiles.empty? %>
+          <div class="title-center">
+            <h3>Matches not found</h3>
+          </div>
+        <% else %>
+          <% @profiles.each do |user| %>
+            <%= link_to profile_path(user) do %>
+              <%= render "layouts/user_summary", user: user %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
       <div data-switch-btn-target="switch1">
-        <%= render "layouts/mapbox" %>
+        <% if @profiles.empty? %>
+          <div class="title-center">
+            <h3>Matches not found</h3>
+          </div>
+        <% else %>
+          <%= render "layouts/mapbox" %>
+        <% end %>
       </div>
     </div>
   </div>
