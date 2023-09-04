@@ -15,7 +15,6 @@ class JamsController < ApplicationController
           puts "jam_join not saved :((((((("
         end
       end
-      raise
       # TODO: collapse toggleable
     else
       flash.alert = "Please enter a date and time in the future."
@@ -25,7 +24,6 @@ class JamsController < ApplicationController
   private
 
   def jam_params
-    # TODO: permit params
     params.require(:jam).permit(:date, :address)
   end
 end
