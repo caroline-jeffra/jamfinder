@@ -16,3 +16,16 @@
     </div>
   </div>
 </div>
+
+<div class="month-units">
+  <% @months.each do |month| %>
+    <h1><%= month %></h1>
+      <% @jams.each do |jam| %>
+        <% if jam.date.mon == month %>
+          <div>
+            <%= render 'jam_info', jam: jam %>
+          </div>
+        <% end %>
+      <% end %>
+  <% end %>
+</div>
