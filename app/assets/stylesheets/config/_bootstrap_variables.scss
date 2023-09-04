@@ -29,6 +29,10 @@ $input-bg: $secondary;
 $component-active-bg: $accent;
 $custom-checkbox-indicator-indeterminate-bg: $accent;
 
+.background-primary {
+  background-color: $body-color;
+}
+
 // button overrides
 .btn {
   font-size: 2rem;
