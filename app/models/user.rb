@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   # Callbacks
   before_create :set_display_name_default
+  before_create :set_default_background
+  before_create :set_default_avatar
 
   # Relations
   has_many :audios, dependent: :destroy
@@ -32,9 +34,31 @@ class User < ApplicationRecord
   # Validations
   validates :first_name, :last_name, :address, presence: true
 
+  include PgSearch::Model
+  pg_search_scope(
+    :search,
+    against: %i[address display_name],
+    using: {
+      tsearch: { prefix: true }
+    }
+  )
+  def coordinates
+    [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
+  end
+
   private
 
   def set_display_name_default
     self.display_name = first_name if display_name.nil?
+  end
+
+  def set_default_background
+    default = 'http://res.cloudinary.com/drxcsc3ye/image/upload/v1693476762/purple_background.png'
+    self.banner_url = default if banner_url.nil?
+  end
+
+  def set_default_avatar
+    default = 'https://www.dlf.pt/dfpng/middlepng/276-2761324_transparent-default-avatar-png-profile-no-image-icon.png'
+    self.avatar_url = default if avatar_url.nil?
   end
 end

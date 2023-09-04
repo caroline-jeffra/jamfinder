@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :jams, only: :create
   resources :genres, only: :create
   resources :instruments, only: :create
-  
+
   get '/dashboard', to: 'pages#dashboard'
+
+  patch 'profiles/bio', to: 'profiles#update_bio', as: :update_bio
+
 end
