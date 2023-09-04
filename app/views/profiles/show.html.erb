@@ -10,7 +10,12 @@
 <div data-controller="popover">
   <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
   <div class="d-none" data-popover-target="bio">
-    <%= render"bioform" %>
+
+  <% if current_user == @profile %>
+  <%= render 'bioform' %>
+  <% end %>
+
+
   </div>
 </div>
 <%= link_to "Chat", chats_path(recipient: params[:id]) %>
