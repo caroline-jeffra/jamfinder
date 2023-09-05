@@ -13,12 +13,11 @@ export default class extends Controller {
     const url = e.srcElement.attributes.href.value;
     fetch(url, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
-    .then(data => this.chatboxTarget.innerHTML = data)
-    this.toggle()
-    setTimeout(() => {
-      // console.log(this.messagesTarget);
-      this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
-    }, 100)
+    .then(data => {
+        this.chatboxTarget.innerHTML = data
+        this.toggle()
+        this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+      })
   }
 
   toggle() {
