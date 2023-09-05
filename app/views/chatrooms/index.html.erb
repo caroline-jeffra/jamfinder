@@ -19,7 +19,7 @@
             <%= chat.messages.last.created_at.strftime("%d/%m/%y") %>
           <% end %>
         </div>
-        <%= link_to "", chat_path(chat.id), data: { action: "click->chats#toggle click->chats#display"}, class: "stretched-link" %>
+        <%= link_to "", chat_path(chat.id), data: { action: "click->chats#display"}, class: "stretched-link" %>
       </div>
     <% end %>
     </ul>

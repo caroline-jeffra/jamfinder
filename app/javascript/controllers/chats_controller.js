@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="chats"
 export default class extends Controller {
-  static targets = ['chatbox', 'chatlist']
+  static targets = ['chatbox', 'chatlist', 'messages']
 
   connect() {
   }
@@ -13,12 +13,16 @@ export default class extends Controller {
     const url = e.srcElement.attributes.href.value;
     fetch(url, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
-    .then(data => this.chatboxTarget.innerHTML = data)
+    .then(data => {
+        this.chatboxTarget.innerHTML = data
+        this.toggle()
+        this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+      })
   }
 
   toggle() {
-    console.log("hi");
     this.chatlistTarget.classList.toggle("d-none");
     this.chatboxTarget.classList.toggle("d-none");
   }
+
 }
