@@ -1,18 +1,26 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid align-items-start">
+  <div class="container-fluid align-items-start mx-1">
     <h2 class="navbar-brand text-primary pt-4"><%= link_to "jamfinder", root_path %></h2>
     <div>
       <% if user_signed_in? %>
-        <%= link_to chats_path do %>
-          <i class="fa-regular fa-paper-plane nav-link pe-4"></i>
-        <% end %>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <%= image_tag current_user.avatar_url, class: "avatar" %>
-        </button>
+        <div class="d-flex mt-1">
+          <div class="mt-2">
+            <%= link_to chats_path do %>
+              <i class="fa-regular fa-paper-plane nav-link pe-4"></i>
+            <% end %>
+          </div>
+          <div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <%= image_tag current_user.avatar_url, class: "avatar" %>
+            </button>
+          </div>
+        </div>
       <% else %>
-        <%= link_to new_user_session_path do %>
-          <i class="fa-solid fa-user nav-item pt-3 pe-4"></i>
-        <% end %>
+        <div class="mt-2">
+          <%= link_to new_user_session_path do %>
+            <i class="fa-solid fa-user nav-item pt-3 pe-4"></i>
+          <% end %>
+        </div>
       <% end %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto d-flex justify-content-end">
