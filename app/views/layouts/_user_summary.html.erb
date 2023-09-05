@@ -14,9 +14,9 @@
     <div>
       <h4 class="py-3"><%= user.tagline %></h4>
       <div class="d-flex flex-row py-3">
-        <i class="fa-solid fa-guitar pe-3 fa-xl"></i>
-        <i class="fa-solid fa-microphone pe-3 fa-xl"></i>
-        <i class="fa-solid fa-drum fa-xl"></i>
+        <% user.categories_icons.each do |cloudinary_id| %>
+          <i><%= cl_image_tag(cloudinary_id, width: 42, height: 42, crop: :fill) %></i>
+        <% end %>
       </div>
     </div>
   </div>
