@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @user = current_user
     @jams = current_user.jams
     @jams = @jams.includes(:users)
+    @jams = @jams.order(date: :asc)
     @months = month_list(@jams)
   end
 
