@@ -14,11 +14,14 @@
 }
 
 .profile-tags{
-padding: 1px 14px;
+  padding: 1px 14px;
   background: rgb(221, 221, 221);
   border-radius: 10px;
   margin: 2px;
+}
 
+.side-scroll{
+  overflow-x: scroll;
 }
 
 .hidden {
