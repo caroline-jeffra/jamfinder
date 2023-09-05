@@ -1,4 +1,4 @@
-<div class="row chat" data-controller="chats">
+<div class="row chat" data-controller="chats" data-chats-url-value=<%= @chatroom ? chat_path(@chatroom) : "" %>>
   <div class="col-12 align-content-start" style="overflow-y: scroll;" data-chats-target="chatlist">
     <div class="align-self-start">
       <h1 class="mx-2">Chats</h1>
