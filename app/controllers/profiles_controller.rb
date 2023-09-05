@@ -31,11 +31,25 @@ class ProfilesController < ApplicationController
       user: current_user,
       genre_id: params[:genre].to_i
     )
+    redirect_to profile_path(current_user)
+  end
 
+  def update_instrument
+    instrument = Instrument.create(user_instrument_params)
+    UserInstrument.create!(
+      user: current_user,
+      instrument: instrument
+    )
     redirect_to profile_path(current_user)
   end
 
   def show
     @profile = User.find(params[:id])
+  end
+
+  private
+
+  def user_instrument_params
+    params.require(:instrument).permit(:name,:category)
   end
 end

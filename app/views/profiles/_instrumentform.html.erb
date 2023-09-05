@@ -1,8 +1,7 @@
 <div class="d-none" data-popover-target="instrument">
   <%= form_tag update_instrument_path, :method => :patch do |f|%>
-  <%= text_field_tag :instrument[name]%>
-  <%= select_tag :instrument[category], options_for_select(Instrument::CATEGORIES.map { |el| [el]})%>
+  <%= text_field_tag :'instrument[name]'%>
+  <%= select_tag :'instrument[category]', options_for_select(Instrument::CATEGORIES.map { |el| [el]})%>
   <%= submit_tag "Update instrument..." %>
-  <% raise %>
   <% end %>
 </div>
