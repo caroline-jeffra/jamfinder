@@ -49,6 +49,8 @@ class User < ApplicationRecord
     [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
   end
 
+  GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska']
+
   def categories
     categories = []
     self.instruments.each do |instrument|

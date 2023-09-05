@@ -26,6 +26,15 @@ class ProfilesController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
+  def update_genre
+    UserGenre.create!(
+      user: current_user,
+      genre_id: params[:genre].to_i
+    )
+
+    redirect_to profile_path(current_user)
+  end
+
   def show
     @profile = User.find(params[:id])
   end
