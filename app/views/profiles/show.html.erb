@@ -1,17 +1,20 @@
-<div class="container pt-1">
+<div class="container pt-1" data-controller="popover">
   <div class="d-flex justify-content-end">
     <%= link_to "Message", chats_path(recipient: params[:id]) %>
   </div>
   <%= render "layouts/user_summary", user: @profile %>
   <hr style="margin: -20px 0 20px 0">
-  <div data-controller="popover">
+  <%# bio form bgn %>
+  <div >
     <% if current_user == @profile %>
-      <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
+      <i class="fa-solid fa-pencil icon-resize" data-action="click->popover#bio"></i>
       <div class="d-none" data-popover-target="bio">
       <%= render"bioform" %>
+      </div>
     <% end %>
-    </div>
   </div>
+  <%# bio form end %>
+  <%# bio article bgn %>
   <article>
     <div id="collapsible-article">
       <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>
@@ -19,25 +22,38 @@
         <p><%= @profile.bio %></p>
       </div>
     </div>
-    <div class="w-100 d-flex justify-content-center"id="readMore"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="w-100 d-flex justify-content-center"id="readMore"><i class="fa-solid fa-chevron-down icon-resize"></i></div>
   </article>
+  <%# bio article end %>
   <div>
     <div class="d-flex align-items-center side-scroll">
+      <%# form for genre bgn %>
+      <% if current_user == @profile %>
+        <i class="profile-tags a-solid fa-plus icon-resize" data-action="click->popover#genre"></i>
+        <%= render "genreform" %>
+      <% end %>
+      <%# form for genre end %>
       <% @profile.genres.each do |genre| %>
         <p class="profile-tags"><%= "##{genre.name}"%></p>
       <% end %>
     </div>
+
+
     <div class="d-flex align-items-center side-scroll">
-        <% @profile.instruments.each do |instrument| %>
-          <p class="profile-tags"><%= "##{instrument.name}"%></p>
-        <% end %>
+      <%# form for instrument bgn %>
+      <% if current_user == @profile %>
+        <i class="profile-tags a-solid fa-plus icon-resize" data-action="click->popover#instrument"></i>
+        <%= render "instrumentform" %>
+      <% end %>
+      <%# form for instrument end %>
+      <% @profile.instruments.each do |instrument| %>
+        <p class="profile-tags"><%= "##{instrument.name}"%></p>
+      <% end %>
     </div>
   </div>
-  <div>
-    <%= current_user.genres.last.name%>
-    <i class="fa-solid fa-plus" data-action="click->popover#genre"></i>
-    <%= render "genreform" %>
-  </div>
+
+
+  <%# images swiper bgn%>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide imageFirst"></div>
@@ -48,9 +64,11 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  </div>
-
+  <%# images swiper end%>
+  <%# soundcloud player bgn%>
   <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FNTSRadio%2Fbubble-gum-violence-w-raya-noire-11th-august-2023%2F" frameborder="0" ></iframe>
+  <%# soundcloud player end%>
+  <%# bio controller bgn%>
   <script>
     document.addEventListener("DOMContentLoaded", (e) => {
     const articleContainer = document.getElementById("collapsible-article");
@@ -62,24 +80,23 @@
           if (fullArticle.classList.contains("hidden")) {
           fullArticle.classList.remove("hidden");
           truncatedArticle.classList.add("hidden")
-          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-up"></i>`;
+          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-up icon-resize"></i>`;
           } else {
           fullArticle.classList.add("hidden");
           truncatedArticle.classList.remove("hidden")
-          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`;
+          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-down icon-resize"></i>`;
           }
         });
     });
   </script>
-
-
+  <%# bio controller end %>
+  <%# swiper controller bgn %>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
   />
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js">
+  </script>
   <script>
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3,
@@ -91,4 +108,5 @@
       },
     });
   </script>
+  <%# swiper controller end %>
 </div>
