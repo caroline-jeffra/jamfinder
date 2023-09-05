@@ -4,14 +4,14 @@
     <div>
       <% if user_signed_in? %>
         <%= link_to chats_path do %>
-          <i class="fa-regular fa-paper-plane nav-link fa-l pe-4"></i>
+          <i class="fa-regular fa-paper-plane nav-link pe-4"></i>
         <% end %>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <%= image_tag current_user.avatar_url, class: "avatar" %>
         </button>
       <% else %>
         <%= link_to new_user_session_path do %>
-          <i class="fa-solid fa-user nav-item fa-2xl pt-3 pe-4"></i>
+          <i class="fa-solid fa-user nav-item pt-3 pe-4"></i>
         <% end %>
       <% end %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
