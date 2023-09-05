@@ -5,17 +5,17 @@
     </div>
   </div> %>
 
-<%= render "layouts/user_summary", user: @profile %>
 <div class="container pt-1">
+  <div class="d-flex justify-content-end">
+    <%= link_to "Message", chats_path(recipient: params[:id]) %>
+  </div>
+  <%= render "layouts/user_summary", user: @profile %>
   <hr style="margin: -20px 0 20px 0">
   <div data-controller="popover">
     <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
     <div class="d-none" data-popover-target="bio">
       <%= render"bioform" %>
     </div>
-  </div>
-  <div class="d-flex justify-content-end">
-    <%= link_to "Message", chats_path(recipient: params[:id]) %>
   </div>
   <article>
     <div id="collapsible-article">
@@ -29,6 +29,8 @@
   <div>
     <div class="d-flex align-items-center side-scroll">
       <% @profile.genres.each do |genre| %>
+        <p class="profile-tags"><%= "##{genre.name}"%></p>
+        <p class="profile-tags"><%= "##{genre.name}"%></p>
         <p class="profile-tags"><%= "##{genre.name}"%></p>
       <% end %>
     </div>
