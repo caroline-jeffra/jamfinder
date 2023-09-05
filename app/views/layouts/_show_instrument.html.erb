@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center side-scroll">
+  <% if current_user == @profile %>
+    <i class="profile-tags a-solid fa-plus icon-resize" data-action="click->popover#instrument"></i>
+    <%= render "instrumentform" %>
+  <% end %>
+  <% @profile.instruments.each do |instrument| %>
+    <p class="profile-tags"><%= "##{instrument.name}"%></p>
+  <% end %>
+</div>
