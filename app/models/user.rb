@@ -26,6 +26,7 @@ class User < ApplicationRecord
   # Cloudinary
   has_one_attached :cl_avatar_url
   has_one_attached :cl_banner_url
+  has_many_attached :cl_images
 
   # Geocoder
   geocoded_by :address

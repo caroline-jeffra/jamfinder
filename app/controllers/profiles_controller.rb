@@ -52,4 +52,8 @@ class ProfilesController < ApplicationController
   def user_instrument_params
     params.require(:instrument).permit(:name,:category)
   end
+
+  def user_images_params
+    params.require(:article).permit(cl_images: [])
+  end
 end

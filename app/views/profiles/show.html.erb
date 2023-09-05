@@ -13,9 +13,12 @@
   <%= render "layouts/show_bio", user: @profile %>
   <%= render "layouts/show_genre", user: @profile %>
   <%= render "layouts/show_instrument", user: @profile %>
-  <%= render "layouts/show_images", user: @profile %>
-  <%= render "layouts/show_audios", user: @profile %>
-  <%# Style, controllers etc. %>
+
+  <%# Implementing cloudinary images upload below %>
+  <%# <%= render "layouts/show_images", user: @profile %> %>
+  <%# <%= render "layouts/show_audios", user: @profile %> %>
+
+  <%# Style, controllers etc. below %>
   <script>
     document.addEventListener("DOMContentLoaded", (e) => {
     const articleContainer = document.getElementById("collapsible-article");

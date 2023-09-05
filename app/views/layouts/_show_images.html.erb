@@ -4,18 +4,16 @@
     <%# <%= render "imageform" %> %>
   <% end %>
 </div>
-<%= if user.images.present? %>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <% user.images.each do |image| %>
-        <%# <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.photo.key, width: 100px !important, height: 100px !important, crop: :fill) %></i> %>
-      <% end %>
-      <div class="swiper-slide imageFirst"></div>
-      <div class="swiper-slide imageSecond"></div>
-      <div class="swiper-slide imageThird"></div>
-      <div class="swiper-slide imageFourth"></div>
-      <div class="swiper-slide imageFith"></div>
-    </div>
-    <div class="swiper-pagination"></div>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <% @profile.cl_images.each do |image| %>
+      <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, width: 100px !important, height: 100px !important, crop: :fill)</i> %>
+    <% end %>
+    <div class="swiper-slide imageFirst"></div>
+    <div class="swiper-slide imageSecond"></div>
+    <div class="swiper-slide imageThird"></div>
+    <div class="swiper-slide imageFourth"></div>
+    <div class="swiper-slide imageFith"></div>
   </div>
-<% end %>
+  <div class="swiper-pagination"></div>
+</div>
