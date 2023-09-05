@@ -1,0 +1,18 @@
+<div class="schedule-form">
+  <h2>Schedule a jam</h2>
+  <%= simple_form_for(jam) do |f| %>
+    <%= f.input :date,
+      label: false,
+      placeholder: 'select a date and time',
+      as: :string,
+      input_html: { data: { controller: "datepicker" } },
+      required: true,
+      autofocus: true %>
+    <%= f.input :address,
+      label: false,
+      placeholder: "Address",
+      required: true %>
+    <%= f.hidden_field :participants, value: participants %>
+    <%= f.submit "Create Jam", class: "btn btn-primary" %>
+  <% end %>
+</div>

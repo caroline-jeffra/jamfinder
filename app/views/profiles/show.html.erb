@@ -23,23 +23,69 @@
     <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>
     <div id="full-article" class="hidden">
       <p><%= @profile.bio %></p>
+</div>
+</div>
+
+<div class="container pt-1">
+  <div class="d-flex justify-content-end">
+    <%= link_to "Message", chats_path(recipient: params[:id]) %>
+  </div>
+  <%= render "layouts/user_summary", user: @profile %>
+  <hr style="margin: -20px 0 20px 0">
+  <div data-controller="popover">
+    <i class="fa-solid fa-pencil" data-action="click->popover#bio"></i>
+    <div class="d-none" data-popover-target="bio">
+      <%= render"bioform" %>
     </div>
   </div>
-  <div class="w-100 d-flex justify-content-center"id="readMore"><i class="fa-solid fa-chevron-down"></i></div>
-</article>
+  <article>
+    <div id="collapsible-article">
+      <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>
+      <div id="full-article" class="hidden">
+        <p><%= @profile.bio %></p>
+      </div>
+    </div>
+    <div class="w-100 d-flex justify-content-center"id="readMore"><i class="fa-solid fa-chevron-down"></i></div>
+  </article>
+  <div>
+    <div class="d-flex align-items-center side-scroll">
+      <% @profile.genres.each do |genre| %>
+        <p class="profile-tags"><%= "##{genre.name}"%></p>
+        <p class="profile-tags"><%= "##{genre.name}"%></p>
+        <p class="profile-tags"><%= "##{genre.name}"%></p>
+      <% end %>
+    </div>
 
+<<<<<<< HEAD
 
 
 <%# <div>
   <div class="d-flex align-items-center ">
     <p class="profile-tags">#Samba</p>
     <p class="profile-tags">#Rumba</p>
+=======
+    <div class="d-flex align-items-center side-scroll">
+        <% @profile.instruments.each do |instrument| %>
+          <p class="profile-tags"><%= "##{instrument.name}"%></p>
+        <% end %>
+    </div>
+>>>>>>> master
   </div>
 
-  <div class="d-flex align-items-center">
-    <p class="profile-tags">#Cajon</p>
-    <p class="profile-tags">#Agogo</p>
+  <hr style="">
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide imageFirst"></div>
+      <div class="swiper-slide imageSecond"></div>
+      <div class="swiper-slide imageThird"></div>
+      <div class="swiper-slide imageFourth"></div>
+      <div class="swiper-slide imageFith"></div>
+
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
+<<<<<<< HEAD
 </div> %>
 
 <div class="d-flex flex-wrap">
@@ -109,3 +155,48 @@
     },
   });
 </script>
+=======
+
+  <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FNTSRadio%2Fbubble-gum-violence-w-raya-noire-11th-august-2023%2F" frameborder="0" ></iframe>
+  <script>
+    document.addEventListener("DOMContentLoaded", (e) => {
+    const articleContainer = document.getElementById("collapsible-article");
+    const fullArticle = document.getElementById("full-article");
+    const readMoreBtn = document.getElementById("readMore");
+    const truncatedArticle = document.getElementById("truncatedArticle");
+
+      readMoreBtn.addEventListener("click", (e) => {
+          if (fullArticle.classList.contains("hidden")) {
+          fullArticle.classList.remove("hidden");
+          truncatedArticle.classList.add("hidden")
+          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-up"></i>`;
+          } else {
+          fullArticle.classList.add("hidden");
+          truncatedArticle.classList.remove("hidden")
+          readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`;
+          }
+        });
+    });
+  </script>
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</div>
+>>>>>>> master

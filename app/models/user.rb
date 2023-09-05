@@ -51,6 +51,17 @@ class User < ApplicationRecord
 
   GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska']
 
+  def categories
+    categories = []
+    self.instruments.each do |instrument|
+      categories << instrument.category if categories.exclude?(instrument.category)
+    end
+    categories
+  end
+
+  def categories_icons
+    self.categories.map { |item| item.downcase }
+  end
 
   private
 

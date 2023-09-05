@@ -1,5 +1,6 @@
 class Jam < ApplicationRecord
   has_many :user_jams, dependent: :destroy
+  has_many :users, through: :user_jams
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
