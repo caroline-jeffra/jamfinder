@@ -15,7 +15,7 @@
 }
 
 .message-header {
-  background-color: $secondary;
+  background-color: $primary;
 }
 
 .message-row {
@@ -38,31 +38,31 @@
 
 
 .sender-style {
-  color: $secondary;
+  color: $primary;
   background-color: $accent;
   .message-timestamp {
     position: absolute;
     right: 10px;
     bottom: -15px;
-    color: $gray;
+    color: $secondary;
     font-size: 10px;
   }
 }
 
 .receiver-style {
-  color: $secondary;
-  background-color: #474345;
+  color: $primary;
+  background-color: $secondary;
   .message-timestamp {
     position: absolute;
     left: 10px;
     bottom: -15px;
-    color: $gray;
+    color: $secondary;
     font-size: 10px;
   }
 }
 
 .message-input {
-  background-color: $secondary;
+  background-color: $primary;
   align-items: center;
 }
 
@@ -83,7 +83,7 @@
 /* Modal Content/Box */
 .modal-content {
   align-items: center;
-  background-color: #fefefe;
+  background-color: $primary;
   margin: 70% auto;
   padding: 20px;
   border: 1px solid #888;
