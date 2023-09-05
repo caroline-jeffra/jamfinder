@@ -37,6 +37,14 @@
   cursor: pointer;
 }
 
+.images_cloudinary {
+  height: 100px !important;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .imageFirst {
   height: 100px !important;
   width: 100px;
