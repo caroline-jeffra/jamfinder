@@ -25,8 +25,11 @@ a {
   position:sticky;
   top:50px;
   width:100%;
-  background-color: white;
   z-index: 1020;
+}
+
+.sticky-class-2 {
+  z-index: 1010;
 }
 
 .scrollable {
