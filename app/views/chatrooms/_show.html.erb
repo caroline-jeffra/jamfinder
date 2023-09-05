@@ -5,7 +5,17 @@
   <div class="card-header message-header d-flex align-items-center">
     <i class="fa-solid fa-arrow-left" style="color: #A40055; font-size: 2.8rem; margin-right: 1.8rem;" data-action="click->chats#toggle"></i>
     <%= link_to(image_tag(chat.recipient(current_user).avatar_url, class: "avatar", style: "align-self: center; margin-right: 2rem"), profile_path(chat.recipient(current_user))) %>
-    <h1 style="margin-bottom: 0;"> <%= chat.recipient(current_user).display_name %></h1>
+    <h1  class="flex-grow-1"style="margin-bottom: 0;"> <%= chat.recipient(current_user).display_name %></h1>
+    <div data-controller="toggle">
+      <button data-action="click->toggle#fire" class="btn btn-outline-primary">Plan a jam</button>
+      <div id="myModal" class="jamModal d-none" data-toggle-target="togglableElement">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <button class="btn close fa-solid fa-xmark" style="color: #000000;" data-action="click->toggle#fire"></button>
+          <%= render "chatrooms/scheduler", jam: @jam, participants: chat.participant_ids %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="card-body messages" data-chats-target="messages" data-chatroom-subscription-target="messages">
     <% if chat.messages.any? %>
@@ -21,14 +31,8 @@
   <div class="card-footer message-input px-2">
     <%= form_for :message, url: messages_path, html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex mr-2" } do |f| %>
       <%= hidden_field_tag "message[chatroom_id]", "#{chat.id}" %>
-      <%= f.text_field :content, class: "form-control" %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <%= f.text_field :content, class: "form-control mx-2" %>
+      <%= f.submit "Send", class: "btn btn-primary" %>
     <% end %>
-  </div>
-</div>
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Plan a jam</button>
-  <div data-toggle-target="togglableElement" class="book-jam d-none">
-    <%= render "chatrooms/scheduler", jam: @jam, participants: chat.participant_ids %>
   </div>
 </div>

@@ -9,10 +9,7 @@ export default class extends Controller {
 
   connect() {
     if(this.urlValue) {
-      console.log("present")
       this.load(this.urlValue)
-    } else {
-      console.log("absent")
     }
   }
 
