@@ -6,7 +6,10 @@ class ChatroomsController < ApplicationController
       @chatroom = Chatroom.find_by(participant_ids: @participants)
     end
     @jam = Jam.new
-    @chatrooms = Chatroom.where("? = ANY (participant_ids)", current_user.id).reverse_order
+    @chatrooms = Chatroom.where("? = ANY (participant_ids)", current_user.id)
+                         .includes(:messages)
+                         .order('messages.created_at DESC')
+                         .where.not(messages: { id: nil })
   end
 
   def show

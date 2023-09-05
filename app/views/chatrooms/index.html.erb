@@ -9,8 +9,8 @@
         <%= image_tag(chat.recipient(current_user).avatar_url, class: "avatar mx-2") %>
         <div class="flex-grow-1">
           <h4><%= chat.recipient(current_user).display_name %></h4>
-          <% if chat.messages.last %>
-            <%= chat.messages.last.content %>
+          <% if chat.messages.first %>
+            <%= chat.messages.first.content %>
           <% end %>
         </div>
         <div class="text-center">
