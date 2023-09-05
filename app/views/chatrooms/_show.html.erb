@@ -8,7 +8,7 @@
     <h1  class="flex-grow-1"style="margin-bottom: 0;"> <%= chat.recipient(current_user).display_name %></h1>
     <div data-controller="toggle">
       <button data-action="click->toggle#fire" class="btn btn-outline-primary">Plan a jam</button>
-      <div id="myModal" class="jamModal d-none" data-toggle-target="togglableElement">
+      <div id="myModal" class="jam-modal d-none" data-toggle-target="togglableElement">
         <!-- Modal content -->
         <div class="modal-content">
           <button class="btn close fa-solid fa-xmark" style="color: #000000;" data-action="click->toggle#fire"></button>
