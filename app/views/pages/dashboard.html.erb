@@ -4,11 +4,11 @@
 </div>
 <%= render 'shared/user_dash_card', user: @user %>
   <% @months.each do |month| %>
-    <div class="month-units pb-2">
-      <h1><%= Date::MONTHNAMES[month] %></h1>
+    <div class="month-units py-2 ps-5">
+      <h3><%= Date::MONTHNAMES[month] %></h3>
         <% @jams.each do |jam| %>
           <% if jam.date.mon == month %>
-            <div class="m-2 p-4 jam-card">
+            <div class="m-2 py-4 jam-card">
               <%= render 'jam_info', jam: jam %>
             </div>
           <% end %>

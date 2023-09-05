@@ -1,5 +1,9 @@
 .jam-day {
-  border: 1px solid black;
-  border-top: 5px solid black;
-  border-radius: 2px;
+  border-top: .7rem solid $accent;
+  border-radius: .3rem;
+  box-shadow: .1rem .05rem .3rem $body-color;
+}
+
+.month-units > h3 {
+  color: $accent;
 }
