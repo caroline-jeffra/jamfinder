@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "chats/index";
 
 // application-wide scss overrides
 html {
@@ -23,7 +24,7 @@ a {
 .sticky-class {
   position:sticky;
   top:50px;
-  width:2vw;
+  width:100%;
   background-color: white;
   z-index: 1020;
 }
@@ -31,4 +32,12 @@ a {
 .scrollable {
   overflow: scroll;
   height: 70vh;
+}
+
+.banner-index{
+  height: 90px;
+}
+
+.mapboxgl-render{
+  visibility: none;
 }

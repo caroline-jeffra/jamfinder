@@ -1,14 +1,29 @@
-<h1>Welcome to the Chatrooms#index</h1>
-
-<div class="row" data-controller="chats">
-  <div class="col chat-list">
+<div class="row chat" data-controller="chats">
+  <div class="col-12 align-content-start" style="overflow-y: scroll;" data-chats-target="chatlist">
+    <div class="align-self-start">
+      <h1 class="mx-2">Chats</h1>
+    </div>
+    <ul class="col-12 chat-list d-flex list-group list-group-flush">
     <% @chatrooms.each do |chat| %>
-      <div class="chat-head">
-        <%= image_tag(User.find((chat.participant_ids-[current_user.id]).first).avatar_url, class: "avatar") %>
-        <%= link_to "Chat##{chat.id}", chat_path(chat.id), data: { action: "click->chats#display" } %>
+      <div class="chat-head px-2 list-group-item d-flex align-items-center">
+        <%= image_tag(chat.recipient(current_user).avatar_url, class: "avatar mx-2") %>
+        <div class="flex-grow-1">
+          <h4><%= chat.recipient(current_user).display_name %></h4>
+          <% if chat.messages.last %>
+            <%= chat.messages.last.content %>
+          <% end %>
+        </div>
+        <div class="text-center">
+          <% if chat.messages.last %>
+            <%= chat.messages.last.created_at.strftime("%H:%M") %><br>
+            <%= chat.messages.last.created_at.strftime("%d/%m/%y") %>
+          <% end %>
+        </div>
+        <%= link_to "", chat_path(chat.id), data: { action: "click->chats#toggle click->chats#display"}, class: "stretched-link" %>
       </div>
     <% end %>
+    </ul>
   </div>
-  <div class="col chatbox" data-chats-target="chatbox">
+  <div class="col-12 chatbox d-none" data-chats-target="chatbox">
   </div>
 </div>

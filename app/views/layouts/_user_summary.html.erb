@@ -11,14 +11,12 @@
         <p class="highlighted"><%= user.address %></p>
       </div>
     </div>
-    <div class="px-3">
-      <h4><%= user.tagline %></h4>
-      <div class="d-flex flex-row">
-        <i class="fa-solid fa-guitar me-2"></i>
-        <i class="fa-solid fa-guitar me-2"></i>
-        <i class="fa-solid fa-guitar me-2"></i>
-        <i class="fa-solid fa-guitar me-2"></i>
-        <i class="fa-solid fa-guitar me-2"></i>
+    <div>
+      <h4 class="py-3"><%= user.tagline %></h4>
+      <div class="d-flex flex-row py-3">
+        <% user.categories_icons.each do |cloudinary_id| %>
+          <i><%= cl_image_tag(cloudinary_id, width: 42, height: 42, crop: :fill) %></i>
+        <% end %>
       </div>
     </div>
   </div>
