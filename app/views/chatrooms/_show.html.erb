@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="card-body messages" data-chats-target="messages" data-chatroom-subscription-target="messages">
+  <div class="card-body messages flex-grow-1" data-chats-target="messages" data-chatroom-subscription-target="messages">
     <% if chat.messages.any? %>
       <% chat.messages.each do |msg| %>
         <div class="message-row d-flex <%= msg.user == (current_user) ? 'justify-content-end' : 'justify-content-start' %>">
