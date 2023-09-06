@@ -7,7 +7,7 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $secondary;
+$body-bg:                $primary;
 $font-size-base:         1.6rem;
 
 // Colors
@@ -25,12 +25,12 @@ $border-radius-sm: 2px;
 
 // Override other variables below!
 $input-border-radius: 20px;
-$input-bg: $secondary;
+$input-bg: $primary;
 $component-active-bg: $accent;
 $custom-checkbox-indicator-indeterminate-bg: $accent;
 
-.background-primary {
-  background-color: $body-color;
+.background-secondary {
+  background-color: $secondary;
 }
 
 // button overrides
@@ -44,7 +44,7 @@ $custom-checkbox-indicator-indeterminate-bg: $accent;
 .btn-outline-primary {
   background-color: $primary;
   border-color: $info;
-  color: $body-color;
+  color: $secondary;
 }
 
 .btn-primary {
@@ -53,7 +53,7 @@ $custom-checkbox-indicator-indeterminate-bg: $accent;
   color: $primary;
 
   a {
-    color: $primary;
+    color: $secondary;
   }
 }
 

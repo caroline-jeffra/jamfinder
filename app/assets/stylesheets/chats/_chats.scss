@@ -1,6 +1,4 @@
 .chat {
-  height: 89vh;
-  max-height: 89vh;
   overflow: scroll;
 }
 
@@ -8,14 +6,17 @@
     display: none;
   }
 
+.chatroom {
+  height: 100%;
+  padding-bottom: 20px;
+}
+
 .messages {
-  min-height: 74vh;
-  max-height: 74vh;
   overflow: scroll;
 }
 
 .message-header {
-  background-color: $secondary;
+  background-color: $primary;
 }
 
 .message-row {
@@ -26,7 +27,7 @@
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 10px;
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 10px;
   position: relative;
   font-family: $body-font;
@@ -38,30 +39,61 @@
 
 
 .sender-style {
-  color: $secondary;
+  color: $primary;
   background-color: $accent;
   .message-timestamp {
     position: absolute;
     right: 10px;
     bottom: -15px;
-    color: $gray;
+    color: $secondary;
     font-size: 10px;
   }
 }
 
 .receiver-style {
-  color: $secondary;
-  background-color: #474345;
+  color: $primary;
+  background-color: $secondary;
   .message-timestamp {
     position: absolute;
     left: 10px;
     bottom: -15px;
-    color: $gray;
+    color: $secondary;
     font-size: 10px;
   }
 }
 
 .message-input {
-  background-color: $secondary;
+  background-color: $primary;
   align-items: center;
+}
+
+/* The Modal (background) */
+.jam-modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  align-items: center;
+  background-color: $primary;
+  margin: 70% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 0.9rem;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  align-self: end;
+  padding: 2px;
 }

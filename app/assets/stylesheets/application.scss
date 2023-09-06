@@ -17,6 +17,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
 a {
   text-decoration: none;
 }
@@ -26,6 +34,10 @@ a {
   top:50px;
   width:100%;
   z-index: 1020;
+}
+
+.sticky-class-2 {
+  z-index: 1010;
 }
 
 .scrollable {
