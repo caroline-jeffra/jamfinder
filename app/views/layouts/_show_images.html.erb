@@ -1,19 +1,21 @@
 <div>
-  <% if current_user == @profile %>
-    <i class="a-solid fa-plus icon-resize images_cloudinary" data-action="click->popover#image"></i>
-    <%# <%= render "imageform" %> %>
-  <% end %>
-</div>
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <% @profile.cl_images.each do |image| %>
-      <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, width: 100px !important, height: 100px !important, crop: :fill)</i> %>
+  <div>
+    <% if current_user == @profile %>
+      <i class="profile-tags a-solid fa-plus icon-resize images_cloudinary" data-action="click->popover#images"></i>
+      <%= render "imageform", user: @profile %>
     <% end %>
-    <div class="swiper-slide imageFirst"></div>
-    <div class="swiper-slide imageSecond"></div>
-    <div class="swiper-slide imageThird"></div>
-    <div class="swiper-slide imageFourth"></div>
-    <div class="swiper-slide imageFith"></div>
   </div>
-  <div class="swiper-pagination"></div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <% @profile.cl_images.each do |image| %>
+        <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, width: 100, height: 100, crop: :fill) %> </i>
+      <% end %>
+      <div class="swiper-slide imageFirst"></div>
+      <div class="swiper-slide imageSecond"></div>
+      <div class="swiper-slide imageThird"></div>
+      <div class="swiper-slide imageFourth"></div>
+      <div class="swiper-slide imageFith"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>

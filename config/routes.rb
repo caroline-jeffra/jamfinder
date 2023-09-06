@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   patch 'profiles/bio', to: 'profiles#update_bio', as: :update_bio
   patch 'profiles/genre', to: 'profiles#update_genre', as: :update_genre
   patch 'profiles/instrument', to: 'profiles#update_instrument', as: :update_instrument
-
+  patch 'profiles/cl_images', to: 'profiles#update_cl_images', as: :update_cl_images
 end
