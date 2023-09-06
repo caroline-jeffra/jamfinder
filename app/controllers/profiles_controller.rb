@@ -52,11 +52,6 @@ class ProfilesController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
-  def update_cl_audios
-    current_user.update(user_audios_params)
-    redirect_to profile_path(current_user)
-  end
-
   private
 
   def user_instrument_params
