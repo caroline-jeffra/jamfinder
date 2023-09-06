@@ -1,6 +1,6 @@
-<%= form_tag update_bio_path, :method => :patch do |f|%>
-<%= text_field_tag :bio%>
-<%= submit_tag "Update Bio..." %>
+<%= form_tag update_bio_path, method: :patch do |f| %>
+  <%= text_area_tag :bio, @profile.bio, class: "form-control input-field" %>
+  <%= submit_tag "Update Bio...", class: "btn btn-primary my-2" %>
 <% end %>
 
 
