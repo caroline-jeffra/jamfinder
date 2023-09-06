@@ -5,9 +5,11 @@
   </div>
 <% end %>
 <div class="container pt-1" data-controller="popover">
-  <div class="d-flex justify-content-end">
-    <%= link_to "Message", chats_path(recipient: params[:id]) %>
-  </div>
+  <% if current_user != @profile %>
+    <div class="d-flex justify-content-end">
+      <%= link_to "Message", chats_path(recipient: params[:id]) %>
+    </div>
+  <% end %>
   <%= render "layouts/show_card", user: @profile %>
   <hr style="margin: -20px 0 20px 0">
   <%= render "layouts/show_bio", user: @profile %>
