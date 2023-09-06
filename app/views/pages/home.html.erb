@@ -14,13 +14,4 @@
       <%= render "layouts/user_summary", user: profile %>
     <% end %>
   <% end %>
-  <div class="d-flex justify-content-center pb-5" style="width:100vw;">
-    <button class="btn btn-primary">
-      <% if current_user %>
-        <%= link_to "join the jam", profiles_path %>
-      <% else %>
-        <%= link_to "join the jam", user_session_path %>
-      <% end %>
-    </button>
-  </div>
 </div>
