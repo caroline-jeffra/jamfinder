@@ -1,6 +1,6 @@
 <div class="schedule-form text-center">
   <h2>Schedule a jam</h2>
-  <%= simple_form_for(jam, data: { action: "submit->toggle#fire" }) do |f| %>
+  <%= simple_form_for(jam) do |f| %>
     <%= f.input :date,
       label: false,
       placeholder: 'select a date and time',
