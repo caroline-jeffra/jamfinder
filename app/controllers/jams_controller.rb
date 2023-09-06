@@ -2,9 +2,10 @@ class JamsController < ApplicationController
   def create
     @jam = Jam.new(jam_params)
     puts jam_params
+    participants = params[:jam][:participants].split
+    recipient_id = (participants - [current_user.id.to_s]).first
     if @jam.save
       flash.alert = "Jam booked!"
-      participants = params[:jam][:participants].split
       participants.each do |participant|
         jam_join = UserJam.new
         jam_join.user = User.find(participant.to_i)
@@ -14,11 +15,13 @@ class JamsController < ApplicationController
         else
           flash.alert = "There was an error saving your jam to your profile. Please try again."
         end
+        redirect_to chats_path(recipient: recipient_id)
       end
-      # TODO: collapse toggleable
     else
+      # TODO: show form errors
       flash.alert = "Please enter a date and time in the future."
     end
+
   end
 
   private
