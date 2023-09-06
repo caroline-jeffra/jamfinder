@@ -2,9 +2,10 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="popover"
 export default class extends Controller {
-  static targets = ['bio', 'genre', 'instrument', 'images']
+  static targets = ['bioForm', 'bio', 'genre', 'instrument', 'images']
   bio(){
     this.bioTarget.classList.toggle('d-none')
+    this.bioFormTarget.classList.toggle('d-none')
   }
   genre(){
     this.genreTarget.classList.toggle('d-none')
