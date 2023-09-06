@@ -33,6 +33,10 @@ $custom-checkbox-indicator-indeterminate-bg: $accent;
   background-color: $secondary;
 }
 
+.background-primary {
+  background-color: $primary;
+}
+
 // button overrides
 .btn {
   font-size: 2rem;
