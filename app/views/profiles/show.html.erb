@@ -1,21 +1,26 @@
 <% if current_user == @profile %>
-  <div class="title-center background-primary pt-4 py-3 m-0 mt-3 sticky-class sticky-class-2">
-    <%= link_to "Profile", profile_path(current_user), class: "btn btn-primary col-4 me-5" %>
-    <%= link_to "Jams", dashboard_path, class: "btn btn-outline-primary col-4 me-5" %>
+  <div class="title-center background-secondary pt-4 py-3 m-0 sticky-class sticky-class-2">
+    <%= link_to "Profile", profile_path(current_user), class: "btn btn-primary col-4 mx-3" %>
+    <%= link_to "Jams", dashboard_path, class: "btn btn-outline-primary col-4 mx-3" %>
   </div>
 <% end %>
-<div class="container scrollable pt-1" data-controller="popover">
+<div class="container scrollable" data-controller="popover">
   <% if current_user != @profile %>
     <div class="d-flex justify-content-end">
       <%= link_to "Message", chats_path(recipient: params[:id]) %>
     </div>
   <% end %>
   <%= render "layouts/show_card", user: @profile %>
-  <hr style="margin: -20px 0 20px 0">
-  <%= render "layouts/show_bio", user: @profile %>
-  <%= render "layouts/show_genre", user: @profile %>
-  <%= render "layouts/show_instrument", user: @profile %>
-  <%= render "layouts/show_images", user: @profile %>
+  <div class="container">
+    <%= render "layouts/show_bio", user: @profile %>
+      <hr style="margin: 20px 0 20px 0">
+    <%= render "layouts/show_genre", user: @profile %>
+      <hr style="margin: 20px 0 20px 0">
+    <%= render "layouts/show_instrument", user: @profile %>
+      <hr style="margin: 20px 0 20px 0">
+    <%= render "layouts/show_images", user: @profile %>
+      <hr style="margin: 20px 0 20px 0">
+  </div>
 
   <%# WARNING: Style, controllers etc. below %>
   <script>
