@@ -44,7 +44,13 @@ a {
 .scrollable {
   overflow: scroll;
   height: 70rem;
-  min-height: 93rem;
+  body {
+    display: revert;
+    flex-direction: revert;
+    height: revert;
+    min-height: revert;
+    justify-content: revert;
+}
 }
 
 .banner-index{
