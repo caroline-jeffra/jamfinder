@@ -3,9 +3,9 @@
 <%# <div id="user-bio"> %>
 <%#   <p><%= @profile.bio %1></p> %>
 <%# </div> %>
-<div class="row d-inline-flex flex-nowrap w-100">
+<div class="row d-inline-flex flex-nowrap w-100 mt-1">
     <div id="collapsible-article" data-popover-target="bio" style="flex-shrink: 1;">
-      <p id="truncatedArticle"><%= truncate(@profile.bio, length: 100) %></p>
+      <p id="truncatedArticle"><%= truncate(@profile.bio, length: 200) %></p>
       <div id="full-article" class="hidden">
         <p id="full-article-text"><%= @profile.bio %></p>
       </div>
