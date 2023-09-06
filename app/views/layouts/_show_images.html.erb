@@ -5,24 +5,13 @@
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-
         <% if current_user == @profile %>
-          <%# <i class="fa-solid fa-plus images_cloudinary" data-action="click->popover#images"></i> %>
-          <%= render "imageform", user: @profile %>
+          <i class="swiper-slide"> <%= render "imageform", user: @profile %> </i>
         <% end %>
       </div>
-
-
-
-      <% @profile.cl_images.each do |image| %>
+      <% @profile.cl_images.reverse().each do |image| %>
         <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, width: 100, height: 100, crop: :fill) %> </i>
       <% end %>
-
-
-      <div class="swiper-slide imageFirst"></div>
-      <div class="swiper-slide imageFirst"></div>
-      <div class="swiper-slide imageFirst"></div>
-      <div class="swiper-slide imageFirst"></div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
