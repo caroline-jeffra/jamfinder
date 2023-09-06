@@ -1,9 +1,8 @@
-<div class="d-none" data-popover-target="images">
-  <%= simple_form_for(user, url: update_cl_images_path, method: :patch) do |f|%>
-    <label class="custom-file-upload">
-      <%= f.input :cl_images, as: :file, input_html: { multiple: true } %>
-      <img src="/path/to/plus-sign-image.png" alt="Add File" />
-    </label>
+<div data-controller ="photo-upload">
+  <div class="" data-popover-target="images">
+    <%= simple_form_for(user, url: update_cl_images_path, method: :patch, data: { photo_upload_target: 'form', action:"change->photo-upload#upload" }) do |f|%>
+    <%= f.input :cl_images, as: :file, input_html: { class: 'd-none', multiple: true }, data: { photo_upload_target: "input" },label_html: { class: 'upload-photo'}, label: '+'%>
     <%= f.submit 'Save' %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
