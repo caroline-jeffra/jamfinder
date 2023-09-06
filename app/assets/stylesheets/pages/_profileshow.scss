@@ -10,14 +10,14 @@
   p {
     margin: 0;
   }
-
 }
 
 .profile-tags{
   padding: 1px 14px;
-  background: rgb(221, 221, 221);
-  border-radius: 10px;
-  margin: 2px;
+  background: $primary;
+  border-radius: .6rem;
+  box-shadow: .1rem .1rem .3rem $secondary;
+  margin: .3rem;
 }
 
 .side-scroll{
