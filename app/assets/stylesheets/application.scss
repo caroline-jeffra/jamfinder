@@ -34,6 +34,7 @@ a {
   top:50px;
   width:100%;
   z-index: 1020;
+  justify-content: flex-start;
 }
 
 .sticky-class-2 {
@@ -52,5 +53,3 @@ a {
 .mapboxgl-render{
   visibility: none;
 }
-
-

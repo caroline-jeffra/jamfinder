@@ -1,8 +1,8 @@
-<div class="title-center background-primary pt-4 py-3 m-0 mt-3 sticky-class sticky-class-2">
+<div class="title-center background-secondary pt-4 py-3 m-0 sticky-class sticky-class-2">
   <%= link_to "Profile", profile_path(current_user), class: "btn btn-outline-primary col-4 me-5" %>
   <%= link_to "Jams", dashboard_path, class: "btn btn-primary col-4 me-5" %>
 </div>
-<div class="scrollable">
+<div class="scrollable page-content">
   <%= render 'shared/user_dash_card', user: @user %>
   <% if @jams.length > 0 %>
     <% @months.each do |month| %>
