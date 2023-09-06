@@ -1,4 +1,9 @@
-<%# should we create a images controller %>
-<%= simple_form_for(user_images) do |f|%>
-<%= f.input :cl_images, as: :file, input_html: { multiple: true } %>
-<% end %>
+<div class="d-none" data-popover-target="images">
+  <%= simple_form_for(user, url: update_cl_images_path, method: :patch) do |f|%>
+    <label class="custom-file-upload">
+      <%= f.input :cl_images, as: :file, input_html: { multiple: true } %>
+      <img src="/path/to/plus-sign-image.png" alt="Add File" />
+    </label>
+    <%= f.submit 'Save' %>
+  <% end %>
+</div>

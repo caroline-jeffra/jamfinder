@@ -47,6 +47,11 @@ class ProfilesController < ApplicationController
     @profile = User.find(params[:id])
   end
 
+  def update_cl_images
+    current_user.update(user_images_params)
+    redirect_to profile_path(current_user)
+  end
+
   private
 
   def user_instrument_params
@@ -54,6 +59,10 @@ class ProfilesController < ApplicationController
   end
 
   def user_images_params
-    params.require(:article).permit(cl_images: [])
+    params.require(:user).permit(cl_images: [])
+  end
+
+  def user_audios_params
+    params.require(:user).permit(cl_audios: [])
   end
 end

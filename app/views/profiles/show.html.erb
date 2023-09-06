@@ -4,7 +4,7 @@
     <%= link_to "Jams", dashboard_path, class: "btn btn-outline-primary col-4 me-5" %>
   </div>
 <% end %>
-<div class="container pt-1" data-controller="popover">
+<div class="container scrollable pt-1" data-controller="popover">
   <% if current_user != @profile %>
     <div class="d-flex justify-content-end">
       <%= link_to "Message", chats_path(recipient: params[:id]) %>
@@ -15,10 +15,7 @@
   <%= render "layouts/show_bio", user: @profile %>
   <%= render "layouts/show_genre", user: @profile %>
   <%= render "layouts/show_instrument", user: @profile %>
-
-  <%# Implementing cloudinary images upload below %>
-  <%# <%= render "layouts/show_images", user: @profile %> 
-  <%= render "layouts/show_audios", user: @profile %>
+  <%= render "layouts/show_images", user: @profile %>
 
   <%# WARNING: Style, controllers etc. below %>
   <script>
