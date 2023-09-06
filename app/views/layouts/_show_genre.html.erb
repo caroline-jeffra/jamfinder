@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center side-scroll">
+  <% if current_user == @profile %>
+    <i class="profile-tags a-solid fa-plus icon-resize" data-action="click->popover#genre"></i>
+    <%= render "genreform" %>
+  <% end %>
+  <% @profile.genres.each do |genre| %>
+    <p class="profile-tags"><%= "##{genre.name}"%></p>
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<%# should we create a images controller %>
+<%= simple_form_for(user_images) do |f|%>
+<%= f.input :cl_images, as: :file, input_html: { multiple: true } %>
+<% end %>
