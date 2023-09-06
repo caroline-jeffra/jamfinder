@@ -1,6 +1,4 @@
 .chat {
-  height: 89vh;
-  max-height: 89vh;
   overflow: scroll;
 }
 
@@ -8,9 +6,12 @@
     display: none;
   }
 
+.chatroom {
+  height: 100%;
+  padding-bottom: 20px;
+}
+
 .messages {
-  min-height: 74vh;
-  max-height: 74vh;
   overflow: scroll;
 }
 

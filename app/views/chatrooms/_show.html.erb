@@ -5,9 +5,9 @@
   <div class="card-header message-header d-flex align-items-center">
     <i class="fa-solid fa-arrow-left" style="color: #A40055; font-size: 2.8rem; margin-right: 1.8rem;" data-action="click->chats#toggle"></i>
     <%= link_to(image_tag(chat.recipient(current_user).avatar_url, class: "avatar", style: "align-self: center; margin-right: 2rem"), profile_path(chat.recipient(current_user))) %>
-    <h1  class="flex-grow-1"style="margin-bottom: 0;"> <%= chat.recipient(current_user).display_name %></h1>
+    <h2  class="flex-grow-1"style="margin-bottom: 0;"> <%= chat.recipient(current_user).display_name %></h2>
     <div data-controller="toggle">
-      <button data-action="click->toggle#fire" class="btn btn-outline-primary">Plan a jam</button>
+      <button data-action="click->toggle#fire" class="btn btn-outline-primary">Jam</button>
       <div id="myModal" class="jam-modal d-none" data-toggle-target="togglableElement">
         <!-- Modal content -->
         <div class="modal-content">
@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="card-body messages" data-chats-target="messages" data-chatroom-subscription-target="messages">
+  <div class="card-body messages flex-grow-1" data-chats-target="messages" data-chatroom-subscription-target="messages">
     <% if chat.messages.any? %>
       <% chat.messages.each do |msg| %>
         <div class="message-row d-flex <%= msg.user == (current_user) ? 'justify-content-end' : 'justify-content-start' %>">
