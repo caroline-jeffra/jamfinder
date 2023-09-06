@@ -2,30 +2,32 @@
   <%= link_to "Profile", profile_path(current_user), class: "btn btn-outline-primary col-4 me-5" %>
   <%= link_to "Jams", dashboard_path, class: "btn btn-primary col-4 me-5" %>
 </div>
-<%= render 'shared/user_dash_card', user: @user %>
-<% if @jams.length > 0 %>
-  <% @months.each do |month| %>
-    <div class="month-units py-2 ps-5">
-      <h3><%= Date::MONTHNAMES[month] %></h3>
-        <% @jams.each do |jam| %>
-          <% if jam.date.mon == month %>
-            <div class="m-2 py-4 jam-card">
-              <%= render 'jam_info', jam: jam %>
-            </div>
+<div class="scrollable">
+  <%= render 'shared/user_dash_card', user: @user %>
+  <% if @jams.length > 0 %>
+    <% @months.each do |month| %>
+      <div class="month-units py-2 ps-5">
+        <h3><%= Date::MONTHNAMES[month] %></h3>
+          <% @jams.each do |jam| %>
+            <% if jam.date.mon == month %>
+              <div class="m-2 py-4 jam-card">
+                <%= render 'jam_info', jam: jam %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-    </div>
-    <hr class="my-2">
-  <% end %>
-<% else %>
-  <div class="d-flex  align-items-center justify-content-center">
-    <div class="row d-flex">
-      <div class="col-2"></div>
-      <div class="col-7">
-        <h3 class="text-center mb-2">No scheduled jams</h3>
-        <p class="text-center">Have a look at some profiles and start chatting to find jam partners!</p>
       </div>
-      <div class="col-2"></div>
+      <hr class="my-2">
+    <% end %>
+  <% else %>
+    <div class="d-flex  align-items-center justify-content-center">
+      <div class="row d-flex">
+        <div class="col-2"></div>
+        <div class="col-7">
+          <h3 class="text-center mb-2">No scheduled jams</h3>
+          <p class="text-center">Have a look at some profiles and start chatting to find jam partners!</p>
+        </div>
+        <div class="col-2"></div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
