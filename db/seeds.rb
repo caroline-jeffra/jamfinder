@@ -26,6 +26,7 @@ Genre.destroy_all
 UserGenre.destroy_all
 User.destroy_all
 
+
 INSTRUMENTS = [
   { name: 'accordion', category: 'keyboard' },
   { name: 'bagpipes', category: 'wind' },
@@ -257,9 +258,11 @@ User.create!(
   address: 'Voorburgstraat, Amsterdam',
   instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
   genres: [Genre.find_by(name: "Progressive rock")],
-  tagline: TAGLINE[7],
+  tagline: "I hope you like jammin' too!",
   bio: BIO[7]
 )
+Audio.create(url: 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FDrJimmy%2Fdr-jimmy-jazzs-guitar-greats-the-lost-set%2F', user_id: User.last.id)
+
 User.create!(
   first_name: 'Marius',
   last_name: 'Placeholder',
@@ -310,7 +313,7 @@ User.create!(
   display_name: 'Nathan',
   avatar_url: 'https://ca.slack-edge.com/T02NE0241-U05FRFGF7K9-d997ff9f3224-512',
   banner_url: 'https://wallpapercave.com/wp/wp4132927.jpg',
-  address: 'Admiral de Ruijterweg, Amsterdam',
+  address: 'Admiraal de Ruijterweg, Amsterdam',
   instruments: [ Instrument.find_by(name: "Bagpipes"), Instrument.find_by(name: "Snare") ],
   genres: [Genre.find_by(name: "Rock fusion")],
   tagline: TAGLINE[11],
