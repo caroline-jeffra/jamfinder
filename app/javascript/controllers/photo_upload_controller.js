@@ -1,17 +1,17 @@
-import { Controller } from "@hotwired/stimulus"
+// app/javascript/controllers/auto_submit_form_controller.js
+import { Controller } from "stimulus";
 
-// Connects to data-controller="photo-upload"
 export default class extends Controller {
-  static targets = ["input", "form"]
+  static targets = ["fileInput", "submitButton"];
 
   connect() {
-    console.log("hihi")
+    this.fileInputTarget.addEventListener("change", this.handleFileChange.bind(this));
   }
 
-  upload(event) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      this.formTarget.submit();
+  handleFileChange() {
+    if (this.fileInputTarget.files.length > 0) {
+      this.submitButtonTarget.style.display = "block";
+      this.submitButtonTarget.click();
     }
   }
 }
