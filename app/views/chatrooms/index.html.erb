@@ -3,20 +3,20 @@
     <div class="align-self-start">
       <h1 class="mx-2">Chats</h1>
     </div>
-    <ul class="col-12 chat-list d-flex list-group list-group-flush">
+    <ul class="col-12 chat-list d-flex list-group list-group-flush px-3">
       <% @chatrooms.each do |chat| %>
         <div class="chat-head px-2 list-group-item d-flex align-items-center">
           <%= image_tag(chat.recipient(current_user).avatar_url, class: "avatar mx-2") %>
-          <div class="flex-grow-1">
+          <div class="flex-grow-1 chat-list-summary">
             <h4><%= chat.recipient(current_user).display_name %></h4>
             <% if chat.messages.first %>
-              <%= chat.messages.first.content %>
+              <p><%= truncate(chat.messages.first.content, length: 37) %></p>
             <% end %>
           </div>
-          <div class="text-center">
+          <div class="chat-list-timestamps text-end">
             <% if chat.messages.last %>
-              <%= chat.messages.last.created_at.strftime("%H:%M") %><br>
-              <%= chat.messages.last.created_at.strftime("%d/%m/%y") %>
+              <p><%= chat.messages.last.created_at.strftime("%H:%M") %></p>
+              <p><%= chat.messages.last.created_at.strftime("%d/%m/%y") %></p>
             <% end %>
           </div>
           <%= link_to "", chat_path(chat.id), data: { action: "click->chats#display"}, class: "stretched-link" %>
