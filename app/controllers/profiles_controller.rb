@@ -50,7 +50,7 @@ class ProfilesController < ApplicationController
   def update_cl_images
     user_images_params
     current_user.cl_images.attach(params[:user][:cl_images]) if params.dig(:user, :cl_images).present?
-    redirect_to profile_path(current_user)
+    redirect_to profile_path(current_user, anchor: "image-upload-input")
   end
 
   private
