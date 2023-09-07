@@ -1,0 +1,22 @@
+.full-height-flex-col {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: start;
+}
+
+.profiles-sticky {
+  position: sticky;
+  top: 62px;
+  width: 100%;
+  z-index: 1020;
+  align-self: flex-start;
+}
+
+.profiles-view-selector {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: white;
+}
