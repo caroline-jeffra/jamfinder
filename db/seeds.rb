@@ -326,7 +326,7 @@ User.create!(
   banner_url: 'https://wallpapercave.com/wp/wp2832280.jpg',
   address: '1071ME',
   instruments: [ Instrument.find_by(name: "Cello"), Instrument.find_by(name: "Flute") ],
-  genres: [Genre.find_by(name: "Twee Pop")],
+  genres: [Genre.find_by(name: "Twee pop")],
   tagline: TAGLINE[12],
   bio: BIO[12]
 )
