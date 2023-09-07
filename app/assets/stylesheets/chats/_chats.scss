@@ -2,6 +2,17 @@
   overflow: scroll;
 }
 
+.chat-list-summary, .chat-list-timestamps {
+  padding-left: 0.5rem;
+
+  h4 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+
 .chat::-webkit-scrollbar, .chat-list::-webkit-scrollbar, .messages::-webkit-scrollbar{
     display: none;
   }
@@ -9,10 +20,20 @@
 .chatroom {
   height: 100%;
   padding-bottom: 20px;
+
+  h2 {
+    font-size: 2.4rem;
+  }
 }
 
 .messages {
   overflow: scroll;
+}
+
+.message-timestamp {
+  color: $secondary;
+  font-size: 1.5rem;
+  bottom: -2.0rem;
 }
 
 .message-header {
@@ -37,28 +58,22 @@
   font-size: 1.8rem;
 }
 
-
 .sender-style {
   color: $primary;
-  background-color: $accent;
+  background-color: $secondary;
+  text-align: end;
   .message-timestamp {
     position: absolute;
-    right: 10px;
-    bottom: -15px;
-    color: $secondary;
-    font-size: 10px;
+    right: 1.0rem;
   }
 }
 
 .receiver-style {
   color: $primary;
-  background-color: $secondary;
+  background-color: $accent;
   .message-timestamp {
     position: absolute;
-    left: 10px;
-    bottom: -15px;
-    color: $secondary;
-    font-size: 10px;
+    left: 1.0rem;
   }
 }
 
@@ -96,4 +111,15 @@
 .close {
   align-self: end;
   padding: 2px;
+}
+
+.btn-make-jam {
+  border-top: .7rem solid $accent;
+  border-radius: .3rem;
+  box-shadow: .1rem .05rem .3rem $body-color;
+  padding: .4rem 1.4rem;
+  margin-right: 1rem;
+  h2 {
+    color: $accent !important;
+  }
 }
