@@ -41,11 +41,13 @@
 }
 
 .images_cloudinary {
-  height: 100px !important;
+  height: 100px;
   width: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border-radius: .6rem;
+  box-shadow: .1rem .1rem .3rem $secondary;
 }
 
 .imageFirst {
@@ -88,4 +90,17 @@
   background: url("https://media.istockphoto.com/id/1391832141/photo/percussion-instrument-called-atabaque.webp?b=1&s=170667a&w=0&k=20&c=8io0jFOG08AW3IgPhEaCcQFv7yFIyKERCmJhrW4Ovxo=");  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+
+#size1{
+  font-size: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#size2{
+  font-size: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }

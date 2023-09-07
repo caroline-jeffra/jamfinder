@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center side-scroll">
   <% if current_user == @profile %>
-    <i class="profile-tags a-solid fa-plus icon-resize" data-action="click->popover#instrument"></i>
+    <i class="profile-tags fa-solid fa-plus icon-resize" id="size1" data-action="click->popover#instrument"></i>
     <%= render "instrumentform" %>
   <% end %>
   <% @profile.instruments.each do |instrument| %>

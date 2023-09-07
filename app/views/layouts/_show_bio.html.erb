@@ -1,8 +1,5 @@
 <div>
 </div>
-<%# <div id="user-bio"> %>
-<%#   <p><%= @profile.bio %1></p> %>
-<%# </div> %>
 <div class="row d-inline-flex flex-nowrap w-100 mt-1">
     <div id="collapsible-article" data-popover-target="bio" style="flex-shrink: 1;">
       <p id="truncatedArticle"><%= truncate(@profile.bio, length: 200) %></p>
@@ -14,7 +11,6 @@
       <div class="d-none" data-popover-target="bioForm" style="flex-shrink: 1;">
         <%= render"bioform" %>
       </div>
-      <i class="fa-solid fa-pencil icon-resize" data-action="click->popover#bio" style="height: 2rem; width: 2rem"></i>
     <% end %>
   </div>
-<div class="w-100 d-flex justify-content-center"id="readMore"><i class="fa-solid fa-chevron-down icon-resize"></i></div>
+<div class="w-100 d-flex justify-content-center"id="readMore"></div>
