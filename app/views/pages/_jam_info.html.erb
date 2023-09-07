@@ -1,13 +1,13 @@
 <div class="d-flex flex-row justify-content-left ps-1">
   <div class="jam-day d-flex align-items-center px-4 pt-1">
-    <h2><%= jam.date.mday %></h2>
+    <h2><%= "%02d" % jam.date.mday %></h2>
   </div>
   <div class="jam-info d-flex flex-column ps-4">
     <div class="jam-participant">
-      <h4>Jam with <%= jam.users.last.display_name %></h4>
+      <h4>Jam with <%= jam.users.where.not(id: current_user.id).last.display_name %></h4>
     </div>
     <div class="jam-details d-flex flex-row">
-      <div class="jam-time pe-2"><p><%= jam.date.hour %>:<%= jam.date.min %></p></div>
+      <div class="jam-time pe-2"><p><%= "%02d" % jam.date.hour %>:<%= "%02d" % jam.date.min %></p></div>
       <div class="jam-place"><p><%= jam.address %></p></div>
     </div>
   </div>
