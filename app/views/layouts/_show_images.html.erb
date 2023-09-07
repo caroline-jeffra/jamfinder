@@ -10,9 +10,9 @@
         <% end %>
       </div>
       <% @profile.cl_images.reverse().each do |image| %>
-        <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, width: 100, height: 100, crop: :fill) %> </i>
+        <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, class:"images_cloudinary", crop: :fill) %> </i>
       <% end %>
     </div>
-    <div class="swiper-pagination pb-1"></div>
+    <div class="swiper-pagination final-1"></div>
   </div>
 </div>

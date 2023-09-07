@@ -37,11 +37,13 @@
 }
 
 .images_cloudinary {
-  height: 100px !important;
+  height: 100px;
   width: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border-radius: .6rem;
+  box-shadow: .1rem .1rem .3rem $secondary;
 }
 
 .imageFirst {
