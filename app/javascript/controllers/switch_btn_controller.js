@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["switch1", "switch2", "switch3", "switch4"]
   connect() {
-    this.switch2Target.classList.add("d-none");
+    localStorage.setItem("returnURL", `${window.location.pathname}${window.location.search}`);
   }
   fire1() {
     this.switch1Target.classList.add("d-none");
