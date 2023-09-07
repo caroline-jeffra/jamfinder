@@ -81,7 +81,86 @@ end
 
 puts "#{Genre.count} genres created"
 
+TAGLINE = [
+  "Serenading Souls Through Melodies",
+  "Crafting Emotions with Soundwaves",
+  "Strings and Beats, My Musical Canvas",
+  "Notes Dance, I'm the Choreographer",
+  "Musical Stories Painted in Tunes",
+  "Journeying Through Soundscapes",
+  "Feelings Echo in Every Chord",
+  "Lyrics of Life, Sung by Me",
+  "Rhythmic Pulse of My Heart",
+  "Expressing Life's Rhythm in Songs",
+  "Creating Harmony, Sharing Love",
+  "Soundscape Architect, Music's Muse",
+  "Unlocking Emotions with Harmony",
+  "Dreams Whispered Through Melodies",
+  "Chords Connect, Music Reflects",
+  "Composing Life's Symphony",
+  "Tunes Unite, Hearts Take Flight",
+  "Soulful Melodies, My Language",
+  "Notes Weave Tales of Life",
+  "Harmonious Vibes, My Passion's Drive",
+  "Playing Feelings, Crafting Sound",
+  "Musical Narratives from the Heart",
+  "Melding Beats, Shaping Souls",
+  "Strings of My Heart, Notes of My Soul",
+  "Life's Palette, Tinged with Music",
+  "Capturing Moments in Musical Frames",
+  "Strumming Dreams into Reality",
+  "Chords of Life, Music of Me",
+  "Soundtrack of Emotions, That's Me",
+  "Heartfelt Lyrics, My True Expression",
+  "Melodies Painted on Silence",
+  "Orchestrating Memories with Music",
+  "Playing Life's Tune, Note by Note",
+  "Strings Attached to My Dreams",
+  "Singing Life's Verses in Harmony",
+  "Musical Euphoria, My Way",
+  "Harmonizing the Universe Within",
+  "Emotions Resonate in Every Note",
+  "Melodies Speak Louder Than Words",
+  "Songs as Mirrors of My Soul",
+  "Composing Life's Masterpiece",
+  "Music's Embrace, My Refuge",
+  "Rhythmic Whispers, My Calling",
+  "Sculpting Sound, Crafting Dreams",
+  "Strings of Hope, Melodies of Joy",
+  "Melodies Connect, Beyond Language",
+  "Tales Woven in Harmonic Threads",
+  "Striking Chords, Shaping Destinies",
+  "Singing My Truth, Every Verse",
+  "Harmonies Heal, Notes Mend",
+  "Composing Life's Symphony",
+  "Music's Tapestry, Woven by Me",
+  "In Notes We Trust, My Melody",
+  "Rhythms Painted on the Air",
+  "Strumming the Language of Emotions",
+  "Sonic Brushstrokes of My Mind",
+  "Echoes of Dreams in Every Note",
+  "Music's Journey, Guided by Heart"
+].freeze
+
 puts "Creating profiles..."
+
+BIO = [
+  "🎵 Groove creator mixing hip-hop vibes with electronic beats. Spreading musical love worldwide. Catch me on stage for some #MusicMagic!",
+  "🎶 Soulful singer-songwriter crafting melodies that touch hearts. Let's connect through music and share some #SoulfulSounds.",
+  "🎹 Keyboard maestro jazzing up melodies and creating magic note by note. Join me on my journey as a #PianoWizard!",
+  "🎧 Electronic explorer and sound sculptor. Dive into my sonic universe, and let's vibe together through #Soundscapes.",
+  "🎻 Bridging classical and modern, I'm a violin dreamer. Let's journey through harmonies and speak the universal language of music. #StringsConnect",
+  "🎙️ Lyric weaver and rhythmic storyteller. Capturing emotions in every verse, I invite you to join me on my musical journey of #VerseVibes.",
+  "🎤 Vocal acrobat and R&B sensation. My notes touch the soul, and I welcome you to join me on this melodious ride of #SoulfulMelodies.",
+  "🕺 Dancefloor commander by night and dreamer by day. Creating beats that make you move. Let's groove together and catch the #DanceFever!",
+  "Guitar guru strumming through emotions and making melodies that resonate. Let's rock on and experience some #GuitarMagic.🎸",
+  "🎵 Melody sculptor crafting feelings into tunes. Join me in this musical odyssey as we create symphonies together. 🎹🌌 #SymphonicSoul🎧" ,
+  "Sound architect mixing and molding sonic realms. Let's explore soundscapes together and hear the world differently. #SoundExplorer",
+  "🥁 Drumbeat chaser and rhythm weaver. On a percussive soul journey. Let's find the groove together and embark on a musical #BeatQuest.",
+  "🎶 Music magician. Notes that spark imagination. Join me in this sonic adventure and let the melodies enchant you. 🎩✨ #EnchantedTunes",
+  "🎤 Vocal wanderer harmonizing emotions with lyrics that paint stories. Let's sing life's melody together in #HarmonicTales.",
+  "🎵 Songwriter's haven. Crafting dreams into lyrics. Join my melodic world and let's make music that truly matters. 📝🎶 #DreamWeaver"
+].freeze
 
 User.create!(
   first_name: 'Adrian',
@@ -94,8 +173,8 @@ User.create!(
   address: '1017HV',
   instruments: [ Instrument.find_by(name: "Vocals"), Instrument.find_by(name: "Guitar") ],
   genres: [Genre.find_by(name: "Sung poetry")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[1],
+  bio: BIO[1]
 )
 User.create!(
   first_name: 'Aleem',
@@ -108,8 +187,8 @@ User.create!(
   address: '1057NT',
   instruments: [ Instrument.find_by(name: "Saxophone"), Instrument.find_by(name: "Vocals") ],
   genres: [Genre.find_by(name: "Trad jazz")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[2],
+  bio: BIO[2]
 )
 User.create!(
   first_name: 'Callum',
@@ -122,8 +201,8 @@ User.create!(
   address: '1018CZ',
   instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Tambourine") ],
   genres: [Genre.find_by(name: "Grime")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[3],
+  bio: BIO[3]
 )
 User.create!(
   first_name: 'Caroline',
@@ -136,8 +215,8 @@ User.create!(
   address: '1065VJ',
   instruments: [ Instrument.find_by(name: "Mandolin") ],
   genres: [Genre.find_by(name: "Boogie")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[4],
+  bio: BIO[4]
 )
 User.create!(
   first_name: 'Cristian',
@@ -150,8 +229,8 @@ User.create!(
   address: '1094HL',
   instruments: [ Instrument.find_by(name: "Oboe"), Instrument.find_by(name: "Harp") ],
   genres: [Genre.find_by(name: "Avant-garde jazz")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[5],
+  bio: BIO[5]
 )
 User.create!(
   first_name: 'Daniele',
@@ -164,8 +243,8 @@ User.create!(
   address: '1016GP',
   instruments: [ Instrument.find_by(name: "Zither"), Instrument.find_by(name: "Piano") ],
   genres: [Genre.find_by(name: "Traditional folk")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[6],
+  bio: BIO[6]
 )
 User.create!(
   first_name: 'Francesco',
@@ -178,8 +257,8 @@ User.create!(
   address: '1062JB',
   instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
   genres: [Genre.find_by(name: "Progressive rock")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[7],
+  bio: BIO[7]
 )
 User.create!(
   first_name: 'Marius',
@@ -192,8 +271,8 @@ User.create!(
   address: '1015KJ',
   instruments: [ Instrument.find_by(name: "Triangle"), Instrument.find_by(name: "Accordion") ],
   genres: [Genre.find_by(name: "Ska jazz")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[8],
+  bio: BIO[8]
 )
 User.create!(
   first_name: 'Matheus',
@@ -206,8 +285,8 @@ User.create!(
   address: '1032CA',
   instruments: [ Instrument.find_by(name: "Keyboard"), Instrument.find_by(name: "Bongo") ],
   genres: [Genre.find_by(name: "Downtempo")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[9],
+  bio: BIO[9]
 )
 User.create!(
   first_name: 'Nancy',
@@ -220,8 +299,8 @@ User.create!(
   address: '1011EN',
   instruments: [ Instrument.find_by(name: "Xylophone"), Instrument.find_by(name: "Piano") ],
   genres: [Genre.find_by(name: "Jazz blues")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[10],
+  bio: BIO[10]
 )
 User.create!(
   first_name: 'Nathan',
@@ -234,8 +313,8 @@ User.create!(
   address: '1056GL',
   instruments: [ Instrument.find_by(name: "Bagpipes"), Instrument.find_by(name: "Snare") ],
   genres: [Genre.find_by(name: "Rock fusion")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[11],
+  bio: BIO[11]
 )
 User.create!(
   first_name: 'Prachi',
@@ -247,9 +326,9 @@ User.create!(
   banner_url: 'https://wallpapercave.com/wp/wp2832280.jpg',
   address: '1071ME',
   instruments: [ Instrument.find_by(name: "Cello"), Instrument.find_by(name: "Flute") ],
-  genres: [Genre.find_by(name: "Twee Pop")],
-  tagline: "",
-  bio: ""
+  genres: [Genre.find_by(name: "Twee pop")],
+  tagline: TAGLINE[12],
+  bio: BIO[12]
 )
 User.create!(
   first_name: 'Sophia',
@@ -262,8 +341,8 @@ User.create!(
   address: '1059CD',
   instruments: [ Instrument.find_by(name: "Ocarina"), Instrument.find_by(name: "Vocals") ],
   genres: [Genre.find_by(name: "Dream pop")],
-  tagline: "",
-  bio: ""
+  tagline: TAGLINE[13],
+  bio: BIO[13]
 )
 
 puts "#{User.count} profiles created"
