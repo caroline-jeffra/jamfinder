@@ -26,238 +26,244 @@ Genre.destroy_all
 UserGenre.destroy_all
 User.destroy_all
 
-# Dataset:
-CITIES = ['Amsterdam', 'Den Haag', 'Utrecht', 'Leiden', 'Rotterdam'].freeze
+INSTRUMENTS = [
+  { name: 'accordion', category: 'keyboard' },
+  { name: 'bagpipes', category: 'wind' },
+  { name: 'bongo', category: 'percussion' },
+  { name: 'cello', category: 'string' },
+  { name: 'guitar', category: 'string' },
+  { name: 'harmonica', category: 'wind' },
+  { name: 'harp', category: 'string' },
+  { name: 'keyboard', category: 'keyboard' },
+  { name: 'mandolin', category: 'string' },
+  { name: 'oboe', category: 'wind' },
+  { name: 'ocarina', category: 'wind' },
+  { name: 'piano', category: 'keyboard' },
+  { name: 'saxophone', category: 'wind' },
+  { name: 'tambourine', category: 'percussion' },
+  { name: 'triangle', category: 'percussion' },
+  { name: 'vocals', category: 'vocal' },
+  { name: 'zither', category: 'string' },
+  { name: 'xylophone', category: 'percussion' },
+  { name: 'snare', category: 'percussion' },
+  { name: 'flute', category: 'wind' }
+]
 
-CATEGORIES = {
-  "Vocal" => ["Soprano", "Tenor", "Baritone", "Alto"],
-  "Keyboard" => ["Piano", "Organ", "Synthesizer", "Electric Piano"],
-  "String" => ["Violin", "Cello", "Guitar", "Harp"],
-  "Percussion" => ["Drum Kit", "Bongo Drums", "Tambourine", "Marimba"],
-  "Wind" => ["Flute", "Saxophone", "Trumpet", "Clarinet"]
-}.freeze
+puts "Creating instruments..."
 
-GENRES = ['Rock','Pop','Hip-hop','Jazz','Classical','Electronic','R&B','Country','Reggae','Metal', 'Ska'].freeze
+INSTRUMENTS.each do |instrument|
+  Instrument.create!(instrument)
+end
 
-TAGLINE = [
-  "Serenading Souls Through Melodies",
-  "Crafting Emotions with Soundwaves",
-  "Strings and Beats, My Musical Canvas",
-  "Notes Dance, I'm the Choreographer",
-  "Musical Stories Painted in Tunes",
-  "Journeying Through Soundscapes",
-  "Feelings Echo in Every Chord",
-  "Lyrics of Life, Sung by Me",
-  "Rhythmic Pulse of My Heart",
-  "Expressing Life's Rhythm in Songs",
-  "Creating Harmony, Sharing Love",
-  "Soundscape Architect, Music's Muse",
-  "Unlocking Emotions with Harmony",
-  "Dreams Whispered Through Melodies",
-  "Chords Connect, Music Reflects",
-  "Composing Life's Symphony",
-  "Tunes Unite, Hearts Take Flight",
-  "Soulful Melodies, My Language",
-  "Notes Weave Tales of Life",
-  "Harmonious Vibes, My Passion's Drive",
-  "Playing Feelings, Crafting Sound",
-  "Musical Narratives from the Heart",
-  "Melding Beats, Shaping Souls",
-  "Strings of My Heart, Notes of My Soul",
-  "Life's Palette, Tinged with Music",
-  "Capturing Moments in Musical Frames",
-  "Strumming Dreams into Reality",
-  "Chords of Life, Music of Me",
-  "Soundtrack of Emotions, That's Me",
-  "Heartfelt Lyrics, My True Expression",
-  "Melodies Painted on Silence",
-  "Orchestrating Memories with Music",
-  "Playing Life's Tune, Note by Note",
-  "Strings Attached to My Dreams",
-  "Singing Life's Verses in Harmony",
-  "Musical Euphoria, My Way",
-  "Harmonizing the Universe Within",
-  "Emotions Resonate in Every Note",
-  "Melodies Speak Louder Than Words",
-  "Songs as Mirrors of My Soul",
-  "Composing Life's Masterpiece",
-  "Music's Embrace, My Refuge",
-  "Rhythmic Whispers, My Calling",
-  "Sculpting Sound, Crafting Dreams",
-  "Strings of Hope, Melodies of Joy",
-  "Melodies Connect, Beyond Language",
-  "Tales Woven in Harmonic Threads",
-  "Striking Chords, Shaping Destinies",
-  "Singing My Truth, Every Verse",
-  "Harmonies Heal, Notes Mend",
-  "Composing Life's Symphony",
-  "Music's Tapestry, Woven by Me",
-  "In Notes We Trust, My Melody",
-  "Rhythms Painted on the Air",
-  "Strumming the Language of Emotions",
-  "Sonic Brushstrokes of My Mind",
-  "Echoes of Dreams in Every Note",
-  "Music's Journey, Guided by Heart"
-].freeze
+puts "#{Instrument.count} instruments created"
 
-DISPLAY_NAME = ["Rockstar",
-  "Maestro",
-  "Diva",
-  "Crooner",
-  "Guitar Hero",
-  "Songbird",
-  "Beatsmith",
-  "Pianist",
-  "Bard",
-  "Fiddler",
-  "Conductor",
-  "Virtuoso",
-  "Minstrel",
-  "Jazz Cat",
-  "Mozart of __ (genre)",
-  "Harmonizer",
-  "Troubadour",
-  "Chanteuse",
-  "Beatmaker",
-  "Axeman",
-  "Frontman/Frontwoman",
-  "Siren",
-  "Rapper",
-  "Cellist",
-  "Synth Wizard",
-  "Harper",
-  "Music Maverick",
-  "Serenade Master",
-  "Drum Machine"
-].freeze
+GENRES = [
+  { name: 'Avant-garde jazz' },
+  { name: 'Boogie' },
+  { name: 'Downtempo' },
+  { name: 'Dream pop' },
+  { name: 'Grime' },
+  { name: 'Jazz blues' },
+  { name: 'Progressive rock' },
+  { name: 'Rock fusion' },
+  { name: 'Ska jazz' },
+  { name: 'Sung poetry' },
+  { name: 'Trad jazz' },
+  { name: 'Traditional folk' },
+  { name: 'Twee Pop' }
+]
 
-BIO = [
-  "🎵 Groove creator mixing hip-hop vibes with electronic beats. Spreading musical love worldwide. Catch me on stage for some #MusicMagic!",
-  "🎶 Soulful singer-songwriter crafting melodies that touch hearts. Let's connect through music and share some #SoulfulSounds.",
-  "🎹 Keyboard maestro jazzing up melodies and creating magic note by note. Join me on my journey as a #PianoWizard!",
-  "🎧 Electronic explorer and sound sculptor. Dive into my sonic universe, and let's vibe together through #Soundscapes.",
-  "🎻 Bridging classical and modern, I'm a violin dreamer. Let's journey through harmonies and speak the universal language of music. #StringsConnect",
-  "🎙️ Lyric weaver and rhythmic storyteller. Capturing emotions in every verse, I invite you to join me on my musical journey of #VerseVibes.",
-  "🎤 Vocal acrobat and R&B sensation. My notes touch the soul, and I welcome you to join me on this melodious ride of #SoulfulMelodies.",
-  "🕺 Dancefloor commander by night and dreamer by day. Creating beats that make you move. Let's groove together and catch the #DanceFever!",
-  "Guitar guru strumming through emotions and making melodies that resonate. Let's rock on and experience some #GuitarMagic.🎸",
-  "🎵 Melody sculptor crafting feelings into tunes. Join me in this musical odyssey as we create symphonies together. 🎹🌌 #SymphonicSoul🎧" ,
-  "Sound architect mixing and molding sonic realms. Let's explore soundscapes together and hear the world differently. #SoundExplorer",
-  "🥁 Drumbeat chaser and rhythm weaver. On a percussive soul journey. Let's find the groove together and embark on a musical #BeatQuest.",
-  "🎶 Music magician. Notes that spark imagination. Join me in this sonic adventure and let the melodies enchant you. 🎩✨ #EnchantedTunes",
-  "🎤 Vocal wanderer harmonizing emotions with lyrics that paint stories. Let's sing life's melody together in #HarmonicTales.",
-  "🎵 Songwriter's haven. Crafting dreams into lyrics. Join my melodic world and let's make music that truly matters. 📝🎶 #DreamWeaver"
-].freeze
+puts "Creating genres..."
 
-# FACES
-AVATAR_URL = [
-  'https://kitt.lewagon.com/placeholder/users/cveneziani',
-  'https://kitt.lewagon.com/placeholder/users/arthur-littm',
-  'https://kitt.lewagon.com/placeholder/users/sarahlafer',
-  'https://kitt.lewagon.com/placeholder/users/krokrob'
-].freeze
+GENRES.each do |genre|
+  Genre.create!(genre)
+end
 
-INSTRUMENTS_NAME = [
-  "Acoustic Guitar", "Electric Guitar", "Piano", "Violin", "Flute",
-  "Drum Kit", "Saxophone", "Trumpet", "Cello", "Clarinet",
-  "Bass Guitar", "Trombone", "Harp", "Accordion", "Banjo",
-  "Ukulele", "French Horn", "Xylophone", "Oboe", "Synthesizer",
-  "Bagpipes", "Didgeridoo", "Mandolin", "Sitar", "Bongo Drums"
-].freeze
+puts "#{Genre.count} genres created"
 
-BANNERS = [
-  'https://www.chuppspianos.com/wp-content/uploads/2021/05/Steinway-Sons-Model-45-Upright-Vertical-Piano-356674-Art-Case-Crown-Jewel-Piano.jpg',
-  'https://carusopianos.com/images/stories/virtuemart/product/yamaha_dgh1b_5319498_2__1682098959_400.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/9/90/Boesendorfer-5075415.jpg',
-  'https://img.kyodonews.net/english/public/images/posts/5c9687645d0afc13a3f8a7a0a41d0ea3/image_l.jpeg',
-  'https://images.reverb.com/image/upload/s--D9BPS13I--/f_auto,t_supersize/v1617023779/pfoxkc1giu4fybagqvdy.jpg',
-  'https://www.drumazon.com/cdn/shop/products/PEARL-MASTERWORKS-5-PIECE-DRUM-KIT-IRIDECENT-WHITE-SPARKLE-GOLD-HARDWARE-DRUMAZON_01_1024x1024.jpg?v=1600385701',
-  'https://www.hornhospital.com/main/wp-content/uploads/Yamaha-0586.jpg',
-  'https://i.ebayimg.com/images/g/mz0AAOSwQThhHEXh/s-l1200.jpg',
-  'https://images.reverb.com/image/upload/s--FWsk9fMz--/f_auto,t_large/v1630085214/vtdgahn6j7coqbtg4dxr.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/4/40/Andrea_Amati_violin_-_Met_Museum_NY.jpg?Amati1160988356',
-  'https://cdn.shoplightspeed.com/shops/632400/files/38628731/holton-used-holton-h180-double-french-horn.jpg',
-  'https://i.ebayimg.com/images/g/XqgAAOSwa~5kdrRK/s-l1200.webp',
-  'https://zingendesnaar.nl/media/catalog/product/cache/1cda160bbd810bf3aa1b6126fd0b1bbc/s/a/salvi_diana_walnoot.jpg',
-  'https://dirkwitte.nl/cdn/shop/products/DSC04103_1024x1024.jpg?v=1650974707',
-  'https://www.woodstockguitars.dk/wp-content/uploads/2020/10/Fender_Stratocaster_Sunburst_1.jpg',
-  'https://cdn.webshopapp.com/shops/229736/files/400505282/fender-fender-custom-shop-52-mod-journeyman-teleca.jpg',
-  'https://www.stars-music.nl/medias/gibson/sg-standard-1961-faded-maestro-vibrola-original-2h-trem-rw-hd-7-192081.jpg',
-  'https://max.guitars/media/catalog/product/cache/55c72fef4415145db30bd2dcfee62df6/a/r/art-20602_av_ii_66_jazz_bass_rw_wt3tb_art-20602-31173.jpg',
-  'https://max.guitars/media/catalog/product/cache/55c72fef4415145db30bd2dcfee62df6/0/1/0190160806_fen_ins_frt_1_rr.jpg',
-  'https://guitargeargiveaway.co.uk/wp-content/uploads/2023/03/Gibson-Thunderbird-Bass-in-Tobacco-Burst-01.jpg',
-  'https://gsquid.b-cdn.net/wp-content/uploads/2022/04/Ibanez%20SR500%20(2).jpg',
-  'https://dijkmansmuziek.nl/cdn/shop/files/IMG_6544_c51d7acb-3c0f-4d95-8e01-50af6c29659d.jpg?v=1686826798&width=480',
-].freeze
+puts "Creating profiles..."
 
-# Admin user here, do not delete from seed
-puts 'Making admin user...'
-User.new(
-  email: 'admin@email.com',
+User.create!(
+  first_name: 'Adrian',
+  last_name: 'Placeholder',
+  email: 'Adrian@email.com',
   password: 'password',
-  first_name: 'Admin',
-  last_name: 'Admin',
-  display_name: 'Admin',
-  address: 'Amsterdam',
-  bio: 'The admin...',
-  tagline: 'Guess who admin stuff',
-  avatar_url: AVATAR_URL.sample,
-  banner_url: BANNERS.sample
-).save
+  display_name: 'Adrian',
+  avatar_url: 'https://avatars.githubusercontent.com/u/139060899?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp11903020.jpg',
+  address: '1017HV',
+  instruments: [ Instrument.find_by(name: "Vocals"), Instrument.find_by(name: "Guitar") ],
+  genres: [Genre.find_by(name: "Sung poetry")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Aleem',
+  last_name: 'Placeholder',
+  email: 'Aleem@email.com',
+  password: 'password',
+  display_name: 'Aleem',
+  avatar_url: 'https://avatars.githubusercontent.com/u/28513224?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp10347654.jpg',
+  address: '1057NT',
+  instruments: [ Instrument.find_by(name: "Saxophone"), Instrument.find_by(name: "Vocals") ],
+  genres: [Genre.find_by(name: "Trad jazz")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Callum',
+  last_name: 'Placeholder',
+  email: 'Callum@email.com',
+  password: 'password',
+  display_name: 'Callum',
+  avatar_url: 'https://avatars.githubusercontent.com/u/116356064?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp3454635.jpg',
+  address: '1018CZ',
+  instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Tambourine") ],
+  genres: [Genre.find_by(name: "Grime")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Caroline',
+  last_name: 'Placeholder',
+  email: 'Caroline@email.com',
+  password: 'password',
+  display_name: 'Caroline',
+  avatar_url: 'https://avatars.githubusercontent.com/u/138127305?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4134869.jpg',
+  address: '1065VJ',
+  instruments: [ Instrument.find_by(name: "Mandolin") ],
+  genres: [Genre.find_by(name: "Boogie")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Cristian',
+  last_name: 'Placeholder',
+  email: 'Cristian@email.com',
+  password: 'password',
+  display_name: 'Cristian',
+  avatar_url: 'https://avatars.githubusercontent.com/u/138874915?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4135070.jpg',
+  address: '1094HL',
+  instruments: [ Instrument.find_by(name: "Oboe"), Instrument.find_by(name: "Harp") ],
+  genres: [Genre.find_by(name: "Avant-garde jazz")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Daniele',
+  last_name: 'Placeholder',
+  email: 'Daniele@email.com',
+  password: 'password',
+  display_name: 'Daniele',
+  avatar_url: 'https://avatars.githubusercontent.com/u/79024584?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4136074.jpg',
+  address: '1016GP',
+  instruments: [ Instrument.find_by(name: "Zither"), Instrument.find_by(name: "Piano") ],
+  genres: [Genre.find_by(name: "Traditional folk")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Francesco',
+  last_name: 'Placeholder',
+  email: 'Francesco@email.com',
+  password: 'password',
+  display_name: 'Francesco',
+  avatar_url: 'https://avatars.githubusercontent.com/u/5818940?v=4',
+  banner_url: 'https://wallpapercave.com/wp/HTiPvGX.jpg',
+  address: '1062JB',
+  instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
+  genres: [Genre.find_by(name: "Progressive rock")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Marius',
+  last_name: 'Placeholder',
+  email: 'Marius@email.com',
+  password: 'password',
+  display_name: 'Marius',
+  avatar_url: 'https://avatars.githubusercontent.com/u/138881754?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4132920.jpg',
+  address: '1015KJ',
+  instruments: [ Instrument.find_by(name: "Triangle"), Instrument.find_by(name: "Accordion") ],
+  genres: [Genre.find_by(name: "Ska jazz")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Matheus',
+  last_name: 'Placeholder',
+  email: 'Matheus@email.com',
+  password: 'password',
+  display_name: 'Matheus',
+  avatar_url: 'https://avatars.githubusercontent.com/u/78371638?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4133097.jpg',
+  address: '1032CA',
+  instruments: [ Instrument.find_by(name: "Keyboard"), Instrument.find_by(name: "Bongo") ],
+  genres: [Genre.find_by(name: "Downtempo")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Nancy',
+  last_name: 'Placeholder',
+  email: 'Nancy@email.com',
+  password: 'password',
+  display_name: 'Nancy',
+  avatar_url: 'https://avatars.githubusercontent.com/u/64468956?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4134229.jpg',
+  address: '1011EN',
+  instruments: [ Instrument.find_by(name: "Xylophone"), Instrument.find_by(name: "Piano") ],
+  genres: [Genre.find_by(name: "Jazz blues")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Nathan',
+  last_name: 'Placeholder',
+  email: 'Nathan@email.com',
+  password: 'password',
+  display_name: 'Nathan',
+  avatar_url: 'https://ca.slack-edge.com/T02NE0241-U05FRFGF7K9-d997ff9f3224-512',
+  banner_url: 'https://wallpapercave.com/wp/wp4132927.jpg',
+  address: '1056GL',
+  instruments: [ Instrument.find_by(name: "Bagpipes"), Instrument.find_by(name: "Snare") ],
+  genres: [Genre.find_by(name: "Rock fusion")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Prachi',
+  last_name: 'Placeholder',
+  email: 'Prachi@email.com',
+  password: 'password',
+  display_name: 'Prachi',
+  avatar_url: 'https://avatars.githubusercontent.com/u/126870650?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp2832280.jpg',
+  address: '1071ME',
+  instruments: [ Instrument.find_by(name: "Cello"), Instrument.find_by(name: "Flute") ],
+  genres: [Genre.find_by(name: "Twee Pop")],
+  tagline: "",
+  bio: ""
+)
+User.create!(
+  first_name: 'Sophia',
+  last_name: 'Placeholder',
+  email: 'Sophia@email.com',
+  password: 'password',
+  display_name: 'Sophia',
+  avatar_url: 'https://avatars.githubusercontent.com/u/138873317?v=4',
+  banner_url: 'https://wallpapercave.com/wp/wp4135219.jpg',
+  address: '1059CD',
+  instruments: [ Instrument.find_by(name: "Ocarina"), Instrument.find_by(name: "Vocals") ],
+  genres: [Genre.find_by(name: "Dream pop")],
+  tagline: "",
+  bio: ""
+)
 
-puts 'Creating users...'
-
-
-# The following are normal users:
-7.times do |i|
-  User.new(
-    email: "user#{i}@email.com",
-    password: 'password',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    display_name: DISPLAY_NAME.sample,
-    address: CITIES.sample,
-    bio: BIO.sample,
-    tagline: TAGLINE.sample,
-    avatar_url: AVATAR_URL.sample,
-    banner_url: BANNERS.sample
-  ).save
-end
-
-puts "Seeded #{User.count} users."
-
-puts 'Creating genres...'
-
-8.times do
-  Genre.new(
-    name: GENRES.sample
-  ).save
-end
-
-puts 'Relating genres to users...'
-
-16.times do
-  UserGenre.new(
-    genre_id: Genre.all.sample.id,
-    user_id: User.all.sample.id
-  ).save
-end
-
-puts 'Creating instruments...'
-
-8.times do
-  categorie = CATEGORIES.keys.sample
-  Instrument.new(
-    category: categorie,
-    name: CATEGORIES[categorie].sample
-  ).save
-end
-
-puts 'Relating instruments to users...'
-
-16.times do
-  UserInstrument.new(
-    instrument_id: Instrument.all.sample.id,
-    user_id: User.all.sample.id
-  ).save
-end
+puts "#{User.count} profiles created"
