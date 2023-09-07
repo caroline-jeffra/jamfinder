@@ -42,7 +42,7 @@ INSTRUMENTS = [
   { name: 'saxophone', category: 'wind' },
   { name: 'tambourine', category: 'percussion' },
   { name: 'triangle', category: 'percussion' },
-  { name: 'vocals', category: 'vocals' },
+  { name: 'vocals', category: 'vocal' },
   { name: 'zither', category: 'string' },
   { name: 'xylophone', category: 'percussion' },
   { name: 'snare', category: 'percussion' },
@@ -58,18 +58,18 @@ end
 puts "#{Instrument.count} instruments created"
 
 GENRES = [
+  { name: 'Avant-garde jazz' },
+  { name: 'Boogie' },
+  { name: 'Downtempo' },
   { name: 'Dream pop' },
+  { name: 'Grime' },
+  { name: 'Jazz blues' },
+  { name: 'Progressive rock' },
+  { name: 'Rock fusion' },
+  { name: 'Ska jazz' },
   { name: 'Sung poetry' },
   { name: 'Trad jazz' },
-  { name: 'Indie folk' },
-  { name: 'Boogie' },
-  { name: 'Avant-garde jazz' },
   { name: 'Traditional folk' },
-  { name: 'Progressive rock' },
-  { name: 'Ska jazz' },
-  { name: 'Downtempo' },
-  { name: 'Jazz blues' },
-  { name: 'Rock fusion' },
   { name: 'Twee Pop' }
 ]
 
@@ -92,7 +92,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/139060899?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp11903020.jpg',
   address: '1017HV',
-  instruments: [ Instrument.find_by(name: "vocals"), Instrument.find_by(name: "guitar") ],
+  instruments: [ Instrument.find_by(name: "Vocals"), Instrument.find_by(name: "Guitar") ],
+  genres: [Genre.find_by(name: "Sung poetry")],
   tagline: "",
   bio: ""
 )
@@ -105,7 +106,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/28513224?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp10347654.jpg',
   address: '1057NT',
-  instruments: [ Instrument.find_by(name: "saxophone"), Instrument.find_by(name: "vocals") ],
+  instruments: [ Instrument.find_by(name: "Saxophone"), Instrument.find_by(name: "Vocals") ],
+  genres: [Genre.find_by(name: "Trad jazz")],
   tagline: "",
   bio: ""
 )
@@ -117,8 +119,9 @@ User.create!(
   display_name: 'Callum',
   avatar_url: 'https://avatars.githubusercontent.com/u/116356064?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp3454635.jpg',
-  address: '1015KJ',
-  instruments: [ Instrument.find_by(name: "harmonica"), Instrument.find_by(name: "tambourine") ],
+  address: '1018CZ',
+  instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Tambourine") ],
+  genres: [Genre.find_by(name: "Grime")],
   tagline: "",
   bio: ""
 )
@@ -130,8 +133,9 @@ User.create!(
   display_name: 'Caroline',
   avatar_url: 'https://avatars.githubusercontent.com/u/138127305?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4134869.jpg',
-  address: '1014EE',
-  instruments: [ Instrument.find_by(name: "mandolin") ],
+  address: '1065VJ',
+  instruments: [ Instrument.find_by(name: "Mandolin") ],
+  genres: [Genre.find_by(name: "Boogie")],
   tagline: "",
   bio: ""
 )
@@ -143,8 +147,9 @@ User.create!(
   display_name: 'Cristian',
   avatar_url: 'https://avatars.githubusercontent.com/u/138874915?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4135070.jpg',
-  address: '1015FF',
-  instruments: [ Instrument.find_by(name: "oboe"), Instrument.find_by(name: "harp") ],
+  address: '1094HL',
+  instruments: [ Instrument.find_by(name: "Oboe"), Instrument.find_by(name: "Harp") ],
+  genres: [Genre.find_by(name: "Avant-garde jazz")],
   tagline: "",
   bio: ""
 )
@@ -157,7 +162,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/79024584?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4136074.jpg',
   address: '1016GP',
-  instruments: [ Instrument.find_by(name: "zither"), Instrument.find_by(name: "piano") ],
+  instruments: [ Instrument.find_by(name: "Zither"), Instrument.find_by(name: "Piano") ],
+  genres: [Genre.find_by(name: "Traditional folk")],
   tagline: "",
   bio: ""
 )
@@ -170,7 +176,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/5818940?v=4',
   banner_url: 'https://wallpapercave.com/wp/HTiPvGX.jpg',
   address: '1062JB',
-  instruments: [ Instrument.find_by(name: "guitar"), Instrument.find_by(name: "harmonica") ],
+  instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
+  genres: [Genre.find_by(name: "Progressive rock")],
   tagline: "",
   bio: ""
 )
@@ -182,8 +189,9 @@ User.create!(
   display_name: 'Marius',
   avatar_url: 'https://avatars.githubusercontent.com/u/138881754?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4132920.jpg',
-  address: '1018EF',
-  instruments: [ Instrument.find_by(name: "triangle"), Instrument.find_by(name: "accordion") ],
+  address: '1015KJ',
+  instruments: [ Instrument.find_by(name: "Triangle"), Instrument.find_by(name: "Accordion") ],
+  genres: [Genre.find_by(name: "Ska jazz")],
   tagline: "",
   bio: ""
 )
@@ -195,8 +203,9 @@ User.create!(
   display_name: 'Matheus',
   avatar_url: 'https://avatars.githubusercontent.com/u/78371638?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4133097.jpg',
-  address: '1019CC',
-  instruments: [ Instrument.find_by(name: "keyboard"), Instrument.find_by(name: "bongo") ],
+  address: '1032CA',
+  instruments: [ Instrument.find_by(name: "Keyboard"), Instrument.find_by(name: "Bongo") ],
+  genres: [Genre.find_by(name: "Downtempo")],
   tagline: "",
   bio: ""
 )
@@ -209,7 +218,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/64468956?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4134229.jpg',
   address: '1011EN',
-  instruments: [ Instrument.find_by(name: "xylophone"), Instrument.find_by(name: "piano") ],
+  instruments: [ Instrument.find_by(name: "Xylophone"), Instrument.find_by(name: "Piano") ],
+  genres: [Genre.find_by(name: "Jazz blues")],
   tagline: "",
   bio: ""
 )
@@ -222,7 +232,8 @@ User.create!(
   avatar_url: 'https://ca.slack-edge.com/T02NE0241-U05FRFGF7K9-d997ff9f3224-512',
   banner_url: 'https://wallpapercave.com/wp/wp4132927.jpg',
   address: '1056GL',
-  instruments: [ Instrument.find_by(name: "bagpipes"), Instrument.find_by(name: "snare") ],
+  instruments: [ Instrument.find_by(name: "Bagpipes"), Instrument.find_by(name: "Snare") ],
+  genres: [Genre.find_by(name: "Rock fusion")],
   tagline: "",
   bio: ""
 )
@@ -234,8 +245,9 @@ User.create!(
   display_name: 'Prachi',
   avatar_url: 'https://avatars.githubusercontent.com/u/126870650?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp2832280.jpg',
-  address: '1014CD',
-  instruments: [ Instrument.find_by(name: "cello"), Instrument.find_by(name: "flute") ],
+  address: '1071ME',
+  instruments: [ Instrument.find_by(name: "Cello"), Instrument.find_by(name: "Flute") ],
+  genres: [Genre.find_by(name: "Twee Pop")],
   tagline: "",
   bio: ""
 )
@@ -248,7 +260,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138873317?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4135219.jpg',
   address: '1059CD',
-  instruments: [ Instrument.find_by(name: "ocarina"), Instrument.find_by(name: "vocals") ],
+  instruments: [ Instrument.find_by(name: "Ocarina"), Instrument.find_by(name: "Vocals") ],
+  genres: [Genre.find_by(name: "Dream pop")],
   tagline: "",
   bio: ""
 )
