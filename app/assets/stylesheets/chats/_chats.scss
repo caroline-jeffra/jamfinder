@@ -2,6 +2,17 @@
   overflow: scroll;
 }
 
+.chat-list-summary, .chat-list-timestamps {
+  padding-left: 0.5rem;
+
+  h4 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+
 .chat::-webkit-scrollbar, .chat-list::-webkit-scrollbar, .messages::-webkit-scrollbar{
     display: none;
   }
@@ -39,12 +50,6 @@
 
 .message-content {
   font-size: 1.8rem;
-}
-
-.message-timestamp {
-  color: $secondary;
-  font-size: 1.5rem;
-  bottom: -2.0rem;
 }
 
 .sender-style {
