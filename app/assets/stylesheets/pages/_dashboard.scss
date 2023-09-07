@@ -2,6 +2,9 @@
   border-top: .7rem solid $accent;
   border-radius: .3rem;
   box-shadow: .1rem .05rem .3rem $body-color;
+  width: 6.1rem;
+  min-width: 6.1rem;
+  justify-content: center;
 }
 
 .month-units > h3 {
