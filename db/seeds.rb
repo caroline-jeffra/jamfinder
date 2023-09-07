@@ -26,7 +26,6 @@ Genre.destroy_all
 UserGenre.destroy_all
 User.destroy_all
 
-
 INSTRUMENTS = [
   { name: 'accordion', category: 'keyboard' },
   { name: 'bagpipes', category: 'wind' },
