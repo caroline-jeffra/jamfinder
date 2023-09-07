@@ -4,10 +4,10 @@
   </div>
   <div class="jam-info d-flex flex-column ps-4">
     <div class="jam-participant">
-      <h4>Jam with <%= jam.users.last.display_name %></h4>
+      <h4>Jam with <%= jam.users.where.not(id: current_user.id).last.display_name %></h4>
     </div>
     <div class="jam-details d-flex flex-row">
-      <div class="jam-time pe-2"><p><%= jam.date.hour %>:<%= jam.date.min %></p></div>
+      <div class="jam-time pe-2"><p><%= "%02d" % jam.date.hour %>:<%= "%02d" % jam.date.min %></p></div>
       <div class="jam-place"><p><%= jam.address %></p></div>
     </div>
   </div>
