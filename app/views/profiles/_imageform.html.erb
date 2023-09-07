@@ -2,23 +2,17 @@
   <div class="">
     <%= simple_form_for(user, url: update_cl_images_path, method: :patch) do |f|%>
     <%= f.input :cl_images, as: :file, input_html: { class: 'd-none', multiple: true },label_html: { class: 'upload-photo'}, label: '+', id: 'image-upload-input'%>
-    <%= f.submit 'Save', id: 'submit-button' %>
+    <%= f.submit 'Save', id: 'submit-button', class: 'd-none' %>
     <% end %>
   </div>
 </div>
 
 <script>
-  $(document).ready(function () {
-    console.log("antes")
-    const fileInput = $("#image-upload-input");
-    const submitButton = $("#submit-button");
-    console.log("active")
-    fileInput.change(function () {
-      if (fileInput[0].files.length > 0) {
-        // Files were selected, so show and click the submit button
-        submitButton.css("display", "block"); // Show the submit button
-        submitButton.click(); // Simulate a click on the submit button
+    const fileInput = document.getElementById("user_cl_images");
+    const submitButton = document.getElementById("submit-button");
+    fileInput.addEventListener('change', (e) => {
+      if (fileInput.value.length > 0) {
+        submitButton.click();
       }
     });
-  });
 </script>
