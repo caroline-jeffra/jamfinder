@@ -58,5 +58,6 @@ p {
 }
 
 .text-pale {
-  color: $primary; 
+  color: $primary;
+  text-shadow: .2rem .2rem .3rem $secondary;
 }
