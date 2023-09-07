@@ -16,12 +16,12 @@ class JamsController < ApplicationController
           flash.alert = "There was an error saving your jam to your profile. Please try again."
         end
         redirect_to chats_path(recipient: recipient_id)
+        return
       end
     else
       # TODO: show form errors
       flash.alert = "Please enter a date and time in the future."
     end
-
   end
 
   private
