@@ -30,6 +30,12 @@
   overflow: scroll;
 }
 
+.message-timestamp {
+  color: $secondary;
+  font-size: 1.5rem;
+  bottom: -2.0rem;
+}
+
 .message-header {
   background-color: $primary;
 }
