@@ -13,9 +13,9 @@
     </div>
     <div class="container">
       <h4 class="py-1"><%= user.tagline %></h4>
-      <div class="d-flex flex-row">
+      <div class="d-flex flex-row" style="position: absolute; top: 22.8rem; right: 0; margin-right: 1rem;">
         <% user.categories_icons.each do |cloudinary_id| %>
-          <i class="px-3"><%= image_tag("#{cloudinary_id}.png", width: 22, height: 22, crop: :fit) %></i>
+          <i class="px-2"><%= image_tag("#{cloudinary_id}.png", width: 22, height: 22, crop: :fit) %></i>
         <% end %>
       </div>
     </div>
