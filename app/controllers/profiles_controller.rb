@@ -48,7 +48,8 @@ class ProfilesController < ApplicationController
   end
 
   def update_cl_images
-    current_user.update(user_images_params)
+    user_images_params
+    current_user.cl_images.attach(params[:user][:cl_images]) if params.dig(:user, :cl_images).present?
     redirect_to profile_path(current_user)
   end
 
@@ -62,7 +63,4 @@ class ProfilesController < ApplicationController
     params.require(:user).permit(cl_images: [])
   end
 
-  def user_audios_params
-    params.require(:user).permit(cl_audios: [])
-  end
 end
