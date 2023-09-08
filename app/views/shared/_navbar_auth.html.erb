@@ -1,0 +1,32 @@
+<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid align-items-start mx-1">
+    <h2 class="navbar-brand text-primary pt-4"><%= link_to "jamfinder", root_path %></h2>
+    <div>
+      <div class="d-flex mt-1">
+        <div class="mt-2">
+          <%= link_to chats_path do %>
+            <i class="fa-regular fa-paper-plane nav-link pe-4"></i>
+          <% end %>
+        </div>
+        <div class="avatar-navbar">
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <%= image_tag current_user.avatar_url, class: "avatar" %>
+          </button>
+        </div>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex justify-content-end">
+          <ul class="navbar-nav d-flex me-3">
+            <li class="nav-item dropdown">
+              <%= link_to "Dashboard", profile_path(current_user), class: "dropdown-item text-right" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-right" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

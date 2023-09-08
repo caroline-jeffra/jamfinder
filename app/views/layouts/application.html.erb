@@ -31,7 +31,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% if user_signed_in? %>
+      <%= render "shared/navbar_auth" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <%= render "shared/flashes" %>
     <%= yield %>
   </body>
