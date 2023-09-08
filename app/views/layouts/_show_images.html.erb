@@ -4,14 +4,14 @@
   </div>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide row">
-        <% if current_user == @profile %>
+      <% if current_user == @profile %>
+        <div class="swiper-slide row">
           <i class="swiper-slide"> <%= render "imageform", user: @profile %> </i>
-        <% end %>
-      </div>
-        <% @profile.cl_images.reverse().each do |image| %>
-          <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, class:"images_cloudinary", crop: :fill) %> </i>
-        <% end %>
+        </div>
+      <% end %>
+      <% @profile.cl_images.reverse().each do |image| %>
+        <i class="images_cloudinary swiper-slide"><%= cl_image_tag(image.key, class:"images_cloudinary", crop: :fill) %> </i>
+      <% end %>
     </div>
   </div>
 </div>
