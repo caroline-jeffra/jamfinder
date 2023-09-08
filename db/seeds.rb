@@ -46,6 +46,7 @@ INSTRUMENTS = [
   { name: 'zither', category: 'string' },
   { name: 'xylophone', category: 'percussion' },
   { name: 'snare', category: 'percussion' },
+  { name: 'trombone', category: 'wind' },
   { name: 'flute', category: 'wind' }
 ]
 
@@ -213,9 +214,9 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138127305?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4134869.jpg',
   address: 'Thomas van Erpehof, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Mandolin") ],
+  instruments: [ Instrument.find_by(name: "Mandolin"), Instrument.find_by(name: "Trombone") ],
   genres: [Genre.find_by(name: "Boogie")],
-  tagline: "They say goldfish have no memory. I guess theirs lives are much like mine",
+  tagline: "They say goldfish have no memory. I guess their lives are much like mine",
   bio: "I'm an eclectic person with electic taste. I love all sorts of music and playing it is a great hobby - listening too! Looking forward to finding jam buddies!"
 )
 Audio.create(url: "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fogataken%2Fjapanese-mellow-ska-mix%2F", user_id: User.last.id)
@@ -259,7 +260,7 @@ User.create!(
   instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
   genres: [Genre.find_by(name: "Progressive rock")],
   tagline: "I hope you like jammin' too!",
-  bio: BIO[7]
+  bio: "Anything from Classic Rock all the way to Fusion Funk, as long as the guitars are singing I'm gonna love it. Nothing beats a nice jam in the park!"
 )
 Audio.create(url: 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FDrJimmy%2Fdr-jimmy-jazzs-guitar-greats-the-lost-set%2F', user_id: User.last.id)
 
