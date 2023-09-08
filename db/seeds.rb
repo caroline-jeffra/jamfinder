@@ -62,7 +62,7 @@ GENRES = [
   { name: 'Boogie' },
   { name: 'Downtempo' },
   { name: 'Dream pop' },
-  { name: 'Grime' },
+  { name: 'Classical grime' },
   { name: 'Jazz blues' },
   { name: 'Progressive rock' },
   { name: 'Rock fusion' },
@@ -199,9 +199,9 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/116356064?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp3454635.jpg',
   address: 'Gibboneiland, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Tambourine") ],
-  genres: [Genre.find_by(name: "Grime")],
-  tagline: TAGLINE[3],
+  instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Guitar") ],
+  genres: [Genre.find_by(name: "Classical grime")],
+  tagline: "Speaking the language of music - do you want to have a chat?",
   bio: BIO[3]
 )
 User.create!(
@@ -215,9 +215,10 @@ User.create!(
   address: 'Thomas van Erpehof, Amsterdam',
   instruments: [ Instrument.find_by(name: "Mandolin") ],
   genres: [Genre.find_by(name: "Boogie")],
-  tagline: TAGLINE[4],
-  bio: BIO[4]
+  tagline: "They say goldfish have no memory. I guess theirs lives are much like mine",
+  bio: "I'm an eclectic person with electic taste. I love all sorts of music and playing it is a great hobby - listening too! Looking forward to finding jam buddies!"
 )
+Audio.create(url: "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fogataken%2Fjapanese-mellow-ska-mix%2F", user_id: User.last.id)
 User.create!(
   first_name: 'Cristian',
   last_name: 'Placeholder',
