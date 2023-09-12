@@ -1,7 +1,15 @@
 # Jamfinder
 ## About the App
+
+<p>Jamfinder is a PWA which connects musicians to one another. They can search profiles and then use in-app chat to find common ground with others and schedule jam sessions. Once scheduled, the jams are visible in the user’s dashboard.</p>
+<p>This app was developed during Le Wagon’s full time web dev bootcamp. It was designed, developed, demoed and deployed within the final two weeks of the course.</p>
+
 ## The Team
+
+<a href="https://www.linkedin.com/in/cjeffra/">Caroline Jeffra</a> | <a href="https://github.com/francescozz">Francesco Zeno Zencovich</a> | <a href="https://github.com/T-Lucio">Thiago Souza</a>
+
 ## The Tech Stack
+
 <p align="left">
   <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" alt="ruby" width="40" height="40"/> </a>
   <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" width="40" height="40"/> </a>
@@ -16,5 +24,3 @@
 </p>
 
 ## The Timeline
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
