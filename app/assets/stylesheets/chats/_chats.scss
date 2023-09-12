@@ -61,7 +61,7 @@
 .sender-style {
   color: $primary;
   background-color: $secondary;
-  paddling-left: 40%;
+  max-width: 60%;
   text-align: end;
   .message-timestamp {
     position: absolute;
@@ -72,7 +72,7 @@
 .receiver-style {
   color: $primary;
   background-color: $accent;
-  paddling-right: 40%;
+  max-width: 60%;
   .message-timestamp {
     position: absolute;
     left: 1.0rem;
