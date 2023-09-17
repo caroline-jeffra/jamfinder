@@ -6,7 +6,7 @@
 
 ## The Team
 
-<a href="https://www.linkedin.com/in/cjeffra/">Caroline Jeffra</a> | <a href="https://github.com/francescozz">Francesco Zeno Zencovich</a> | <a href="https://github.com/T-Lucio">Thiago Souza</a>
+<a href="https://www.linkedin.com/in/cjeffra/">Caroline Jeffra</a> | <a href="https://github.com/francescozz">Francesco Zeno Zencovich</a> | <a href="https://github.com/souza-t">Thiago Souza</a>
 
 ## The Tech Stack
 
