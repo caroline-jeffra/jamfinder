@@ -1,18 +1,20 @@
-<% if current_user == @profile %>
-  <div class="title-center background-secondary pt-4 py-3 m-0 sticky-class sticky-class-2">
-    <%= link_to "Profile", profile_path(current_user), class: "btn btn-primary col-4 mx-3" %>
-    <%= link_to "Jams", dashboard_path, class: "btn btn-outline-primary col-4 mx-3" %>
-  </div>
-<% else %>
-  <div class="title-center background-primary pt-4 py-3 m-0 sticky-class sticky-class-2 flex-end">
-    <i 
-      class="fa-solid fa-arrow-left" 
-      style="position: absolute; left: 7.5px; top: 18.75px; color: #A40055; font-size: 2.8rem; margin-right: 1.8rem;"
-      onClick="window.location.href = localStorage.getItem('returnURL')">
-    </i>
-    <%= link_to "Message", chats_path(recipient: params[:id]), class: "btn btn-primary col-4 mx-3" %>
-  </div>
-<% end %>
+<div class="container">
+  <% if current_user == @profile %>
+    <div class="title-center background-secondary pt-4 py-3 m-0 sticky-class sticky-class-2">
+      <%= link_to "Profile", profile_path(current_user), class: "btn btn-primary col-4 mx-3" %>
+      <%= link_to "Jams", dashboard_path, class: "btn btn-outline-primary col-4 mx-3" %>
+    </div>
+  <% else %>
+    <div class="title-center background-primary pt-4 py-3 m-0 sticky-class sticky-class-2 flex-end">
+      <i
+        class="fa-solid fa-arrow-left"
+        style="position: absolute; left: 7.5px; top: 18.75px; color: #A40055; font-size: 2.8rem; margin-right: 1.8rem;"
+        onClick="window.location.href = localStorage.getItem('returnURL')">
+      </i>
+      <%= link_to "Message", chats_path(recipient: params[:id]), class: "btn btn-primary col-4 mx-3" %>
+    </div>
+  <% end %>
+</div>
 <div class="container scrollable" data-controller="popover">
   <%= render "layouts/show_card", user: @profile %>
   <div class="container">
