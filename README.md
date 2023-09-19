@@ -2,7 +2,7 @@
 ## About the App
 
 <p>Jamfinder is a PWA which connects musicians to one another. They can search profiles and then use in-app chat to find common ground with others and schedule jam sessions. Once scheduled, the jams are visible in the user’s dashboard.</p>
-<p>This app was developed during Le Wagon’s full time web dev bootcamp. It was designed, developed, demoed and deployed within the final two weeks of the course.</p>
+<p>This app was developed during Le Wagon’s full time web dev bootcamp. It was designed, developed, demoed and deployed within the final two weeks of the course. <a href="https://www.jamfinder.live">Visit Jamfinder</a></p>
 
 ## The Team
 
