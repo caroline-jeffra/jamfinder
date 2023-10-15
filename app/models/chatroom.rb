@@ -1,30 +1,30 @@
 class Chatroom < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :users, through: :user_chatrooms
-  before_validation :sort_and_uniquify_participant_ids
+  # before_validation :sort_and_uniquify_participant_ids
 
-  validates :participant_ids, presence: true, length: { minimum: 2 }
+  # validates :participant_ids, presence: true, length: { minimum: 2 }
 
-  validates_uniqueness_of :participant_ids
-  validate :users_exist?
+  # validates_uniqueness_of :participant_ids
+  # validate :users_exist?
 
-  def recipient(current)
-    (participants - [current]).first
-  end
+  # def recipient(current)
+  #   (participants - [current]).first
+  # end
 
-  def participants
-    User.where(id: participant_ids)
-  end
+  # def participants
+  #   User.where(id: participant_ids)
+  # end
 
-  private
+  # private
 
-  def sort_and_uniquify_participant_ids
-    self.participant_ids = participant_ids.uniq.sort
-  end
+  # def sort_and_uniquify_participant_ids
+  #   self.participant_ids = participant_ids.uniq.sort
+  # end
 
-  def users_exist?
-    return true if participant_ids.count == participants.count
+  # def users_exist?
+  #   return true if participant_ids.count == participants.count
 
-    errors.add(:participant_ids, 'Non-existent user(s)')
-  end
+  #   errors.add(:participant_ids, 'Non-existent user(s)')
+  # end
 end
