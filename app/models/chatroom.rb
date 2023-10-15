@@ -1,6 +1,6 @@
 class Chatroom < ApplicationRecord
   has_many :messages, dependent: :destroy
-  has_many :user_chatrooms
+  has_many :users, through: :user_chatrooms
   before_validation :sort_and_uniquify_participant_ids
 
   validates :participant_ids, presence: true, length: { minimum: 2 }
