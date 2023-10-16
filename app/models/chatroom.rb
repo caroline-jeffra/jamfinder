@@ -14,4 +14,8 @@ class Chatroom < ApplicationRecord
   def self.find_private_chatroom(user1, user2)
     (user1.chatrooms & user2.chatrooms).filter { |c| c.users_count == 2 }.first
   end
+
+  def recipient(current)
+    (users - [current]).first
+  end
 end
