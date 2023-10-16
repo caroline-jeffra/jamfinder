@@ -1,15 +1,15 @@
 class ChatroomsController < ApplicationController
   def index
     if params[:recipient] && User.find_by(id: params[:recipient])
-      @participants = [current_user.id, params[:recipient].to_i].sort
-      Chatroom.create!(participant_ids: @participants) unless Chatroom.where(participant_ids: @participants).any?
-      @chatroom = Chatroom.find_by(participant_ids: @participants)
+      @participants = [current_user, User.find(params[:recipient])]
+      Chatroom.create!(users: @participants) unless Chatroom.private_chatroom_exists?(@participants.first, @participants.last)
+      @chatroom = Chatroom.find_private_chatroom(@participants.first, @participants.last)
     end
     @jam = Jam.new
-    @chatrooms = Chatroom.where("? = ANY (participant_ids)", current_user.id)
-                         .includes(:messages)
-                         .order('messages.created_at DESC')
-                         .where.not(messages: { id: nil })
+    @chatrooms = current_user.chatrooms
+                             .includes(:messages)
+                             .order('messages.created_at DESC')
+                             .where.not(messages: { id: nil })
   end
 
   def show
