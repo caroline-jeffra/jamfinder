@@ -8,22 +8,10 @@ class Chatroom < ApplicationRecord
     user2 = User.find_by(id: id2)
     return false unless user1 && user2
 
-    return find_chatroom(user1, user2).any?
+    return find_private_chatroom(user1, user2).present?
   end
 
-  def self.find_chatroom(user1, user2)
-    Chatroom.find_by_sql(
-      "#{user_private_chatrooms_query(user1)}
-      INTERSECT
-      #{user_private_chatrooms_query(user2)}"
-    )
-  end
-
-  private_class_method def self.user_private_chatrooms_query(user)
-    Chatroom.where(users_count: 2)
-            .joins(:user_chatrooms)
-            .where(user_chatrooms: { user_id: user.id })
-            .group('chatrooms.id')
-            .to_sql
+  def self.find_private_chatroom(user1, user2)
+    (user1.chatrooms & user2.chatrooms).filter { |c| c.users_count == 2 }.first
   end
 end
