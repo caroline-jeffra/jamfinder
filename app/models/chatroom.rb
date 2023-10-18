@@ -26,4 +26,8 @@ class Chatroom < ApplicationRecord
 
     errors.add(:users, "Chatroom already exists for users #{users.map(&:id)}")
   end
+
+  def recipient(current)
+    (users - [current]).first
+  end
 end
