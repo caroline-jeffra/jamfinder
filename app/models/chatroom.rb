@@ -10,9 +10,8 @@ class Chatroom < ApplicationRecord
   end
 
   def self.find_by_users(users)
-    users.reduce(Chatroom.where(users_count: users.length)) do |results, u|
-      results.where(id: u.chatrooms)
-    end.first
+    chatrooms = Chatroom.where(users_count: users.length)
+    users.reduce(chatrooms) { |c, u| c.where(id: u.chatrooms) }.first
   end
 
   def recipient(current)
