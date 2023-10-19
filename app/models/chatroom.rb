@@ -12,7 +12,7 @@ class Chatroom < ApplicationRecord
   def self.find_by_users(users)
     users.reduce(Chatroom.where(users_count: users.length)) do |results, u|
       results.where(id: u.chatrooms)
-    end
+    end.first
   end
 
   def recipient(current)
