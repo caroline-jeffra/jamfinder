@@ -14,6 +14,8 @@ class ChatroomsController < ApplicationController
 
   def show
     @chat = Chatroom.find(params[:id])
+    redirect_to chats_path and return unless @chat.users.include?(current_user)
+
     @jam = Jam.new
     respond_to do |format|
       format.html { render partial: "show", locals: { chat: @chat }, formats: [:html] }
