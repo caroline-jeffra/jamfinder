@@ -35,6 +35,7 @@ class User < ApplicationRecord
   # Validations
   validates :first_name, :last_name, :address, presence: true
 
+  # PgSearch
   include PgSearch::Model
   pg_search_scope :search,
     against: [:address, :display_name],
@@ -45,6 +46,11 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  # Scopes
+  def recent_chatrooms
+    chatrooms.order(updated_at: :desc)
+  end
 
   def coordinates
     [latitude, longitude] if attributes.values_at("latitude", "longitude").all?
