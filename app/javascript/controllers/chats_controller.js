@@ -17,7 +17,7 @@ export default class extends Controller {
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
-  toggle(e) {
+  toggle() {
     this.chatlistTarget.classList.toggle("d-none");
     this.chatboxTarget.classList.toggle("d-none");
     this.scrollDown();
