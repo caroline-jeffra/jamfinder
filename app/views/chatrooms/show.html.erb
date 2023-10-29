@@ -16,7 +16,7 @@
       </div>
     </div>
     <%= turbo_stream_from dom_id(@chatroom) %>
-    <%= tag.div id: "messages", class:"card-body messages flex-grow-1", data: { chats_target: "messages", subscriber_id: current_user.id } do %>
+    <%= tag.div id: "messages", class:"card-body messages flex-grow-1", data: { chats_target: "messages" } do %>
       <%= render @messages %>
     <% end %>
     <div class="card-footer message-input px-2">

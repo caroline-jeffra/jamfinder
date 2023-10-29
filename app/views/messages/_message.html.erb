@@ -1,6 +1,6 @@
-<%= tag.div class: "message-row d-flex", data: { controller: "message", message_sender_id_value: message.user_id } do %>
-  <div class="message" data-message-target="message">
+<%= tag.div class: "message-row d-flex" do %>
+  <%= tag.div class: "message", data: { chats_target: "message", sender_id: message.user_id } do %>
     <span class="message-content"><%= message.content %></span>
     <span class="message-timestamp"><%= message.created_at.strftime("%H:%M") %></span>
-  </div>
+  <% end %>
 <% end %>
