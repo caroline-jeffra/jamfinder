@@ -1,29 +1,10 @@
-<div class="container chat d-flex flex-column justify-content-between h-100 flex-grow-1" data-controller="chats" data-chats-url-value=<%= @chatroom ? chat_path(@chatroom) : "" %>>
-  <div class="col-12 flex-grow-1 align-content-start" style="overflow-y: scroll;" data-chats-target="chatlist">
-    <div class="align-self-start">
-      <h1 class="mx-2">Chats</h1>
-    </div>
-    <ul class="col-12 chat-list d-flex list-group list-group-flush px-3">
-      <% @chatrooms.each do |chat| %>
-        <div class="chat-head px-2 list-group-item d-flex align-items-center">
-          <%= image_tag(chat.recipient(current_user).avatar_url, class: "avatar mx-2") %>
-          <div class="flex-grow-1 chat-list-summary">
-            <h4><%= chat.recipient(current_user).display_name %></h4>
-            <% if chat.messages.first %>
-              <p><%= truncate(chat.messages.first.content, length: 37) %></p>
-            <% end %>
-          </div>
-          <div class="chat-list-timestamps text-end">
-            <% if chat.messages.last %>
-              <p><%= chat.messages.last.created_at.strftime("%H:%M") %></p>
-              <p><%= chat.messages.last.created_at.strftime("%d/%m/%y") %></p>
-            <% end %>
-          </div>
-          <%= link_to "", chat_path(chat.id), data: { action: "click->chats#display"}, class: "stretched-link" %>
-        </div>
-      <% end %>
+<%= tag.div class: "container chat d-flex flex-column justify-content-between h-100 flex-grow-1", data: { controller: "chats", chats_url_value: @chatroom ? chat_path(@chatroom) : "", chats_subscriber_id_value: current_user.id } do %>
+<div class="col-12 flex-grow-1 align-content-start" style="overflow-y: scroll;" data-chats-target="chatlist">
+    <%= turbo_stream_from "user_#{current_user.id}_chatrooms" %>
+    <ul id="chatrooms" class="col-12 chat-list d-flex list-group list-group-flush px-3"%>
+    <%= render @chatrooms, current: current_user %>
     </ul>
   </div>
-  <div class="col-12 chatbox d-flex flex-column h-100 flex-grow-1 d-none" data-chats-target="chatbox">
-  </div>
-</div>
+  <%= turbo_frame_tag "chatbox", class: "col-12 chatbox d-flex flex-column h-100 flex-grow-1 d-none", data: { chats_target: "chatbox", action: "turbo:frame-load->chats#toggle" }, src: @chatroom ? chat_path(@chatroom.id) : ""  do %>
+  <% end %>
+<% end %>
