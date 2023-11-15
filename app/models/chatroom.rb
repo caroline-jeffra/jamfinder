@@ -30,14 +30,11 @@ class Chatroom < ApplicationRecord
   end
 
   def broadcast_updates
-    if messages.length == 1
-      broadcast_first_message
-    else
-      broadcast_new_messages
-    end
+    remove_old_message unless messages.length == 1
+    broadcast_message
   end
 
-  def broadcast_first_message
+  def broadcast_message
     active_users.each do |user|
       broadcast_prepend_to "user_#{user.id}_chatrooms",
                            target: "chatrooms",
@@ -46,12 +43,10 @@ class Chatroom < ApplicationRecord
     end
   end
 
-  def broadcast_new_messages
+  def remove_old_message
     active_users.each do |user|
-      broadcast_replace_to "user_#{user.id}_chatrooms",
-                           target: dom_id(self),
-                           partial: 'chatrooms/chatroom',
-                           locals: { chatroom: self, current: user }
+      broadcast_remove_to "user_#{user.id}_chatrooms",
+                           target: dom_id(self)
     end
   end
 
