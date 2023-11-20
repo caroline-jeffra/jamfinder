@@ -33,9 +33,6 @@ class ProfilesController < ApplicationController
   end
 
   def update_instrument
-    # raise
-    # sanitize_instrument_params
-    # user_instrument_params
     current_user.instruments = user_instrument_params
     redirect_to profile_path(current_user)
   end
