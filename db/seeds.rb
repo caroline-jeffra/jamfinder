@@ -59,19 +59,19 @@ end
 puts "#{Instrument.count} instruments created"
 
 GENRES = [
-  { name: 'Avant-garde jazz' },
-  { name: 'Boogie' },
-  { name: 'Downtempo' },
-  { name: 'Dream pop' },
-  { name: 'Classical grime' },
-  { name: 'Jazz blues' },
-  { name: 'Progressive rock' },
-  { name: 'Rock fusion' },
-  { name: 'Ska jazz' },
-  { name: 'Sung poetry' },
-  { name: 'Trad jazz' },
-  { name: 'Traditional folk' },
-  { name: 'Twee Pop' }
+  { name: 'avant-garde-jazz' },
+  { name: 'boogie' },
+  { name: 'downtempo' },
+  { name: 'dream-pop' },
+  { name: 'classical-grime' },
+  { name: 'jazz-blues' },
+  { name: 'progressive-rock' },
+  { name: 'rock-fusion' },
+  { name: 'ska-jazz' },
+  { name: 'sung-poetry' },
+  { name: 'trad-jazz' },
+  { name: 'traditional-folk' },
+  { name: 'twee-pop' }
 ]
 
 puts "Creating genres..."
@@ -172,8 +172,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/139060899?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp11903020.jpg',
   address: 'Kerkstraat, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Vocals"), Instrument.find_by(name: "Guitar") ],
-  genres: [Genre.find_by(name: "Sung poetry")],
+  instruments: [ Instrument.find_by(name: "vocals"), Instrument.find_by(name: "guitar") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[1],
   bio: BIO[1]
 )
@@ -186,8 +186,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/28513224?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp10347654.jpg',
   address: 'Staalmeesterslaan, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Saxophone"), Instrument.find_by(name: "Vocals") ],
-  genres: [Genre.find_by(name: "Trad jazz")],
+  instruments: [ Instrument.find_by(name: "saxophone"), Instrument.find_by(name: "vocals") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[2],
   bio: BIO[2]
 )
@@ -200,8 +200,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/116356064?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp3454635.jpg',
   address: 'Gibboneiland, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Harmonica"), Instrument.find_by(name: "Guitar") ],
-  genres: [Genre.find_by(name: "Classical grime")],
+  instruments: [ Instrument.find_by(name: "harmonica"), Instrument.find_by(name: "guitar") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: "Speaking the language of music - do you want to have a chat?",
   bio: BIO[3]
 )
@@ -214,8 +214,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138127305?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4134869.jpg',
   address: 'Thomas van Erpehof, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Mandolin"), Instrument.find_by(name: "Trombone") ],
-  genres: [Genre.find_by(name: "Boogie")],
+  instruments: [ Instrument.find_by(name: "mandolin"), Instrument.find_by(name: "trombone") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: "They say goldfish have no memory. I guess their lives are much like mine",
   bio: "I'm an eclectic person with electic taste. I love all sorts of music and playing it is a great hobby - listening too! Looking forward to finding jam buddies!"
 )
@@ -229,8 +229,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138874915?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4135070.jpg',
   address: 'Javastraat, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Oboe"), Instrument.find_by(name: "Harp") ],
-  genres: [Genre.find_by(name: "Avant-garde jazz")],
+  instruments: [ Instrument.find_by(name: "oboe"), Instrument.find_by(name: "harp") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[5],
   bio: BIO[5]
 )
@@ -243,8 +243,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/79024584?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4136074.jpg',
   address: 'Leliegracht, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Zither"), Instrument.find_by(name: "Piano") ],
-  genres: [Genre.find_by(name: "Traditional folk")],
+  instruments: [ Instrument.find_by(name: "zither"), Instrument.find_by(name: "piano") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[6],
   bio: BIO[6]
 )
@@ -257,8 +257,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/5818940?v=4',
   banner_url: 'https://wallpapercave.com/wp/HTiPvGX.jpg',
   address: 'Voorburgstraat, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Guitar"), Instrument.find_by(name: "Harmonica") ],
-  genres: [Genre.find_by(name: "Progressive rock")],
+  instruments: [ Instrument.find_by(name: "guitar"), Instrument.find_by(name: "harmonica") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: "I hope you like jammin' too!",
   bio: "Anything from Classic Rock all the way to Fusion Funk, as long as the guitars are singing I'm gonna love it. Nothing beats a nice jam in the park!"
 )
@@ -273,8 +273,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138881754?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4132920.jpg',
   address: 'Lindengracht, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Triangle"), Instrument.find_by(name: "Accordion") ],
-  genres: [Genre.find_by(name: "Ska jazz")],
+  instruments: [ Instrument.find_by(name: "triangle"), Instrument.find_by(name: "accordion") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[8],
   bio: BIO[8]
 )
@@ -287,8 +287,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/78371638?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4133097.jpg',
   address: 'Ribesstraat, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Keyboard"), Instrument.find_by(name: "Bongo") ],
-  genres: [Genre.find_by(name: "Downtempo")],
+  instruments: [ Instrument.find_by(name: "keyboard"), Instrument.find_by(name: "bongo") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[9],
   bio: BIO[9]
 )
@@ -301,8 +301,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/64468956?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4134229.jpg',
   address: 'Zeedijk, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Xylophone"), Instrument.find_by(name: "Piano") ],
-  genres: [Genre.find_by(name: "Jazz blues")],
+  instruments: [ Instrument.find_by(name: "xylophone"), Instrument.find_by(name: "piano") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[10],
   bio: BIO[10]
 )
@@ -315,8 +315,8 @@ User.create!(
   avatar_url: 'https://ca.slack-edge.com/T02NE0241-U05FRFGF7K9-d997ff9f3224-512',
   banner_url: 'https://wallpapercave.com/wp/wp4132927.jpg',
   address: 'Admiraal de Ruijterweg, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Bagpipes"), Instrument.find_by(name: "Snare") ],
-  genres: [Genre.find_by(name: "Rock fusion")],
+  instruments: [ Instrument.find_by(name: "bagpipes"), Instrument.find_by(name: "snare") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[11],
   bio: BIO[11]
 )
@@ -329,8 +329,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/126870650?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp2832280.jpg',
   address: 'Koninginneweg, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Cello"), Instrument.find_by(name: "Flute") ],
-  genres: [Genre.find_by(name: "Twee pop")],
+  instruments: [ Instrument.find_by(name: "cello"), Instrument.find_by(name: "flute") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[12],
   bio: BIO[12]
 )
@@ -343,8 +343,8 @@ User.create!(
   avatar_url: 'https://avatars.githubusercontent.com/u/138873317?v=4',
   banner_url: 'https://wallpapercave.com/wp/wp4135219.jpg',
   address: 'Valschermkade, Amsterdam',
-  instruments: [ Instrument.find_by(name: "Ocarina"), Instrument.find_by(name: "Vocals") ],
-  genres: [Genre.find_by(name: "Dream pop")],
+  instruments: [ Instrument.find_by(name: "ocarina"), Instrument.find_by(name: "vocals") ],
+  genres: [Genre.order("RANDOM()").first],
   tagline: TAGLINE[13],
   bio: BIO[13]
 )

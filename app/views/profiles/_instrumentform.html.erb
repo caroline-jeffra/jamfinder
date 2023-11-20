@@ -1,7 +1,15 @@
-<div class="d-none" data-popover-target="instrument">
-  <%= form_tag update_instrument_path, :method => :patch do |f|%>
-  <%= text_field_tag :'instrument[name]'%>
-  <%= select_tag :'instrument[category]', options_for_select(Instrument::CATEGORIES.map { |el| [el]})%>
-  <%= submit_tag "Update instrument..." %>
+<div class="col-12 d-none" data-popover-target="instrument">
+  <%= form_tag update_instrument_path, method: :patch do |f|%>
+    <%= select :instrument, :category, Instrument::CATEGORIES, { prompt: "Select a category" }, class: "form-select form-select-lg is-invalid", data: { tags_target: "category", action: "input->tags#checkCategoryValidity" } %>
+    <div class="invalid-feedback">
+      "Please select a category"
+    </div>
+    <%= text_field nil, nil, placeholder: "Enter instruments (⌫ to delete)", class: "tag-input col-12", data: { tags_target: "input", action: "keyup->tags#tagify keydown->tags#preventSubmit" } %>
+    <input type="hidden" name="user[instruments]" data-tags-target="hiddenField"/>
+    <div class="col-12 position-relative mb-2">
+      <%= tag.ul class: "suggestion list-group col-12", data: { tags_target: "suggestions" } %>
+    </div>
+    <button class="btn btn-sm btn-primary" action="Submit">Save</button>
+    <button type="button" class="btn btn-sm btn-secondary" data-action="click->popover#instrument">Cancel</button>
   <% end %>
 </div>

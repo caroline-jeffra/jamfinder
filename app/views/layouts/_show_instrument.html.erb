@@ -1,9 +1,14 @@
-<div class="d-flex align-items-center side-scroll">
+<h2 class="mt-4 mb-2">Instruments</h2>
+<%= tag.div class: "d-flex flex-wrap align-items-center", data: { controller: "tags", tags_user_tags_value: @profile.instruments.pluck(:name, :category), tags_all_tags_value: Instrument.all.pluck(:name, :category) } do %>
+  <%= tag.div class: "d-flex flex-wrap", data: { tags_target: "tags" } do %>
+    <% if current_user == @profile %>
+      <i class="profile-tags fa-solid fa-plus icon-resize" id="size2" data-action="click->popover#instrument"></i>
+    <% end %>
+    <% @profile.instruments.each do |instrument| %>
+      <p class="profile-tags"><%= "##{instrument.name}"%></p>
+    <% end %>
+  <% end %>
   <% if current_user == @profile %>
-    <i class="profile-tags fa-solid fa-plus icon-resize" id="size1" data-action="click->popover#instrument"></i>
     <%= render "instrumentform" %>
   <% end %>
-  <% @profile.instruments.each do |instrument| %>
-    <p class="profile-tags"><%= "##{instrument.name}"%></p>
-  <% end %>
-</div>
+<% end %>
