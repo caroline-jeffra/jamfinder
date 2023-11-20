@@ -4,7 +4,7 @@
     <div class="invalid-feedback">
       "Please select a category"
     </div>
-    <%= text_field nil, nil, placeholder: "Enter instruments (⌫ to delete)", class: "tag-input col-12", data: { tags_target: "input", action: "keyup->tags#tagify keydown->tags#preventSubmit" } %>
+    <%= text_field nil, nil, placeholder: "Enter instruments (⌫ to delete)", class: "tag-input col-12", data: { tags_target: "input", action: "keyup->tags#handleKeyUp keydown->tags#handleKeyDown" } %>
     <input type="hidden" name="user[instruments]" data-tags-target="hiddenField"/>
     <div class="col-12 position-relative mb-2">
       <%= tag.ul class: "suggestion list-group col-12", data: { tags_target: "suggestions" } %>

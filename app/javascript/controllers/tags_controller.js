@@ -29,7 +29,7 @@ export default class extends Controller {
   connect() {
   }
 
-  preventSubmit(e) {
+  handleKeyDown(e) {
     if(e.key == "Enter") {
       e.preventDefault();
     } else if(e.key == "Backspace" && this.inputTarget.selectionStart == 0 && this.userTags.length > 0) {
@@ -40,7 +40,7 @@ export default class extends Controller {
     }
   }
 
-  tagify(e) {
+  handleKeyUp(e) {
     if(e.key == "," || e.key == "Enter") {
       this.addTagToHTML();
     } else if(e.key == "ArrowDown") {
