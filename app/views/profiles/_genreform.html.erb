@@ -2,7 +2,7 @@
   <%= form_tag update_genre_path, method: :patch do |f|%>
     <%= text_field nil, nil, placeholder: "Enter genres (⌫ to delete)", class: "tag-input col-12", data: { tags_target: "input", action: "keyup->tags#tagify keydown->tags#preventSubmit" } %>
     <input type="hidden" name="genre[list]" data-tags-target="hiddenField"/>
-    <div class="col-12 position-relative">
+    <div class="col-12 position-relative mb-2">
       <%= tag.ul id: "genreSuggestions", class: "suggestion list-group col-12", data: { tags_target: "suggestions" } %>
     </div>
     <button class="btn btn-sm btn-primary" action="Submit">Save</button>
