@@ -4,9 +4,13 @@ import flatpickr from "flatpickr"; // You need to import this to use new flatpic
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   connect() {
-    flatpickr(this.element, {
+    this.fp = flatpickr(this.element, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today"})
+  }
+
+  disconnect() {
+    this.fp.destroy()
   }
 }

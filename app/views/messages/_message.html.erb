@@ -1,3 +1,6 @@
-<span class="message-content"><%= message.content %></span>
-<span class="message-timestamp"><%= message.created_at.strftime("%H:%M") %></span>
-
+<%= tag.div class: "message-row d-flex" do %>
+  <%= tag.div class: "message", data: { chats_target: "message", sender_id: message.user_id } do %>
+    <span class="message-content"><%= message.content %></span>
+    <span class="message-timestamp"><%= message.created_at.strftime("%H:%M") %></span>
+  <% end %>
+<% end %>

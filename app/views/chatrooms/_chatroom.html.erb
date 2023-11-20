@@ -1,0 +1,12 @@
+<%= tag.div id: dom_id(chatroom), class: "chat-head px-2 list-group-item d-flex align-items-center" do %>
+  <%= image_tag(chatroom.recipient(current).avatar_url, class: "avatar mx-2") %>
+  <div class="flex-grow-1 chat-list-summary">
+    <h4><%= chatroom.recipient(current).display_name %></h4>
+      <p><%= truncate(chatroom.messages.last.content, length: 37) %></p>
+  </div>
+  <div class="chat-list-timestamps text-end">
+      <p><%= chatroom.messages.last.created_at.strftime("%H:%M") %></p>
+      <p><%= chatroom.messages.last.created_at.strftime("%d/%m/%y") %></p>
+  </div>
+  <%= link_to "", chat_path(chatroom.id), data: { turbo_frame: "chatbox" }, class: "stretched-link" %>
+<% end %>
