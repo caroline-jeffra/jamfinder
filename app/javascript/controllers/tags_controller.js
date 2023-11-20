@@ -105,7 +105,12 @@ export default class extends Controller {
 
   setCategory(tag) {
     if(!this.categoryTarget.value) {
-      this.categoryTarget.value = this.allTagsValue.find((e) => e[0] == tag)?.[1];
+      const tagCategory = this.allTagsValue.find((e) => e[0] == tag)?.[1]
+      if(tagCategory) {
+        this.categoryTarget.value = tagCategory;
+      } else {
+        this.categoryTarget.selectedIndex = 0;
+      }
       this.categoryTarget.dispatchEvent(new Event('input', { 'bubbles': true }));
     }
   }
