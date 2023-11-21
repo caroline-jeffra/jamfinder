@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
   end
 
   def update_instrument
-    current_user.instruments = user_instrument_params
+    current_user.instruments = format_user_instruments_params
     redirect_to profile_path(current_user)
   end
 

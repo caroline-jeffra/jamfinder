@@ -231,4 +231,21 @@ export default class extends Controller {
     this.inputTarget.value = e.target.innerText;
     this.addTagToHTML();
   }
+  
+  resetTags() {
+    while(this.tagsTarget.lastElementChild.tagName == 'P') {
+      this.tagsTarget.lastElementChild.remove();
+    }
+    this.userTags = [];
+    if(this.hasCategoryTarget) {
+      this.userTagsValue.forEach(v => {
+        this.addInstrumentTag(v[0]);
+      })
+      this.categoryTarget.selectedIndex = 0;
+    } else {
+      this.userTagsValue.forEach(v => {
+        this.addGenreTag(v);
+      })
+    }
+  }
 }
