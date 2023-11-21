@@ -27,19 +27,12 @@ class ProfilesController < ApplicationController
   end
 
   def update_genre
-    UserGenre.create!(
-      user: current_user,
-      genre_id: params[:genre].to_i
-    )
+    current_user.genres = format_user_genres_params
     redirect_to profile_path(current_user)
   end
 
   def update_instrument
-    instrument = Instrument.create(user_instrument_params)
-    UserInstrument.create!(
-      user: current_user,
-      instrument: instrument
-    )
+    current_user.instruments = format_user_instruments_params
     redirect_to profile_path(current_user)
   end
 
@@ -55,8 +48,23 @@ class ProfilesController < ApplicationController
 
   private
 
-  def user_instrument_params
-    params.require(:instrument).permit(:name,:category)
+  def user_genres_params
+    params.require(:user).permit(:genres)
+  end
+
+  def format_user_genres_params
+    user_genres_params[:genres].split(",")
+      .map { |g| Genre.where(name: g).first_or_create }
+  end
+
+  def user_instruments_params
+    params.require(:user).permit(:instruments)
+  end
+  
+  def format_user_instruments_params
+    JSON.parse(user_instruments_params[:instruments])
+      .map { |i| {name: i[0], category: i[1]} }
+      .map { |p| Instrument.where(p).first_or_create }
   end
 
   def user_images_params

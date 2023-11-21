@@ -1,6 +1,11 @@
-<div class="d-none" data-popover-target="genre">
-  <%= form_tag update_genre_path, :method => :patch do |f|%>
-  <%= select_tag :genre, options_for_select(Genre.all.map { |el| [el.name, el.id] })%>
-  <%= submit_tag "Update genre..." %>
+<div class="col-12 d-none" data-popover-target="genre">
+  <%= form_tag update_genre_path, method: :patch do |f|%>
+    <%= text_field nil, nil, placeholder: "Enter genres (⌫ to delete)", class: "tag-input col-12", data: { tags_target: "input", action: "keyup->tags#handleKeyUp keydown->tags#handleKeyDown" } %>
+    <input type="hidden" name="user[genres]" data-tags-target="hiddenField"/>
+    <div class="col-12 position-relative mb-2">
+      <%= tag.ul class: "suggestion list-group col-12", data: { tags_target: "suggestions" } %>
+    </div>
+    <button class="btn btn-sm btn-primary" action="Submit">Save</button>
+    <button type="button" class="btn btn-sm btn-secondary" data-action="click->popover#genre click->tags#resetTags">Cancel</button>
   <% end %>
 </div>

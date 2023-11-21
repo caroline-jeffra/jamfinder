@@ -15,17 +15,13 @@
     </div>
   <% end %>
 </div>
-<div class="container scrollable" data-controller="popover">
+<div class="container" data-controller="popover">
   <%= render "layouts/show_card", user: @profile %>
   <div class="container">
     <%= render "layouts/show_bio", user: @profile %>
-      <hr style="margin: 20px 0 20px 0">
-    <%= render "layouts/show_genre", user: @profile %>
-      <hr style="margin: 20px 0 20px 0">
-    <%= render "layouts/show_instrument", user: @profile %>
-      <hr style="margin: 20px 0 20px 0">
-      <%= render "layouts/show_images", user: @profile %>
-        <hr style="margin: 20px 0 20px 0">
+    <%= render "layouts/show_genre" %>
+    <%= render "layouts/show_instrument" %>
+    <%= render "layouts/show_images", user: @profile %>
     <div>
       <% if @profile.audios.any? %>
         <% @profile.audios.each do |audio| %>
@@ -57,23 +53,6 @@
           readMoreBtn.innerHTML = `<i class="fa-solid fa-chevron-down icon-resize"></i>`;
           }
         });
-    });
-  </script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js">
-  </script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      freeMode: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
     });
   </script>
 </div>

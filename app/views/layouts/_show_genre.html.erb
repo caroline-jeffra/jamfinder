@@ -1,9 +1,14 @@
-<div class="d-flex align-items-center side-scroll">
+<h2 class="mt-4 mb-2">Genres</h2>
+<%= tag.div class: "d-flex flex-wrap align-items-center", data: { controller: "tags", tags_user_tags_value: @profile.genres.pluck(:name), tags_all_tags_value: Genre.all.pluck(:name) } do %>
+  <%= tag.div class: "d-flex flex-wrap", data: { tags_target: "tags" } do %>
+    <% if current_user == @profile %>
+      <i class="profile-tags fa-solid fa-plus icon-resize" id="size2" data-action="click->popover#genre"></i>
+    <% end %>
+    <% @profile.genres.each do |genre| %>
+      <p class="profile-tags"><%= "##{genre.name}"%></p>
+    <% end %>
+  <% end %>
   <% if current_user == @profile %>
-    <i class="profile-tags fa-solid fa-plus icon-resize" id="size2" data-action="click->popover#genre"></i>
     <%= render "genreform" %>
   <% end %>
-  <% @profile.genres.each do |genre| %>
-    <p class="profile-tags"><%= "##{genre.name}"%></p>
-  <% end %>
-</div>
+<% end %>
